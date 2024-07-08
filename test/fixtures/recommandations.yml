@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  new_loading_dose: 1
+  new_maintenance_bolus: 1
+  new_maintenance_bolus_time: 2024-07-08 16:29:50
+  patient: one
+
+two:
+  new_loading_dose: 1
+  new_maintenance_bolus: 1
+  new_maintenance_bolus_time: 2024-07-08 16:29:50
+  patient: two

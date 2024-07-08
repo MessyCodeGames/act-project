@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bolus_given: 1
+  bolus_time: MyString
+  datetime: MyString
+  patient: one
+
+two:
+  bolus_given: 1
+  bolus_time: MyString
+  datetime: MyString
+  patient: two
