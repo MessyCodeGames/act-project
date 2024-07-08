@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  act_value: 1
+  act_time: 2024-07-08 16:27:29
+  patient: one
+
+two:
+  act_value: 1
+  act_time: 2024-07-08 16:27:29
+  patient: two
