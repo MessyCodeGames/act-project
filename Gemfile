@@ -27,7 +27,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use R code in Ruby
-gem "rinruby"
+# gem "rinruby"
+gem 'rinruby', '~> 2.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
