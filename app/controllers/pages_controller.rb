@@ -3,9 +3,23 @@ class PagesController < ApplicationController
   end
 
   def calculate
-    require "rinruby"
-    R.eval "print('Hello from R')"
-    
+    var1 = params[:var1]
+    var2 = params[:var2]
+
+    # Path to your R script
+    script_path = Rails.root.join('lib', 'scripts', 'script.R')
+
+    # Execute the R script with parameters
+    output = `Rscript #{script_path} #{var1} #{var2}`
+
+    # Capture the result
+    @result = output.strip
+
+    render :home
+
+    # require "rinruby"
+    # R.eval "print('Hello from R')"
+
     # Les deux variables récupérées depuis le formulaire
     # var1 = params[:var1].to_i
     # var2 = params[:var2].to_i
@@ -23,6 +37,6 @@ class PagesController < ApplicationController
     # RSCRIPT
 
     # @result = R.pull("res")
-    render :home
+    # render :home
   end
 end
