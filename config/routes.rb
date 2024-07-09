@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :recommandations, only: [:new, :create, :destroy, :index, :show]
   end
 
+  post 'calculate', to: 'pages#calculate'
+
   # Defines the root path route ("/")
   root to: "pages#home"
 end
