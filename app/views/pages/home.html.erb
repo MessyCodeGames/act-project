@@ -1,1 +1,16 @@
 <h1>ACT Project App Homepage</h1>
+<br>
+
+<%= form_tag(calculate_path, method: :post) do %>
+  <%= label_tag(:var1, "Variable 1:") %>
+  <%= number_field_tag(:var1) %>
+
+  <%= label_tag(:var2, "Variable 2:") %>
+  <%= number_field_tag(:var2) %>
+
+  <%= submit_tag("Calculate") %>
+<% end %>
+
+<% if @result %>
+  <p>Result: <%= @result %></p>
+<% end %>
