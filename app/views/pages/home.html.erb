@@ -1,7 +1,8 @@
 <h1>ACT Project App Homepage</h1>
 <br>
 
-<%= form_tag(calculate_path, method: :post) do %>
+<p>Add the two numbers:</p>
+<%= form_tag(calculate_path, method: :post, data: { turbo: false }) do %>
   <%= label_tag(:var1, "Variable 1:") %>
   <%= number_field_tag(:var1) %>
 
@@ -12,5 +13,5 @@
 <% end %>
 
 <% if @result %>
-  <p>Result: <%= @result %></p>
+  <p>Result of the addition: <%= @result %></p>
 <% end %>
