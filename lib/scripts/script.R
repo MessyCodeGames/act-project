@@ -1,4 +1,5 @@
 args <- commandArgs(trailingOnly = TRUE)
+
 var1 <- as.numeric(args[1])
 var2 <- as.numeric(args[2])
 
