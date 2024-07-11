@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_142950) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_123319) do
   create_table "acts", force: :cascade do |t|
     t.integer "act_value"
     t.datetime "act_time"
@@ -22,8 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_142950) do
 
   create_table "heparins", force: :cascade do |t|
     t.integer "bolus_given"
-    t.string "bolus_time"
-    t.string "datetime"
+    t.datetime "bolus_time"
     t.integer "patient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

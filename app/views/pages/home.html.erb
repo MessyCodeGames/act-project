@@ -2,18 +2,68 @@
 <br>
 
 <p>Add the two numbers:</p>
-<%= form_tag(calculate_path, method: :post, data: { turbo: false }) do %>
-  <%= label_tag(:var1, "Variable 1:") %>
-  <%= number_field_tag(:var1) %>
+<div data-controller="hello" data-result=<%= @result %>>
+  <%= form_tag(calculate_path, method: :post, remote: true, data: { turbo: false }) do %>
+    <%= label_tag(:var1, "Variable 1:") %>
+    <%= number_field_tag(:var1) %>
 
-  <%= label_tag(:var2, "Variable 2:") %>
-  <%= number_field_tag(:var2) %>
+    <%= label_tag(:var2, "Variable 2:") %>
+    <%= number_field_tag(:var2) %>
 
-  <%= submit_tag("Calculate") %>
-<% end %>
+    <!-- <%= submit_tag "Calculate", data: { action: "hello#addiction"} %> -->
+    <%= submit_tag "Calculate"%>
+  <% end %>
+</div>
 
 <br>
 <p>Result of the addition:</p>
 <% if @result %>
   <p><%= @result %></p>
 <% end %>
+
+
+<!-- Test for nested form -->
+<br>
+<h3>Calcul de la prochaine dose</h3>
+<%= form_with model: @patient do |form| %>
+  <%= form.label :weight, "Poids du patient" %>
+  <%= form.number_field :weight %>
+  <div>
+    <%= form.fields_for :acts do |acts_form| %>
+      <%= acts_form.label :act_value, "Valeur d'ACT mesurée" %>
+      <%= acts_form.number_field :act_value %>
+
+      <%= acts_form.label :act_time, "Temps" %>
+      <%= acts_form.datetime_field :act_time %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.fields_for :heparins do |heparins_form| %>
+      <%= heparins_form.label :bolus_given, "Dose d'Heparin injectée" %>
+      <%= heparins_form.number_field :bolus_given %>
+
+      <%= heparins_form.label :act_time, "Temps" %>
+      <%= heparins_form.text_field :bolus_time %>
+    <% end %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+
+<!-- Test for Stimulus (add a new field to the form) -->
+<h3>Calculer le poids</h3>
+<br>
+<div data-controller="hello">
+  <%= form_with model: @patient do |form| %>
+    <div data-hello-target="form">
+      <div>
+        <%= form.label :weight, "Poids du patient" %>
+        <%= form.number_field :weight, data: {:hello_target => "weight"}, class: "weight"  %>
+      </div>
+    </div>
+    <button data-action="click->hello#addrow">Ajouter un champ</button>
+    <%= form.submit "Calculer le poids", data: {:action => "click->hello#calculate"} %>
+  <% end %>
+  <br>
+  <div data-hello-target="result2"></div>
+</div>
