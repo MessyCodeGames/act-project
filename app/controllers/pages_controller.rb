@@ -15,7 +15,8 @@ class PagesController < ApplicationController
     # Capture the result
     @result = output.strip
 
-    render :home
+    # Render the result as JSON
+    render json: { result: @result }
 
     # require "rinruby"
     # R.eval "print('Hello from R')"
