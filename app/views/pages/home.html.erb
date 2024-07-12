@@ -2,22 +2,24 @@
 <br>
 
 <p>Add the two numbers:</p>
-<div data-controller="hello" data-result=<%= @result %>>
-  <%= form_tag(calculate_path, method: :post, remote: true, data: { turbo: false }) do %>
+<div data-controller="hello">
+  <%= form_tag(calculate_path, method: :post, remote: true, data: { turbo: false, action: "hello#addiction" }) do %>
     <%= label_tag(:var1, "Variable 1:") %>
     <%= number_field_tag(:var1) %>
 
     <%= label_tag(:var2, "Variable 2:") %>
     <%= number_field_tag(:var2) %>
 
-    <!-- <%= submit_tag "Calculate", data: { action: "hello#addiction"} %> -->
-    <%= submit_tag "Calculate"%>
+    <%= submit_tag "Calculate" %>
+    <!-- <%= submit_tag "Calculate"%> -->
   <% end %>
+  <div data-hello-target="result">
+  </div>
 </div>
 
-<br>
-<p>Result of the addition:</p>
 <% if @result %>
+  <br>
+  <p>Result of the addition:</p>
   <p><%= @result %></p>
 <% end %>
 
@@ -51,6 +53,8 @@
 
 
 <!-- Test for Stimulus (add a new field to the form) -->
+<hr>
+<br>
 <h3>Calculer le poids</h3>
 <br>
 <div data-controller="hello">
