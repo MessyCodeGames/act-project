@@ -3,41 +3,29 @@ class PagesController < ApplicationController
   end
 
   def calculate
-    var1 = params[:var1]
-    var2 = params[:var2]
+    weight = params[:var1]
+    act_values = params[:var2]
+    # Convert form data of dates as string to DateTime objects for calculations
+    act_times = params[:var3].map { |time_string| DateTime.parse(time_string)}
 
-    # Path to your R script
-    script_path = Rails.root.join('lib', 'scripts', 'script.R')
+    # Transform act Times in minutes
+    act_times_minutes = act_times.each_with_index.map do |time, i|
+      if i == 0
+        0
+      else
+        (time - act_times[0]) * 24 * 60
+      end
+    end
+
+    # Path to the R script
+    script_path = Rails.root.join('lib', 'scripts', 'script.R').to_s
 
     # Execute the R script with parameters
-    output = `Rscript #{script_path} #{var1} #{var2}`
-
+    output = `Rscript #{script_path} #{weight} #{act_values.join(",")} #{act_times_minutes.join(",")}`
     # Capture the result
     @result = output.strip
 
     # Render the result as JSON
     render json: { result: @result }
-
-    # require "rinruby"
-    # R.eval "print('Hello from R')"
-
-    # Les deux variables récupérées depuis le formulaire
-    # var1 = params[:var1].to_i
-    # var2 = params[:var2].to_i
-
-    # Un script R qui fait une simple addition
-    # Avec la définition de la méthode, comme en Ruby presque
-    # Puis l'utilisation de la méthode avec les deux variables mises dans l'objet res
-    # Fin du script
-    # R.pull du res pour pouvoir l'utiliser dans Ruby
-    # R.eval <<-RSCRIPT
-    #   simple_addition <- function(var1, var2) {
-    #     return (var1 + var2)
-    #   }
-    #   res <- simple_addition(#{var1}, #{var2})
-    # RSCRIPT
-
-    # @result = R.pull("res")
-    # render :home
   end
 end
