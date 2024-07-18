@@ -4,16 +4,16 @@ class PagesController < ApplicationController
 
   def calculate
     weight = params[:var1]
-    act_values = params[:var2]
+    act_values = params[:var2].split(",")
     # Convert form data of dates as string to DateTime objects for calculations
-    act_times = params[:var3].map { |time_string| DateTime.parse(time_string)}
+    act_times = params[:var3].split(",").map { |time_string| DateTime.parse(time_string)}
 
     # Transform act Times in minutes
     act_times_minutes = act_times.each_with_index.map do |time, i|
       if i == 0
         0
       else
-        (time - act_times[0]) * 24 * 60
+        (time - act_times[0]) * 1440
       end
     end
 
