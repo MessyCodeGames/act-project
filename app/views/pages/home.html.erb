@@ -3,7 +3,7 @@
     <h2 class="font-bold">ACT Project</h2>
   </div>
   <hr>
-  <p>Add the two numbers:</p>
+  <!--<p>Add the two numbers:</p>
   <div data-controller="hello">
     <%= form_tag(calculate_path, method: :post, remote: true, data: { turbo: false, action: "hello#addiction" }) do %>
       <%= label_tag(:var1, "Variable 1:") %>
@@ -13,64 +13,54 @@
       <%= number_field_tag(:var2) %>
 
       <%= submit_tag "Calculate" %>
-      <!-- <%= submit_tag "Calculate"%> -->
     <% end %>
     <div data-hello-target="result">
     </div>
-  </div>
+  </div> -->
 
-  <% if @result %>
+  <!-- <% if @result %>
     <br>
     <p>Result of the addition:</p>
     <p><%= @result %></p>
-  <% end %>
+  <% end %> -->
 
 
   <!-- Test for nested form -->
   <br>
-  <h3>Calcul de la prochaine dose</h3>
-  <%= form_with model: @patient do |form| %>
-    <%= form.label :weight, "Poids du patient" %>
-    <%= form.number_field :weight %>
-    <div>
-      <%= form.fields_for :acts do |acts_form| %>
-        <%= acts_form.label :act_value, "Valeur d'ACT mesurée" %>
-        <%= acts_form.number_field :act_value %>
+  <div data-controller="hi">
+    <h3>Calcul de la prochaine dose</h3>
+    <div data-hi-target="form">
+      <%= form_with model: @patient, data: { action: "hi#addiction" } do |form| %>
+        <%= form.label :var1, "Poids du patient" %>
+        <%= form.number_field :var1, data: {:hi_target => "weight"}, class: "weight" %>
+        <div data-hi-target="actvalues">
+          <div>
+            <%= form.fields_for :acts do |acts_form| %>
+              <%= acts_form.label :var2, "Valeur d'ACT mesurée" %>
+              <%= acts_form.number_field :var2 %>
 
-        <%= acts_form.label :act_time, "Temps" %>
-        <%= acts_form.datetime_field :act_time %>
-      <% end %>
-    </div>
-    <div>
-      <%= form.fields_for :heparins do |heparins_form| %>
-        <%= heparins_form.label :bolus_given, "Dose d'Heparin injectée" %>
-        <%= heparins_form.number_field :bolus_given %>
-
-        <%= heparins_form.label :act_time, "Temps" %>
-        <%= heparins_form.text_field :bolus_time %>
-      <% end %>
-    </div>
-    <%= form.submit %>
-  <% end %>
-
-
-  <!-- Test for Stimulus (add a new field to the form) -->
-  <hr>
-  <br>
-  <h3>Calculer le poids</h3>
-  <br>
-  <div data-controller="hello">
-    <%= form_with model: @patient do |form| %>
-      <div data-hello-target="form">
-        <div>
-          <%= form.label :weight, "Poids du patient" %>
-          <%= form.number_field :weight, data: {:hello_target => "weight"}, class: "weight"  %>
+              <%= acts_form.label :var3, "Temps" %>
+              <%= acts_form.datetime_field :var3 %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <button data-action="click->hello#addrow">Ajouter un champ</button>
-      <%= form.submit "Calculer le poids", data: {:action => "click->hello#calculate"} %>
-    <% end %>
-    <br>
-    <div data-hello-target="result2"></div>
+        <button data-action="click->hi#addrow">Ajouter un champ</button>
+        <!-- <div data-hi-target="heparinsvalues">
+          <div>
+            <%= form.fields_for :heparins do |heparins_form| %>
+              <%= heparins_form.label :bolus_given, "Dose d'Heparin injectée" %>
+              <%= heparins_form.number_field :bolus_given %>
+
+              <%= heparins_form.label :act_time, "Temps" %>
+              <%= heparins_form.text_field :bolus_time %>
+            <% end %>
+          </div>
+        </div> -->
+        <%= form.submit "Calculer" %>
+      <% end %>
+    </div>
+    <div data-hi-target="result">
+
+    </div>
   </div>
 </div>
