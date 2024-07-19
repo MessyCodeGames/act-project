@@ -44,5 +44,5 @@ protoFunction <- function(weight, actValues, actTimes) {
 output <- protoFunction(weight, actValues, actTimes)
 
 # As the result is in a complex format, the output will be converted to JSON for Ruby
-json_output <- jsonlite::toJSON(output)
+json_output <- toJSON(output)
 cat(json_output)
