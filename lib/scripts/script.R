@@ -6,18 +6,18 @@ actTimes <- as.numeric(unlist(strsplit(args[3], ",")))
 
 protoFunction <- function(weight, actValues, actTimes) {
   # Libraries required, A TESTER PLUS TARD #
-  # packages = c("ggplot2", "MASS", "tidyr", "jsonlite")
+  packages = c("ggplot2", "MASS", "tidyr", "jsonlite")
 
-  # # Load or install & load needed libraries #
-  # package.check <- lapply(
-  #   packages,
-  #   FUN = function(x) {
-  #   if (!require(x, character.only = TRUE)) {
-  #     install.packages(x, dependencies = TRUE)
-  #     library(x, character.only = TRUE)
-  #     }
-  #   }
-  # )
+  # Load or install & load needed libraries #
+  package.check <- lapply(
+    packages,
+    FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+      }
+    }
+  )
 
   # 1
   normalizedWeight <- weight/60
@@ -42,9 +42,7 @@ protoFunction <- function(weight, actValues, actTimes) {
 
 # Outputs #
 output <- protoFunction(weight, actValues, actTimes)
-print(output) # Only for debugging purposes
 
 # As the result is in a complex format, the output will be converted to JSON for Ruby
-library(jsonlite)
 json_output <- toJSON(output)
 cat(json_output)
