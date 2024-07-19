@@ -6,9 +6,9 @@ actTimes <- as.numeric(unlist(strsplit(args[3], ",")))
 
 protoFunction <- function(weight, actValues, actTimes) {
   # Libraries required, A TESTER PLUS TARD #
-  # packages = c("ggplot2", "MASS", "tidyr")
+  # packages = c("ggplot2", "MASS", "tidyr", "jsonlite")
 
-  # Load or install & load needed libraries #
+  # # Load or install & load needed libraries #
   # package.check <- lapply(
   #   packages,
   #   FUN = function(x) {
@@ -29,9 +29,9 @@ protoFunction <- function(weight, actValues, actTimes) {
   }
 
   # 3
-  timePassed <- c()
+  timePassed <- actTimes[1]
   for (i in 2:length(actTimes)) {
-    timePassed <- c(timePassed, (actTimes[i] - actTimes[i - 1]))
+    timePassed <- c(timePassed, (actTimes[i] - actTimes[1]))
   }
 
   # Result list
@@ -42,7 +42,7 @@ protoFunction <- function(weight, actValues, actTimes) {
 
 # Outputs #
 output <- protoFunction(weight, actValues, actTimes)
-# print(output) # Only for debugging purposes
+print(output) # Only for debugging purposes
 
 # As the result is in a complex format, the output will be converted to JSON for Ruby
 library(jsonlite)
