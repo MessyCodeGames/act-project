@@ -17,6 +17,9 @@ class PagesController < ApplicationController
       end
     end
 
+    p "act_times_minutes is nil" if act_times_minutes.nil?
+    p "act_times_minutes is empty" if act_times_minutes.respond_to?(:empty?) && act_times_minutes.empty?
+
     # Path to the R script
     script_path = Rails.root.join('lib', 'scripts', 'script.R').to_s
 
