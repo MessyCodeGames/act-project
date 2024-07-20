@@ -31,9 +31,24 @@ protoFunction <- function(weight, actValues, actTimes) {
     }
   }
 
+  data <- data.frame(times = actTimes,
+                     acts = actValues)
+
+  plot <- ggplot(data = data, aes(x = times, y = acts)) +
+    geom_bar(stat = "identity", fill="steelblue") +
+    theme_bw()
+
+  # Save the plot to a temporary file
+  temp_file <- tempfile(fileext = ".png")
+  ggsave(temp_file, plot = plot, width = 3, height = 3, dpi = 300)
+
+  # Encode the image
+  encoded_image <- base64enc::dataURI(file = temp_file, mime = "image/png")
+
   resultList <- list(normalizedWeight = normalizedWeight,
                       sumActValues = sumActValues,
-                      timePassed = timePassed)
+                      timePassed = timePassed,
+                      plot = encoded_image)
   return(resultList)
 }
 

@@ -69,15 +69,19 @@ export default class extends Controller {
           const p = document.createElement('p');
           p.textContent = `Somme des ACTs: ${value}`;
           this.resultTarget.appendChild(p);
-        } else {
+        } else if (key === 'timePassed') {
           value.forEach((val, i) => {
             const p = document.createElement('p');
             p.textContent = `Time ${i}: ${val} minutes`;
             this.resultTarget.appendChild(p);
           })
+        } else if (key === `plot`) {
+          const img = document.createElement('img');
+          img.src = value;
+          this.resultTarget.appendChild(img)
         }
       })
-      
+
     })
   }
 
