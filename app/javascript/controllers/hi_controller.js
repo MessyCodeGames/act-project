@@ -63,15 +63,15 @@ export default class extends Controller {
       Object.entries(data.result).forEach(([key, value]) => {
         if (key === "ld_new") {
           const p = document.createElement('p');
-          p.textContent = `New loading dose: ${value}`;
+          p.textContent = `New loading dose: ${value} UI`;
           this.resultTarget.appendChild(p);
         } else if (key === "bolus_new") {
           const p = document.createElement('p');
-          p.textContent = `New bolus: ${value}`;
+          p.textContent = `New bolus: ${value} UI`;
           this.resultTarget.appendChild(p);
         } else if (key === "bolus_total") {
           const p = document.createElement('p');
-          p.textContent = `Total injection: ${value}`;
+          p.textContent = `Total injection: ${value} UI`;
           this.resultTarget.appendChild(p);
         } else if (key === "new_bolus_time") {
           const p = document.createElement('p');
