@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     end
 
     # Path to the R script
-    script_path = Rails.root.join('lib', 'scripts', 'script.R').to_s
+    script_path = Rails.root.join('lib', 'scripts', 'robust_model_script.R').to_s
 
     # Execute the R script with parameters
     output = `Rscript #{script_path} #{weight} #{act_values.join(",")} #{act_times_minutes.join(",")}`
