@@ -7,9 +7,9 @@ ACT_Measurement_Times <- as.numeric(unlist(strsplit(args[3], ",")))
 ACT_Target <- 400
 
 # 5 - Heparin boluses given (total UI per shot) :
-Bolus_Given <- c(20000, 27000, 6000)
+Bolus_Given <- c(50000, 26000)
 # 6 - Times where the heparin boluses were given (minutes) :
-Bolus_Times <- c(50, 60,120)
+Bolus_Times <- c(30, 60)
 
 # 7 - Infusion rates of heparin infusions given to the patients (UI per hour) :
 Infusion_Rates_Given <- c(0)
@@ -386,31 +386,24 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
            xlab(label = "Time (h)") +
            ylab(lab = "ACT (seconds)") +
            theme(axis.title.x = element_text(face = "bold"),
-                 axis.title.y = element_text(face = "bold")) +
-           geom_label(data = label, aes(label = label, x = x, y = y), color = "black",
-                      size = 3.5) +
-           geom_path(data = IR_Arrow, aes(x = x, y = y), color = "darkred",
-                     arrow = arrow(length = unit(0.25, "cm")), size = 1) +
-           geom_text(aes(x = Bolus_Time_New + 0.25, y = (minArrowy - 25),
-                         label = name), color = "darkred")
+                 axis.title.y = element_text(face = "bold")) # +
+          #  geom_label(data = label, aes(label = label, x = x, y = y), color = "black",
+          #             size = 3.5) +
+          #  geom_path(data = IR_Arrow, aes(x = x, y = y), color = "darkred",
+          #            arrow = arrow(length = unit(0.25, "cm")), size = 1) +
+          #  geom_text(aes(x = Bolus_Time_New + 0.25, y = (minArrowy - 25),
+          #                label = name), color = "darkred")
 
   # Save the plot to a temporary file
   temp_file <- tempfile(fileext = ".png")
-  ggsave(temp_file, plot = plot_pred, width = 4, height = 4, dpi = 300)
+  ggsave(temp_file, plot = plot_pred, width = 8, height = 4, dpi = 300)
 
   # Encode the image
   encoded_image_plot <- base64enc::dataURI(file = temp_file, mime = "image/png")
 
-
-  # print(paste0("LD_New: ", LD_New))
-  # print(paste0("Bolus_New: ", Bolus_New))
-  # print(paste0("bolusTotal: ", bolusTotal))
-  # print(paste0("new_bolus_time: ", new_bolus_time))
-
-
-  results <- list(ld_new = LD_New,
-                  bolus_new = Bolus_New,
-                  bolus_total = bolusTotal,
+  results <- list(ld_new = round(LD_New,0),
+                  bolus_new = round(Bolus_New,0),
+                  bolus_total = round(bolusTotal,0),
                   new_bolus_time = new_bolus_time,
                   plot = encoded_image_plot)
 
