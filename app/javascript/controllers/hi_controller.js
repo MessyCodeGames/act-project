@@ -61,21 +61,23 @@ export default class extends Controller {
 
       // Iterate over each key-value pair in the result object
       Object.entries(data.result).forEach(([key, value]) => {
-        if (key === 'normalizedWeight') {
+        if (key === "ld_new") {
           const p = document.createElement('p');
-          p.textContent = `Poids normalisé: ${value}`;
+          p.textContent = `New loading dose: ${value}`;
           this.resultTarget.appendChild(p);
-        } else if (key === 'sumActValues') {
+        } else if (key === "bolus_new") {
           const p = document.createElement('p');
-          p.textContent = `Somme des ACTs: ${value}`;
+          p.textContent = `New bolus: ${value}`;
           this.resultTarget.appendChild(p);
-        } else if (key === 'timePassed') {
-          value.forEach((val, i) => {
-            const p = document.createElement('p');
-            p.textContent = `Time ${i}: ${val} minutes`;
-            this.resultTarget.appendChild(p);
-          })
-        } else if (key === `plot`) {
+        } else if (key === "bolus_total") {
+          const p = document.createElement('p');
+          p.textContent = `Total injection: ${value}`;
+          this.resultTarget.appendChild(p);
+        } else if (key === "new_bolus_time") {
+          const p = document.createElement('p');
+          p.textContent = `New injection in ${value} minutes`;
+          this.resultTarget.appendChild(p);
+        } else if (key === "plot") {
           const img = document.createElement('img');
           img.src = value;
           this.resultTarget.appendChild(img)
