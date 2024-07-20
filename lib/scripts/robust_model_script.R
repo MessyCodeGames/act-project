@@ -334,21 +334,21 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
   # Print New loading dose + new maintenance bolus #
   bolusTotal <- LD_New + Bolus_New
 
-  print(paste0("Total UFH bolus (loading dose + maintenance bolus):"))
-  print(paste0(round(bolusTotal,2), " UI"))
-  print("")
+  # print(paste0("Total UFH bolus (loading dose + maintenance bolus):"))
+  # print(paste0(round(bolusTotal,2), " UI"))
+  # print("")
 
-  if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
+  # if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
 
-    print(paste0("Maintenance bolus in ", round((Bolus_Time_New -
-                                                   ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2),
-                 " minutes"))
+  #   print(paste0("Maintenance bolus in ", round((Bolus_Time_New -
+  #                                                  ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2),
+  #                " minutes"))
 
-  } else {
+  # } else {
 
-    print(paste0("Start bolus now"))
+  #   print(paste0("Start bolus now"))
 
-  }
+  # }
   # Add new IR time indication arrow, with offset position #
 
   IR_Arrow <- data.frame(
@@ -396,16 +396,25 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
 
   # Save the plot to a temporary file
   temp_file <- tempfile(fileext = ".png")
-  ggsave(temp_file, plot = plot_pred, width = 3, height = 3, dpi = 300)
+  ggsave(temp_file, plot = plot_pred, width = 4, height = 4, dpi = 300)
 
   # Encode the image
   encoded_image_plot <- base64enc::dataURI(file = temp_file, mime = "image/png")
+
+
+  # print(paste0("LD_New: ", LD_New))
+  # print(paste0("Bolus_New: ", Bolus_New))
+  # print(paste0("bolusTotal: ", bolusTotal))
+  # print(paste0("new_bolus_time: ", new_bolus_time))
+
 
   results <- list(ld_new = LD_New,
                   bolus_new = Bolus_New,
                   bolus_total = bolusTotal,
                   new_bolus_time = new_bolus_time,
                   plot = encoded_image_plot)
+
+  return(results)
 }
 
 output <- Robust_ACT_Intermittent(ACT_Target, ACT_Values_Measured, ACT_Measurement_Times, Patient_Weight,
