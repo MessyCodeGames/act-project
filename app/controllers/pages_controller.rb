@@ -26,8 +26,8 @@ class PagesController < ApplicationController
     # Capture the result
     @result = JSON.parse(output.strip)
 
-    p "Raw R output: #{output}"
-    p "JSON parsed R output: #{@result}"
+    p "JSON parsed R output:"
+    p "#{@result}"
 
     # Render the result as JSON
     render json: { result: @result }

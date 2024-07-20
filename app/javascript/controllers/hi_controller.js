@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["form", "result", "actvalues", "heparinsvalues"]
 
   connect() {
-    console.log("Hello from Stimulus!")
+    console.log("Truc bidon!")
   }
 
   addiction(event) {
@@ -49,9 +49,38 @@ export default class extends Controller {
       console.log(data)
 
       // Update the resultTarget with the result
-      this.resultTarget.textContent = `Result: ${data.result}`;
+      // this.resultTarget.textContent = `Result: ${data.result}`;
+
+      // Clear previous results
+      this.resultTarget.innerHTML = ''
+
+      // Create a header for the result
+      const header = document.createElement('h3')
+      header.textContent = 'Results:'
+      this.resultTarget.appendChild(header)
+
+      // Iterate over each key-value pair in the result object
+      Object.entries(data.result).forEach(([key, value]) => {
+        if (key === 'normalizedWeight') {
+          const p = document.createElement('p');
+          p.textContent = `Poids normalisé: ${value}`;
+          this.resultTarget.appendChild(p);
+        } else if (key === 'sumActValues') {
+          const p = document.createElement('p');
+          p.textContent = `Somme des ACTs: ${value}`;
+          this.resultTarget.appendChild(p);
+        } else {
+          value.forEach((val, i) => {
+            const p = document.createElement('p');
+            p.textContent = `Time ${i}: ${val} minutes`;
+            this.resultTarget.appendChild(p);
+          })
+        }
+      })
+      
     })
   }
+
 
   transformFormData(originalFormData) {
     const newFormData = new FormData();
