@@ -3,59 +3,72 @@
     <h2 class="font-bold">ACT Project</h2>
   </div>
   <hr>
-  <!--<p>Add the two numbers:</p>
-  <div data-controller="hello">
-    <%= form_tag(calculate_path, method: :post, remote: true, data: { turbo: false, action: "hello#addiction" }) do %>
-      <%= label_tag(:var1, "Variable 1:") %>
-      <%= number_field_tag(:var1) %>
-
-      <%= label_tag(:var2, "Variable 2:") %>
-      <%= number_field_tag(:var2) %>
-
-      <%= submit_tag "Calculate" %>
-    <% end %>
-    <div data-hello-target="result">
-    </div>
-  </div> -->
-
-  <!-- <% if @result %>
-    <br>
-    <p>Result of the addition:</p>
-    <p><%= @result %></p>
-  <% end %> -->
-
-
-  <!-- Test for nested form -->
   <br>
   <div data-controller="hi">
     <h3>Calcul de la prochaine dose</h3>
+    <!-- Form -->
     <div data-hi-target="form">
       <%= form_with model: @patient, data: { action: "hi#addiction" } do |form| %>
-        <%= form.label :var1, "Poids du patient" %>
-        <%= form.number_field :var1, data: {:hi_target => "weight"}, class: "weight" %>
-        <div data-hi-target="actvalues">
-          <div>
-            <%= form.fields_for :acts do |acts_form| %>
-              <%= acts_form.label :var2, "Valeur d'ACT mesurée" %>
-              <%= acts_form.number_field :var2 %>
-
-              <%= acts_form.label :var3, "Temps" %>
-              <%= acts_form.datetime_field :var3 %>
-            <% end %>
-          </div>
+        <div id="patient-weight">
+          <%= form.label :patient_weight, "Poids du patient (kg)" %>
+          <%= form.number_field :patient_weight, placeholder: "kg" %>
         </div>
-        <button data-action="click->hi#addrow">Ajouter un champ</button>
-        <!-- <div data-hi-target="heparinsvalues">
-          <div>
-            <%= form.fields_for :heparins do |heparins_form| %>
-              <%= heparins_form.label :bolus_given, "Dose d'Heparin injectée" %>
-              <%= heparins_form.number_field :bolus_given %>
+        <hr>
+        <div id="act-target">
+          <%= form.label :act_target, "Target d'ACT (seconds)" %>
+          <%= form.number_field :act_target, value: "400" %>
+        </div>
+        <hr>
+        <div id="times-between-bolus">
+          <%= form.label :delta_t, "Temps entre les injections (minutes)" %>
+          <%= form.number_field :delta_t, value: "30" %>
+        </div>
+        <hr>
+        <div id="act-measured">
+          <div data-hi-target="actValues">
+            <div>
+              <%= form.fields_for :acts do |acts_form| %>
+                <%= acts_form.label :act_value_measured, "Valeur d'ACT mesurée" %>
+                <%= acts_form.number_field :act_value_measured, placeholder: "seconds" %>
 
-              <%= heparins_form.label :act_time, "Temps" %>
-              <%= heparins_form.text_field :bolus_time %>
-            <% end %>
+                <%= acts_form.label :act_measurement_time, "Temps" %>
+                <%= acts_form.datetime_field :act_measurement_time %>
+              <% end %>
+            </div>
           </div>
-        </div> -->
+          <button data-action="click->hi#addActValues">Ajouter un champ</button>
+        </div>
+        <hr>
+        <div id="bolus-injection">
+          <div data-hi-target="heparinsValues">
+            <div>
+              <%= form.fields_for :heparins do |heparins_form| %>
+                <%= heparins_form.label :bolus_given, "Dose d'Heparin injectée" %>
+                <%= heparins_form.number_field :bolus_given, placeholder: "UI total par dose" %>
+
+                <%= heparins_form.label :bolus_time, "Temps" %>
+                <%= heparins_form.datetime_field :bolus_time %>
+              <% end %>
+            </div>
+          </div>
+          <button data-action="click->hi#addBolus">Ajouter un champ</button>
+        </div>
+        <hr>
+        <div id="heparins-infusions">
+          <div data-hi-target="heparinsInfusions">
+              <%= form.fields_for :heparins do |heparins_form| %>
+                <%= heparins_form.label :infusion_rate_given, "Débit d'Heparin en perfusion" %>
+                <%= heparins_form.number_field :infusion_rate_given, placeholder: "UI par heure" %>
+
+                <%= heparins_form.label :infusion_duration, "Duration" %>
+                <%= heparins_form.number_field :infusion_duration, placeholder: "minutes" %>
+
+                <%= heparins_form.label :infusion_time, "Heure de début" %>
+                <%= heparins_form.datetime_field :infusion_time %>
+              <% end %>
+          </div>
+          <button data-action="click->hi#addInfusion">Ajouter un champ</button>
+        </div>
         <%= form.submit "Calculer" %>
       <% end %>
     </div>
