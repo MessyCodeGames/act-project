@@ -1,25 +1,39 @@
 args <- commandArgs(trailingOnly = TRUE)
 
-Patient_Weight <- as.numeric(args[1]) # Integer
-ACT_Values_Measured <- as.numeric(unlist(strsplit(args[2], ",")))
-ACT_Measurement_Times <- as.numeric(unlist(strsplit(args[3], ",")))
+# Patient_Weight <- as.numeric(args[1]) # Integer
+# ACT_Values_Measured <- as.numeric(unlist(strsplit(args[2], ",")))
+# ACT_Measurement_Times <- as.numeric(unlist(strsplit(args[3], ",")))
 
-ACT_Target <- 400
+# ACT_Target <- 400
 
-# 5 - Heparin boluses given (total UI per shot) :
-Bolus_Given <- c(50000, 26000)
-# 6 - Times where the heparin boluses were given (minutes) :
-Bolus_Times <- c(30, 60)
+# # 5 - Heparin boluses given (total UI per shot) :
+# Bolus_Given <- c(50000, 26000)
+# # 6 - Times where the heparin boluses were given (minutes) :
+# Bolus_Times <- c(30, 60)
 
-# 7 - Infusion rates of heparin infusions given to the patients (UI per hour) :
-Infusion_Rates_Given <- c(0)
-# 8 - Start times of heparin infusions (minutes) :
-Infusion_Times <- c(0)
-# 9 - Duration of given heparin infusions (minutes) :
-Infusion_Durations <- c(0)
+# # 7 - Infusion rates of heparin infusions given to the patients (UI per hour) :
+# Infusion_Rates_Given <- c(0)
+# # 8 - Start times of heparin infusions (minutes) :
+# Infusion_Times <- c(0)
+# # 9 - Duration of given heparin infusions (minutes) :
+# Infusion_Durations <- c(0)
 
-# Time above ACT target #
-deltaT <- 0.5
+# # Time above ACT target #
+# deltaT <- 0.5
+
+Patient_Weight <- as.numeric(args[1])
+ACT_Target <- as.numeric(args[2])
+deltaT <- as.numeric(args[3])
+
+ACT_Values_Measured <- as.numeric(unlist(strsplit(args[4], ",")))
+ACT_Measurement_Times <- as.numeric(unlist(strsplit(args[5], ",")))
+
+Bolus_Given <- as.numeric(unlist(strsplit(args[6], ",")))
+Bolus_Times <- as.numeric(unlist(strsplit(args[7], ",")))
+
+Infusion_Rates_Given <- as.numeric(unlist(strsplit(args[8], ",")))
+Infusion_Times <- as.numeric(unlist(strsplit(args[9], ",")))
+Infusion_Durations <- as.numeric(unlist(strsplit(args[10], ",")))
 
 Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measurement_Times,
                                     Patient_Weight, Bolus_Given, Bolus_Times,
@@ -27,7 +41,6 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
                                     Infusion_Durations, deltaT) {
 
   #### Libraries required ####
-
   # Libraries required #
   packages = c("ggplot2", "MASS", "tidyr", "jsonlite", "base64enc")
 
