@@ -310,18 +310,18 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
       } else {
 
         paste0("New loading dose = ", round(LD_New, 2),
-               " UI, 95% CI: [", round(q5LD,2), "-", round(q95LD,2), "]")
+              " UI, 95% CI: [", round(q5LD,2), "-", round(q95LD,2), "]")
 
       },
 
       paste0("New maintenance bolus = ", round(Bolus_New, 2),
-             " UI/h, 95% CI: [", round(q5IR,2), "-", round(q95IR,2), "]"),
+            " UI/h, 95% CI: [", round(q5IR,2), "-", round(q95IR,2), "]"),
 
       if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
 
-        paste0("Maintenance bolus in ", round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2),
-               " minutes, 95% CI: [", round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2),
-               "-", round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2), "]")
+        paste0("Maintenance bolus in ", round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
+              " minutes, 95% CI: [", round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
+              "-", round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2), "]")
 
       } else {
 
@@ -330,6 +330,8 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
       }))
 
   new_bolus_time <- round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2)
+  q5T <- round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2)
+  q95T <- round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2)
 
   # Print New loading dose + new maintenance bolus #
   bolusTotal <- LD_New + Bolus_New
@@ -401,10 +403,10 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
   # Encode the image
   encoded_image_plot <- base64enc::dataURI(file = temp_file, mime = "image/png")
 
-  results <- list(ld_new = round(LD_New,0),
-                  bolus_new = round(Bolus_New,0),
-                  bolus_total = round(bolusTotal,0),
-                  new_bolus_time = new_bolus_time,
+  results <- list(ld_new = c(round(LD_New, 0), round(q5LD, 0), round(q95LD, 0)),
+                  bolus_new = c(round(Bolus_New, 0), round(q5IR, 0), round(q95IR, 0)),
+                  bolus_total = round(bolusTotal, 0),
+                  new_bolus_time = c(new_bolus_time, q5T, q95T),
                   plot = encoded_image_plot)
 
   return(results)
