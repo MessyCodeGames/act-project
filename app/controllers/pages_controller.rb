@@ -34,7 +34,7 @@ class PagesController < ApplicationController
     infusion_durations = []
     if infusion_rates_given.empty?
       infusion_rates_given = ["0"]
-      infusion_times = ["0"]
+      infusion_times_minutes = ["0"]
       infusion_durations = ["0"]
     else
       infusion_times = params[:infusion_times].split(",").map { |time_string| DateTime.parse(time_string)}
