@@ -46,44 +46,49 @@ export default class extends Controller {
 
     // Handle the response
     .then(data => {
-      console.log(data)
-
-      // Update the resultTarget with the result
-      // this.resultTarget.textContent = `Result: ${data.result}`;
+      console.log(data);
 
       // Clear previous results
-      this.resultTarget.innerHTML = ''
+      this.resultTarget.innerHTML = '';
 
       // Create a header for the result
-      const header = document.createElement('h3')
-      header.textContent = 'Results:'
-      this.resultTarget.appendChild(header)
+      const header = document.createElement('h3');
+      header.textContent = 'Results:';
+      this.resultTarget.appendChild(header);
+
+      // Define a mapping for keys to display labels, units, and special handling
+      const displayMapping = {
+        ld_new: { label: "New loading dose", unit: "UI", ci: true },
+        bolus_new: { label: "New bolus", unit: "UI", ci: true },
+        bolus_total: { label: "Total injection", unit: "UI" },
+        new_bolus_time: { label: "New injection in", unit: "minutes", ci: true },
+        plot: { label: "", unit: "", special: "image" },
+      };
+
+      // Function to format text content based on the presence of confidence intervals
+      const formatContent = (config, value) => {
+        if (config.ci) {
+          return `${config.label}: ${value[0]} ${config.unit}, with 95% CI: [${value[1]} : ${value[2]}] ${config.unit}`;
+        } else {
+          return `${config.label}: ${value} ${config.unit}`;
+        }
+      };
 
       // Iterate over each key-value pair in the result object
       Object.entries(data.result).forEach(([key, value]) => {
-        if (key === "ld_new") {
-          const p = document.createElement('p');
-          p.textContent = `New loading dose: ${value} UI`;
-          this.resultTarget.appendChild(p);
-        } else if (key === "bolus_new") {
-          const p = document.createElement('p');
-          p.textContent = `New bolus: ${value} UI`;
-          this.resultTarget.appendChild(p);
-        } else if (key === "bolus_total") {
-          const p = document.createElement('p');
-          p.textContent = `Total injection: ${value} UI`;
-          this.resultTarget.appendChild(p);
-        } else if (key === "new_bolus_time") {
-          const p = document.createElement('p');
-          p.textContent = `New injection in ${value} minutes`;
-          this.resultTarget.appendChild(p);
-        } else if (key === "plot") {
-          const img = document.createElement('img');
-          img.src = value;
-          this.resultTarget.appendChild(img)
+        const config = displayMapping[key];
+        if (config) {
+          if (config.special === "image") {
+            const img = document.createElement('img');
+            img.src = value;
+            this.resultTarget.appendChild(img);
+          } else {
+            const p = document.createElement('p');
+            p.textContent = formatContent(config, value);
+            this.resultTarget.appendChild(p);
+          }
         }
-      })
-
+      });
     })
   }
 
