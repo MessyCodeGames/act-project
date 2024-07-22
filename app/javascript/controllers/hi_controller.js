@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "result", "actvalues", "heparinsvalues"]
+  static targets = ["form", "result", "actValues", "heparinsValues", "heparinsInfusions"]
 
   connect() {
-    console.log("Truc bidon!")
+    console.log("Form connected!")
   }
 
   addiction(event) {
@@ -14,10 +14,10 @@ export default class extends Controller {
     const form = event.target
     console.log(form)
 
-    const var2 = form.querySelector('input[name="[acts][var2]"]').value
-    const var3 = form.querySelector('input[name="[acts][var3]"]').value
-    console.log(var2)
-    console.log(var3)
+    // const var2 = form.querySelector('input[name="[acts][var2]"]').value
+    // const var3 = form.querySelector('input[name="[acts][var3]"]').value
+    // console.log(var2)
+    // console.log(var3)
 
     // Create FormData object
     const formData = new FormData(form)
@@ -95,66 +95,93 @@ export default class extends Controller {
 
   transformFormData(originalFormData) {
     const newFormData = new FormData();
-    let var2Values = [];
-    let var3Values = [];
+    let actValuesMeasured = [];
+    let actMeasurementTimes = [];
+    let heparinsBolusGiven = [];
+    let heparinsBolusTimes = [];
+    let heparinsInfusionRatesGiven = [];
+    let heparinsInfusionTimes = [];
+    let heparinsInfusionDurations = [];
 
     // Iterate over original FormData
     originalFormData.forEach((value, key) => {
       console.log(key, value)
-      if (key === "[acts][var2]") {
-        var2Values.push(value);
-      } else if (key === "[acts][var3]") {
-        var3Values.push(value);
+      if (key === "[acts][act_value_measured]") {
+        actValuesMeasured.push(value);
+      } else if (key === "[acts][act_measurement_time]") {
+        actMeasurementTimes.push(value);
+      } else if (key === "[heparins][bolus_given]"){
+        heparinsBolusGiven.push(value);
+      } else if (key === "[heparins][bolus_time]"){
+        heparinsBolusTimes.push(value);
+      } else if (key === "[heparins][infusion_rate_given]"){
+        heparinsInfusionRatesGiven.push(value);
+      } else if (key === "[heparins][infusion_time]"){
+        heparinsInfusionTimes.push(value);
+      } else if (key === "[heparins][infusion_duration]"){
+        heparinsInfusionDurations.push(value);
       } else {
         newFormData.append(key, value);
       }
     });
 
     // Append the arrays to the new FormData
-    // newFormData.append("var2", JSON.stringify(var2Values));
-    // newFormData.append("var3", JSON.stringify(var3Values));
-    newFormData.append("var2", var2Values);
-    newFormData.append("var3", var3Values);
-    console.log(var2Values)
-    console.log(var3Values)
+    newFormData.append("act_values_measured", actValuesMeasured);
+    newFormData.append("act_measurement_times", actMeasurementTimes);
+    newFormData.append("bolus_given", heparinsBolusGiven);
+    newFormData.append("bolus_times", heparinsBolusTimes);
+    newFormData.append("infusion_rates_given", heparinsInfusionRatesGiven);
+    newFormData.append("infusion_times", heparinsInfusionTimes);
+    newFormData.append("infusion_durations", heparinsInfusionDurations);
 
     return newFormData;
   }
 
-  // Calculate the sum of the weights and display it
-  // when the form is submitted
-  // calculate(event) {
-  //   event.preventDefault()
-  //   console.log(this.weightTarget)
-
-  //   // Get the weights (in case there are multiple inputs' rows)
-  //   const weights = document.querySelectorAll(".weight")
-  //   console.log(weights)
-
-  //   // Calculate the sum of the weights
-  //   let result = 0
-  //   weights.forEach((weight) => {
-  //     console.log(weight.value)
-  //     result += parseInt(weight.value)
-  //   })
-
-  //   // Display the result by updating the div
-  //   console.log(result)
-  //   this.result2Target.innerHTML = result
-  // }
-
-  // Add a new row to the form
-  addrow(event) {
+  // Add a new row to the ACT values form
+  addActValues(event) {
     event.preventDefault()
     const row = document.createElement("div")
     row.innerHTML = `
-      <label for="_acts_var2">Valeur d'ACT mesurée</label>
-      <input type="number" name="[acts][var2]" id="_acts_var2">
+      <label for="_acts_act_value_measured">Valeur d'ACT mesurée</label>
+      <input placeholder="seconds" type="number" name="[acts][act_value_measured]" id="_acts_act_value_measured">
 
-      <label for="_acts_var3">Temps</label>
-      <input type="datetime-local" name="[acts][var3]" id="_acts_var3">
+      <label for="_acts_act_measurement_time">Temps</label>
+      <input type="datetime-local" name="[acts][act_measurement_time]" id="_acts_act_measurement_time">
     `
-    console.log("Add row", this.actvaluesTarget)
-    this.actvaluesTarget.appendChild(row)
+    console.log("Add ACT row", this.actValuesTarget)
+    this.actValuesTarget.appendChild(row)
+  }
+
+  // Add a new row to the heparins values form
+  addBolus(event) {
+    event.preventDefault()
+    const row = document.createElement("div")
+    row.innerHTML = `
+      <label for="_heparins_bolus_given">Dose d'Heparin injectée</label>
+      <input placeholder="UI total par dose" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given">
+
+      <label for="_heparins_bolus_time">Temps</label>
+      <input type="datetime-local" name="[heparins][bolus_time]" id="_heparins_bolus_time">
+    `
+    console.log("Add bolus row", this.heparinsValuesTarget)
+    this.heparinsValuesTarget.appendChild(row)
+  }
+
+  // Add a new row to the heparins infusions form
+  addInfusion(event) {
+    event.preventDefault()
+    const row = document.createElement("div")
+    row.innerHTML = `
+      <label for="_heparins_infusion_rate_given">Débit d'Heparin en perfusion</label>
+      <input placeholder="Ui par heure" type="number" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given">
+
+      <label for="_heparins_infusion_duration">Duration</label>
+      <input placeholder="minutes" type="number" name="[heparins][infusion_duration]" id="_heparins_infusion_duration">
+
+      <label for="_heparins_infusion_time">Heure de début</label>
+      <input type="datetime-local" name="[heparins][infusion_time]" id="_heparins_infusion_time">
+  `
+    console.log("Add infusion row", this.heparinsInfusionsTarget)
+    this.heparinsInfusionsTarget.appendChild(row)
   }
 }
