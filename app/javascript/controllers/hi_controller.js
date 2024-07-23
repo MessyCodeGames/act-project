@@ -142,7 +142,7 @@ export default class extends Controller {
     event.preventDefault()
     const row = document.createElement("div")
     row.innerHTML = `
-      <label for="_acts_act_value_measured">Valeur d'ACT mesurée</label>
+      <label for="_acts_act_value_measured">Measured ACT values</label>
       <input placeholder="seconds" type="number" name="[acts][act_value_measured]" id="_acts_act_value_measured">
 
       <label for="_acts_act_measurement_time">Temps</label>
@@ -157,7 +157,7 @@ export default class extends Controller {
     event.preventDefault()
     const row = document.createElement("div")
     row.innerHTML = `
-      <label for="_heparins_bolus_given">Dose d'Heparin injectée</label>
+      <label for="_heparins_bolus_given">Heparin bolus injection</label>
       <input placeholder="UI total par dose" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given">
 
       <label for="_heparins_bolus_time">Temps</label>
@@ -172,7 +172,7 @@ export default class extends Controller {
     event.preventDefault()
     const row = document.createElement("div")
     row.innerHTML = `
-      <label for="_heparins_infusion_rate_given">Débit d'Heparin en perfusion</label>
+      <label for="_heparins_infusion_rate_given">Heparin infusion</label>
       <input placeholder="Ui par heure" type="number" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given">
 
       <label for="_heparins_infusion_duration">Duration</label>
