@@ -3,12 +3,6 @@ class PagesController < ApplicationController
   end
 
   def calculate
-    # weight = params[:var1]
-    # act_values = params[:var2].split(",")
-    # # Convert form data of dates as string to DateTime objects for calculations
-    # act_times = params[:var3].split(",").map { |time_string| DateTime.parse(time_string)}
-
-    # All new user inputs ready
     weight = params[:patient_weight]
     act_target = params[:act_target]
     delta_t = params[:delta_t].to_f / 60
@@ -51,6 +45,7 @@ class PagesController < ApplicationController
     # Capture the result
     @result = JSON.parse(output.strip)
 
+    # Console log the result for debugging
     p "JSON parsed R output:"
     p "#{@result}"
 
