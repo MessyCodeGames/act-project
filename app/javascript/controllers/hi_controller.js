@@ -54,6 +54,7 @@ export default class extends Controller {
       // Create a header for the result
       const header = document.createElement('h3');
       header.textContent = 'Results:';
+      header.className = "text-2xl font-semibold text-left text-gray-800";
       this.resultTarget.appendChild(header);
 
       // Define a mapping for keys to display labels, units, and special handling

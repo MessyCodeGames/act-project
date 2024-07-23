@@ -62,7 +62,6 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
 
     ACT <- ACT0 + ((Emax * exp(-0.771 * log(bw/80)) * (A + B)) /
                      (EC50  + exp(-0.771 * log(bw/80)) * (A + B)))
-
     AB <- A+B
 
     rs <- list(ACT, AB)
@@ -75,7 +74,6 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
     PRED <- Pred_Robust(eta, times, doses, dosetime, bw, IR, TDperf, Tinfu)
 
     Distance1 <- sum(0.5 * ((dof + 1) / 2) * log(1+(1/dof) * ((OBS - PRED[[1]])/(sigma * PRED[[1]]))^2))
-
     Distance2 <- 0.5 * eta %*% diag(1/omega) %*% eta
 
     return(Distance1 + Distance2)
@@ -211,17 +209,13 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
                           Infusion_Durations)
 
     if (PREDCI[[1]] < ACT_Target) {
-
       LD_New2 <- A_TargetCI - PREDCI[[2]]
       Bolus_Time_New2 <- ACT_Measurement_Times[length(ACT_Measurement_Times)]
-
     } else if (PREDCI[[1]] >= ACT_Target) {
-
       LD_New2 <- 0
       Bolus_Time_New2 <- ACT_Measurement_Times[length(ACT_Measurement_Times)] +
         ((log(PREDCI[[2]]) - log(A_TargetCI)) /
            (exp(-0.832) * exp(ETA[i,1])))
-
     }
 
     Bolus_New2 <- (exp(-0.832) * exp(ETA[i,1])) * A_TargetCI
@@ -274,29 +268,19 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
     label = c(
 
       if(LD_New == 0) {
-
         paste0("No new loading dose")
-
       } else {
-
         paste0("New loading dose = ", round(LD_New, 2),
               " UI, 95% CI: [", round(q5LD,2), "-", round(q95LD,2), "]")
-
       },
-
       paste0("New maintenance bolus = ", round(Bolus_New, 2),
             " UI/h, 95% CI: [", round(q5IR,2), "-", round(q95IR,2), "]"),
-
       if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
-
         paste0("Maintenance bolus in ", round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
               " minutes, 95% CI: [", round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
               "-", round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2), "]")
-
       } else {
-
         paste0("Maintenance bolus now")
-
       }))
 
   new_bolus_time <- round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)])*60, 2)
@@ -344,7 +328,7 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
 
   # Save the plot to a temporary file
   temp_file <- tempfile(fileext = ".png")
-  ggsave(temp_file, plot = plot_pred, width = 8, height = 4, dpi = 300)
+  ggsave(temp_file, plot = plot_pred, width = 6, height = 3, dpi = 300)
 
   # Encode the image
   encoded_image_plot <- base64enc::dataURI(file = temp_file, mime = "image/png")
