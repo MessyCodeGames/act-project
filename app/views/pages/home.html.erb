@@ -4,11 +4,11 @@
   </div>
   <hr>
   <br>
-  <div data-controller="hi">
+  <div data-controller="formHandler">
     <h3>Calculation of the next heparin bolus</h3>
     <!-- Form -->
-    <div data-hi-target="form">
-      <%= form_with model: @patient, data: { action: "hi#addiction" } do |form| %>
+    <div data-formHandler-target="form" data-controller="addable">
+      <%= form_with model: @patient, data: { action: "formHandler#submitForm" } do |form| %>
         <div id="patient-weight">
           <%= form.label :patient_weight, "Patient weight (kg)" %>
           <%= form.number_field :patient_weight, placeholder: "kg" %>
@@ -24,55 +24,68 @@
           <%= form.number_field :delta_t, value: "30" %>
         </div>
         <hr>
-        <div id="act-measured">
-          <div data-hi-target="actValues">
-            <div>
-              <%= form.fields_for :acts do |acts_form| %>
-                <%= acts_form.label :act_value_measured, "Measured ACT values" %>
-                <%= acts_form.number_field :act_value_measured, placeholder: "seconds" %>
+        <div data-controller="deletable">
+          <div id="act-measured">
+            <div data-addable-target="actValues">
+              <div class="act-row">
+                <%= form.fields_for :acts do |acts_form| %>
+                  <%= acts_form.label :act_value_measured, "Measured ACT values" %>
+                  <%= acts_form.number_field :act_value_measured, placeholder: "seconds" %>
 
-                <%= acts_form.label :act_measurement_time, "Time" %>
-                <%= acts_form.datetime_field :act_measurement_time %>
-              <% end %>
+                  <%= acts_form.label :act_measurement_time, "Time" %>
+                  <%= acts_form.datetime_field :act_measurement_time %>
+                <% end %>
+                <button data-action="click->deletable#deleteActValues">
+                  <%= image_tag "bin.svg", style: "height:40px;width:40px;" %>
+                </button>
+              </div>
             </div>
+            <button data-action="click->addable#addActValues">Add a field</button>
           </div>
-          <button data-action="click->hi#addActValues">Add a field</button>
-        </div>
-        <hr>
-        <div id="bolus-injection">
-          <div data-hi-target="heparinsValues">
-            <div>
-              <%= form.fields_for :heparins do |heparins_form| %>
-                <%= heparins_form.label :bolus_given, "Heparin bolus injection" %>
-                <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot" %>
+          <hr>
+          <div id="bolus-injection">
+            <div data-addable-target="heparinsValues">
+              <div class="bolus-row">
+                <%= form.fields_for :heparins do |heparins_form| %>
+                  <%= heparins_form.label :bolus_given, "Heparin bolus injection" %>
+                  <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot" %>
 
-                <%= heparins_form.label :bolus_time, "Time" %>
-                <%= heparins_form.datetime_field :bolus_time %>
-              <% end %>
+                  <%= heparins_form.label :bolus_time, "Time" %>
+                  <%= heparins_form.datetime_field :bolus_time %>
+                <% end %>
+                <button data-action="click->deletable#deleteBolus">
+                  <%= image_tag "bin.svg", style: "height:40px;width:40px;" %>
+                </button>
+              </div>
             </div>
+            <button data-action="click->addable#addBolus">Add a field</button>
           </div>
-          <button data-action="click->hi#addBolus">Add a field</button>
-        </div>
-        <hr>
-        <div id="heparins-infusions">
-          <div data-hi-target="heparinsInfusions">
-              <%= form.fields_for :heparins do |heparins_form| %>
-                <%= heparins_form.label :infusion_rate_given, "Heparin infusion" %>
-                <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)" %>
+          <hr>
+          <div id="heparins-infusions">
+            <div data-addable-target="heparinsInfusions">
+                <div class="infusion-row">
+                  <%= form.fields_for :heparins do |heparins_form| %>
+                    <%= heparins_form.label :infusion_rate_given, "Heparin infusion" %>
+                    <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)" %>
 
-                <%= heparins_form.label :infusion_duration, "Duration" %>
-                <%= heparins_form.number_field :infusion_duration, placeholder: "minutes" %>
+                    <%= heparins_form.label :infusion_duration, "Duration" %>
+                    <%= heparins_form.number_field :infusion_duration, placeholder: "minutes" %>
 
-                <%= heparins_form.label :infusion_time, "Start time" %>
-                <%= heparins_form.datetime_field :infusion_time %>
-              <% end %>
+                    <%= heparins_form.label :infusion_time, "Start time" %>
+                    <%= heparins_form.datetime_field :infusion_time %>
+                  <% end %>
+                  <button data-action="click->deletable#deleteInfusion">
+                  <%= image_tag "bin.svg", style: "height:40px;width:40px;" %>
+                </button>
+                </div>
+            </div>
+            <button data-action="click->addable#addInfusion">Add a field</button>
           </div>
-          <button data-action="click->hi#addInfusion">Add a field</button>
         </div>
         <%= form.submit "Calculate next dose" %>
       <% end %>
     </div>
-    <div data-hi-target="result">
+    <div data-formHandler-target="result">
 
     </div>
   </div>
