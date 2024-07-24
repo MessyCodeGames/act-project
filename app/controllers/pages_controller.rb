@@ -37,7 +37,7 @@ class PagesController < ApplicationController
     end
 
     # Path to the R script
-    script_path = Rails.root.join('lib', 'scripts', 'robust_model_script.R').to_s
+    script_path = Rails.root.join('lib', 'scripts', 'intermittent_continuous_models.R').to_s
 
     # Execute the R script with parameters
     output = `Rscript #{script_path} #{weight} #{act_target} #{delta_t} #{act_values_measured.join(",")} #{act_times_minutes.join(",")} #{bolus_given.join(",")} #{bolus_times_minutes.join(",")} #{infusion_rates_given.join(",")} #{infusion_times_minutes.join(",")} #{infusion_durations.join(",")}`
