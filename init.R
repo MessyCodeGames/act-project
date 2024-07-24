@@ -12,4 +12,6 @@ install_if_missing = function(p) {
 }
 
 invisible(sapply(my_packages, install_if_missing))
-install.packages("MASS")
+install.packages("remotes")
+remotes::install_version("MASS", version = "7.3-58.1")
+
