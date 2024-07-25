@@ -1,3 +1,4 @@
+pdf(NULL)
 args <- commandArgs(trailingOnly = TRUE)
 
 Patient_Weight <- as.numeric(args[1])
