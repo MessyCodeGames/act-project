@@ -4,10 +4,10 @@
   </div>
   <hr>
   <br>
-  <div data-controller="formHandler">
+  <div data-controller="form-handler">
     <!-- Form -->
-    <div data-formHandler-target="form" data-controller="addable">
-      <%= form_with model: @patient, data: { action: "formHandler#submitForm" } do |form| %>
+    <div data-form-handler-target="form">
+      <%= form_with model: @patient, data: { action: "form-handler#submitForm" } do |form| %>
         <h2 class="text-2xl font-semibold text-left text-gray-800">Setup</h2>
         <div id="patient-weight" class="flex items-center gap-2 my-2">
           <%= form.label :patient_weight, class: "flex items-center mr-2" do %>
@@ -39,9 +39,9 @@
           <%= form.number_field :delta_t, value: "30", min: "0", required: true %>
         </div>
         <hr>
-        <div data-controller="deletable">
+        <div data-controller="addable">
           <div id="act-measured">
-            <div data-addable-target="actValues">
+            <div data-addable-target="actValues" data-controller="deletable">
               <br>
               <h2 class="flex items-center text-2xl font-semibold text-left text-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-6 h-6 mr-2">
@@ -68,7 +68,7 @@
           </div>
           <hr>
           <div id="bolus-injection">
-            <div data-addable-target="heparinsValues">
+            <div data-addable-target="heparinsValues" data-controller="deletable">
               <br>
               <h2 class="flex items-center text-2xl font-semibold text-left text-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 mr-2">
@@ -95,7 +95,7 @@
           </div>
           <hr>
           <div id="heparins-infusions">
-            <div data-addable-target="heparinsInfusions">
+            <div data-addable-target="heparinsInfusions" data-controller="deletable">
               <br>
               <h2 class="text-2xl font-semibold text-left text-gray-800">Heparin infusions</h2>
               <div class="flex items-center gap-2 my-2 infusion-row">
@@ -124,7 +124,7 @@
     </div>
   </div>
   <br>
-  <div data-formHandler-target="result">
+  <div data-form-handler-target="result">
 
   </div>
 </div>
