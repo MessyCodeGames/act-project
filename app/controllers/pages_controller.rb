@@ -45,10 +45,6 @@ class PagesController < ApplicationController
     # Capture the result
     @result = JSON.parse(output.strip)
 
-    # Console log the result for debugging
-    p "JSON parsed R output:"
-    p "#{@result}"
-
     # Render the result as JSON
     render json: { result: @result }
   end
