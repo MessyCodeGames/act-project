@@ -99,8 +99,8 @@ export default class extends Controller {
           }
         }
       });
+      this.resultTarget.scrollIntoView({ behavior: 'smooth' });
     })
-    this.resultTarget.scrollIntoView({ behavior: 'smooth' });
   }
 
 
