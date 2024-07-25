@@ -274,12 +274,12 @@ Robust_ACT_Intermittent <- function(ACT_Target, ACT_Values_Measured, ACT_Measure
         paste0("New loading dose = ", round(LD_New, 2),
               " UI, 95% CI: [", round(q5LD,2), "-", round(q95LD,2), "]")
       },
-      paste0("New maintenance bolus = ", round(Bolus_New, 2),
-            " UI/h, 95% CI: [", round(q5IR,2), "-", round(q95IR,2), "]"),
-      if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
-        paste0("Maintenance bolus in ", round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
-              " minutes, 95% CI: [", round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
-              "-", round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2), "]")
+        paste0("New maintenance bolus = ", round(Bolus_New, 2),
+              " UI/h, 95% CI: [", round(q5IR,2), "-", round(q95IR,2), "]"),
+        if((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) != 0) {
+          paste0("Maintenance bolus in ", round((Bolus_Time_New - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
+                " minutes, 95% CI: [", round((q5TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2),
+                "-", round((q95TIR - ACT_Measurement_Times[length(ACT_Measurement_Times)]) * 60, 2), "]")
       } else {
         paste0("Maintenance bolus now")
       }))

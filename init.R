@@ -1,4 +1,4 @@
-my_packages = c("ggplot2", "tidyr", "jsonlite", "base64enc", "remotes")
+my_packages = c("ggplot2", "tidyr", "jsonlite", "base64enc", "remotes", "gridExtra")
 
 install_if_missing = function(p) {
   if (!p %in% installed.packages()[,"Package"]) {
@@ -14,4 +14,3 @@ install_if_missing = function(p) {
 invisible(sapply(my_packages, install_if_missing))
 install.packages("remotes")
 remotes::install_version("MASS", version = "7.3-58.1")
-
