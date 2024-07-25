@@ -43,37 +43,50 @@ export default class extends Controller {
     .then(data => {
       console.log(data);
 
-      // Clear previous results
       this.resultTarget.innerHTML = '';
 
-      // Create a header for the result
       const header = document.createElement('h3');
       header.textContent = 'Results:';
       header.className = "text-2xl font-semibold text-left text-gray-800";
       this.resultTarget.appendChild(header);
 
-      // Define a mapping for keys to display labels, units, and special handling
       const displayMapping = {
+        ld_new_for_infusion: { label: "New loading dose", unit: "UI", ci: true },
+        infusion_new: { label: "New infusion rate", unit: "UI/h", ci: true, divide_by_500: true },
+        new_infusion_time: { label: "New infusion in", unit: "minutes", ci: true },
         ld_new: { label: "New loading dose", unit: "UI", ci: true },
-        bolus_new: { label: "New bolus", unit: "UI", ci: true },
-        bolus_total: { label: "Total injection", unit: "UI" },
+        bolus_new: { label: "New maintenance bolus", unit: "UI", ci: true },
+        bolus_total: { label: "Total injection (loading dose + maintenance bolus)", unit: "UI" },
         new_bolus_time: { label: "New injection in", unit: "minutes", ci: true },
         plot: { label: "", unit: "", special: "image" },
       };
 
-      // Function to format text content based on the presence of confidence intervals
       const formatContent = (config, value) => {
-        if (config.ci) {
+        if (config.divide_by_500) {
+          return `${config.label}: ${value[0]} ${config.unit}, with 95% CI: [${value[1]} : ${value[2]}] ${config.unit}, or infusin rate/500 : ${(value[0] / 500).toFixed(2)} ${config.unit}`;
+        } else if (config.ci) {
           return `${config.label}: ${value[0]} ${config.unit}, with 95% CI: [${value[1]} : ${value[2]}] ${config.unit}`;
         } else {
           return `${config.label}: ${value} ${config.unit}`;
         }
       };
 
-      // Iterate over each key-value pair in the result object
+      const continuousDosingHeader = document.createElement('p');
+      continuousDosingHeader.innerHTML = '<strong>Continuous dosing strategy:</strong>';
+      this.resultTarget.appendChild(continuousDosingHeader);
+
       Object.entries(data.result).forEach(([key, value]) => {
         const config = displayMapping[key];
         if (config) {
+          if (key === "ld_new") {
+            const lineBreak = document.createElement('br');
+            this.resultTarget.appendChild(lineBreak);
+
+            const intermittentDosingHeader = document.createElement('p');
+            intermittentDosingHeader.innerHTML = '<strong>Intermittent dosing strategy:</strong>';
+            this.resultTarget.appendChild(intermittentDosingHeader);
+          }
+
           if (config.special === "image") {
             const img = document.createElement('img');
             img.src = value;
