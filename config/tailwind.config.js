@@ -21,7 +21,7 @@ module.exports = {
         'icon-color': '#004661',
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(183deg, rgba(249,249,249,1) 0%, rgba(176,215,214,1) 100%)',
+        'custom-gradient': 'linear-gradient(183deg, rgba(249,249,249,1) 0%, rgba(214,233,232,1) 100%)',
       },
     },
   },
