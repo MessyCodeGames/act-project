@@ -487,7 +487,7 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
 
     }
 
-    Bolus_New2 <- (exp(-0.832) * exp(ETA[i,1])) * A_TargetCI
+    Bolus_New2 <- A_Target * (exp(exp(-0.832 + ETA[i,1]) * deltaT) - 1)
 
     LD_95CI <- rbind(LD_95CI, LD_New2)
     IR_95CI <- rbind(IR_95CI, Bolus_New2)
