@@ -18,7 +18,7 @@ module.exports = {
         'secondary': '#B0D7D6',
         'tertiary': '#E5BA6C',
         'quaternary': '#B0D7D6',
-
+        'icon-color': '#004661',
       },
     },
   },

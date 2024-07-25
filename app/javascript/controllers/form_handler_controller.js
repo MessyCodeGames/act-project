@@ -90,7 +90,7 @@ export default class extends Controller {
           if (config.special === "image") {
             const img = document.createElement('img');
             img.src = value;
-            img.className = "w-2/3";
+            img.className = "w-2/3 rounded-2xl";
             this.resultTarget.appendChild(img);
           } else {
             const p = document.createElement('p');
