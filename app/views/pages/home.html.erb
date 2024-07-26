@@ -34,7 +34,7 @@
                   </svg>') %>
                   Patient weight
                 <% end %>
-                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2", min: "1", max: "300", required: true %>
+                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", min: "1", max: "300", required: true %>
               </div>
 
               <div id="act-target" class="flex items-center gap-2 my-2 text-xl">
@@ -44,7 +44,7 @@
                   </svg>') %>
                   Target ACT (seconds)
                 <% end %>
-                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2", required: true %>
+                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", required: true %>
               </div>
 
               <div id="times-between-bolus" class="flex items-center gap-2 my-2 text-xl">
@@ -54,7 +54,7 @@
                   </svg>') %>
                   Time between bolus injections (minutes)
                 <% end %>
-                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2", required: true %>
+                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", required: true %>
               </div>
 
               <div data-controller="addable moveable">
@@ -70,10 +70,10 @@
                     <div class="flex items-center gap-2 my-2 act-row">
                       <%= form.fields_for :acts do |acts_form| %>
                         <%= acts_form.label :act_value_measured, "Measured ACT values", class:"text-xl" %>
-                        <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true %>
+                        <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "data-hj-allow" %>
 
                         <%= acts_form.label :act_measurement_time, "Time", class:"text-xl" %>
-                        <%= acts_form.datetime_field :act_measurement_time, required: true %>
+                        <%= acts_form.datetime_field :act_measurement_time, required: true, class: "data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#actMoveUp">
@@ -111,10 +111,10 @@
                     <div class="flex items-center gap-2 my-2 bolus-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
                         <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"text-xl" %>
-                        <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1" %>
+                        <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "data-hj-allow" %>
 
                         <%= heparins_form.label :bolus_time, "Time", class:"text-xl" %>
-                        <%= heparins_form.datetime_field :bolus_time %>
+                        <%= heparins_form.datetime_field :bolus_time, class: "data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#bolusMoveUp">
@@ -147,13 +147,13 @@
                     <div class="flex items-center gap-2 my-2 infusion-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
                         <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"text-xl" %>
-                        <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)", min: "1" %>
+                        <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)", min: "1", class: "data-hj-allow" %>
 
                         <%= heparins_form.label :infusion_duration, "Duration", class:"text-xl" %>
-                        <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1" %>
+                        <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "data-hj-allow" %>
 
                         <%= heparins_form.label :infusion_time, "Start time", class:"text-xl" %>
-                        <%= heparins_form.datetime_field :infusion_time %>
+                        <%= heparins_form.datetime_field :infusion_time, class: "data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#infusionMoveUp">
