@@ -5,6 +5,7 @@ export default class extends Controller {
 
   connect() {
     console.log("Form connected!")
+    console.log("Result target:", this.resultTarget)
   }
 
   submitForm(event) {
@@ -43,63 +44,85 @@ export default class extends Controller {
     .then(data => {
       console.log(data);
 
-      this.resultTarget.innerHTML = '';
-
-      const header = document.createElement('h3');
-      header.textContent = 'Results:';
-      header.className = "text-2xl font-semibold text-left text-gray-800";
-      this.resultTarget.appendChild(header);
-
       const displayMapping = {
-        ld_new_for_infusion: { label: "New loading dose", unit: "UI", ci: true },
-        infusion_new: { label: "New infusion rate", unit: "UI/h", ci: true, divide_by_500: true },
-        new_infusion_time: { label: "New infusion in", unit: "minutes", ci: true },
-        ld_new: { label: "New loading dose", unit: "UI", ci: true },
-        bolus_new: { label: "New maintenance bolus", unit: "UI", ci: true },
-        bolus_total: { label: "Total injection (loading dose + maintenance bolus)", unit: "UI" },
-        new_bolus_time: { label: "New injection in", unit: "minutes", ci: true },
+        ld_new_for_infusion: { cellId: "new-inf-ld", ciCellId: "new-inf-ld-ci", unit: "UI", ci: true },
+        infusion_new: { cellId: "new-inf-rate", ciCellId: "new-inf-rate-ci", unit: "UI/h", ci: true, divide_by_500: true },
+        new_infusion_time: { cellId: "new-inf-time", ciCellId: "new-inf-time-ci", unit: "minutes", ci: true },
+        ld_new: { cellId: "new-int-ld", ciCellId: "new-int-ld-ci", unit: "UI", ci: true },
+        bolus_new: { cellId: "new-int-mb", ciCellId: "new-int-mb-ci", unit: "UI", ci: true },
+        bolus_total: { cellId: "new-int-total", unit: "UI" },
+        new_bolus_time: { cellId: "new-int-time", ciCellId: "new-int-time-ci", unit: "minutes", ci: true },
+        deltaT_minutes: { cellId: "new-int-mb-delta-t-minutes", unit: "minutes", delta: true },
         plot_continuous: { label: "", unit: "", special: "image" },
         plot_intermittent: { label: "", unit: "", special: "image" }
       };
 
       const formatContent = (config, value) => {
         if (config.divide_by_500) {
-          return `${config.label}: ${value[0]} ${config.unit}, with 95% CI: [${value[1]} : ${value[2]}] ${config.unit}, or infusin rate/500 : ${(value[0] / 500).toFixed(2)} ${config.unit}`;
+          return {
+            main: `${value[0]} ${config.unit}`,
+            ci: `[${value[1]} : ${value[2]}]`,
+            rate500: `${(value[0] / 500).toFixed(2)}`
+          };
         } else if (config.ci) {
-          return `${config.label}: ${value[0]} ${config.unit}, with 95% CI: [${value[1]} : ${value[2]}] ${config.unit}`;
+          return {
+            main: `${value[0]} ${config.unit}`,
+            ci: `[${value[1]} : ${value[2]}]`
+          };
+        } else if (config.delta) {
+          return {
+            main: `New maintenance bolus each ${value} ${config.unit}`
+          }
         } else {
-          return `${config.label}: ${value} ${config.unit}`;
+          return {
+            main: `${value} ${config.unit}`
+          };
         }
       };
 
-      const continuousDosingHeader = document.createElement('p');
-      continuousDosingHeader.innerHTML = '<strong>Continuous dosing strategy:</strong>';
-      this.resultTarget.appendChild(continuousDosingHeader);
-
       Object.entries(data.result).forEach(([key, value]) => {
         const config = displayMapping[key];
-        if (config) {
-          if (key === "ld_new") {
-            const lineBreak = document.createElement('br');
-            this.resultTarget.appendChild(lineBreak);
-
-            const intermittentDosingHeader = document.createElement('p');
-            intermittentDosingHeader.innerHTML = '<strong>Intermittent dosing strategy:</strong>';
-            this.resultTarget.appendChild(intermittentDosingHeader);
-          }
-
-          if (config.special === "image") {
-            const img = document.createElement('img');
-            img.src = value;
-            img.className = "w-1/3 rounded-2xl";
-            this.resultTarget.appendChild(img);
+        if (config && config.special === "image") {
+          const img = document.createElement('img');
+          img.src = value;
+          img.className = "w-1/3 rounded-2xl";
+          const imageContainer = document.getElementById('image-container');
+          if (imageContainer) {
+            imageContainer.appendChild(img);
           } else {
-            const p = document.createElement('p');
-            p.textContent = formatContent(config, value);
-            this.resultTarget.appendChild(p);
+            console.error('Image container not found.');
+          }
+        }
+        if (config) {
+          const content = formatContent(config, value);
+
+          if (config.cellId) {
+            const cellElement = document.getElementById(config.cellId);
+            if (cellElement) {
+              cellElement.textContent = content.main;
+            } else {
+              console.error(`Element with ID ${config.cellId} not found.`);
+            }
+          }
+          if (config.ciCellId) {
+            const ciCellElement = document.getElementById(config.ciCellId);
+            if (ciCellElement) {
+              ciCellElement.textContent = content.ci;
+            } else {
+              console.error(`Element with ID ${config.ciCellId} not found.`);
+            }
+          }
+          if (config.divide_by_500) {
+            const rate500Element = document.getElementById("new-inf-rate-500");
+            if (rate500Element) {
+              rate500Element.textContent = content.rate500;
+            } else {
+              console.error(`Element with ID new-inf-rate-500 not found.`);
+            }
           }
         }
       });
+
       this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'end' });
     })
   }
