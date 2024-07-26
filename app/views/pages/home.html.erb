@@ -10,26 +10,27 @@
     <div class="flex justify-center items-center max-w-6xl mx-auto h-full gap-6">
       <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'w-96 h-auto' %>
       <div class="flex-column">
-        <h1 class="text-4xl font-bold text-white">ACTities, what is it, hm?</h1>
+        <h1 class="text-4xl font-bold text-white">ACTities, what is it?</h1>
         <p class="text-white text-2xl">Now that is some text describing what it does, and very well so. Not too much details, straight to the point, perfect quick explaination. Don't look at the logo it's a placeholder yo</p>
       </div>
     </div>
 
   </div>
   <div class="container mx-auto mt-16 max-w-8xl">
-    <div class="container mx-auto mt-16">  <!--max-w-2xl  text-center-->
+  <div class="rounded-2xl shadow-lg p-4">
+    <div class="container mx-auto">  <!--max-w-2xl  text-center-->
       <h2 id="section-calcul" class="text-3xl font-bold text-center text-gray-900">Heparin prediction form</h2>
     </div>
 
     <div data-controller="form-handler">
       <!-- Form -->
       <div data-form-handler-target="form">
-        <div class="bg-custom-gradient rounded-2xl shadow-lg p-4">
+
           <%= form_with model: @patient, data: { action: "form-handler#submitForm" } do |form| %>
             <h2 class="text-2xl font-semibold text-left text-gray-800">Setup</h2>
             <div id="patient-weight" class="flex items-center gap-2 my-2 text-xl">
               <%= form.label :patient_weight, class: "flex items-center mr-2" do %>
-                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color">
+                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
                   <path d="M128 176a128 128 0 1 1 256 0 128 128 0 1 1 -256 0zM391.8 64C359.5 24.9 310.7 0 256 0S152.5 24.9 120.2 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-56.2 0zM296 224c0-10.6-4.1-20.2-10.9-27.4l33.6-78.3c3.5-8.1-.3-17.5-8.4-21s-17.5 .3-21 8.4L255.7 184c-22 .1-39.7 18-39.7 40c0 22.1 17.9 40 40 40s40-17.9 40-40z"/>
                 </svg>') %>
                 Patient weight
@@ -39,7 +40,7 @@
 
             <div id="act-target" class="flex items-center gap-2 my-2 text-xl">
               <%= form.label :act_target, class: "flex items-center mr-2" do %>
-                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color">
+                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
                   <path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
                 </svg>') %>
                 Target ACT (seconds)
@@ -49,7 +50,7 @@
 
             <div id="times-between-bolus" class="flex items-center gap-2 my-2 text-xl">
               <%= form.label :delta_t, class: "flex items-center mr-2" do %>
-                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color">
+                <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
                   <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
                 </svg>') %>
                 Time between bolus injections (minutes)
@@ -62,7 +63,7 @@
                 <div data-addable-target="actValues" data-controller="deletable">
                   <br>
                   <h2 class="flex items-center text-2xl font-semibold text-left text-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-6 h-6 mr-2 fill-current text-icon-color">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-6 h-6 mr-2 fill-current text-icon-color-dark">
                       <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                     </svg>
                     ACT
@@ -77,7 +78,7 @@
                     <% end %>
                     <div class="justify-center items-center">
                       <button data-action="click->deletable#deleteActValues">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
                           <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                         </svg>
                       </button>
@@ -93,7 +94,7 @@
                 <div data-addable-target="heparinsValues" data-controller="deletable">
                   <br>
                   <h2 class="flex items-center text-2xl font-semibold text-left text-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 mr-2 fill-current text-icon-color">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 mr-2 fill-current text-icon-color-dark">
                       <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
                     </svg>
                     Heparin bolus injection
@@ -107,7 +108,7 @@
                       <%= heparins_form.datetime_field :bolus_time %>
                     <% end %>
                     <button data-action="click->deletable#deleteBolus">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
                         <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                       </svg>
                     </button>
@@ -134,7 +135,7 @@
                       <%= heparins_form.datetime_field :infusion_time %>
                     <% end %>
                     <button data-action="click->deletable#deleteInfusion">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
                         <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                       </svg>
                     </button>
@@ -146,7 +147,7 @@
               </div>
             <br>
             <div class="flex justify-center">
-              <%= form.submit "Calculate next dose", class:"flex justify-center text-2xl bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-tertiary hover:text-black active:bg-green-700 focus:outline-none focus:shadow-outline" %>
+              <%= form.submit "Calculate next dose", class:"flex justify-center text-2xl bg-icon-color-dark text-white font-bold py-2 px-4 rounded hover:bg-tertiary hover:text-black active:bg-green-700 focus:outline-none focus:shadow-outline" %>
             </div>
           <% end %>
         </div>
