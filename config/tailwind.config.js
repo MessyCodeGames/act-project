@@ -27,6 +27,8 @@ module.exports = {
         'quaternary': '#B0D7D6',
         'icon-color-dark': '#004661',
         'icon-color': '#B29790',
+        'light-color': '#e7ddda',
+        'very-light-color': '#f1eceb',
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(183deg, rgba(249,249,249,1) 0%, rgba(249,249,249,1) 39%, rgba(203,223,187,1) 100%)',
