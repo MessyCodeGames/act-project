@@ -187,55 +187,63 @@
           <div class="container mx-auto">  <!--max-w-2xl  text-center-->
             <h2 class="text-3xl font-bold text-center text-gray-900">Results</h2>
           </div>
-          <div data-form-handler-target="result" class="container mx-auto"></div>
-          <table id="result-table"class="mx-auto">
-              <tr>
-                <th></th>
-                <th colspan="2">Intermittent strategy</th>
-                <th colspan="2">Continuous trategy</th>
-              </tr>
-              <tr>
-                <th></th>
-                <th>Value</th>
-                <th>95% CI</th>
-                <th>Value</th>
-                <th>95% CI</th>
-              </tr>
-              <tr>
-                <td>New loading dose</td>
-                <td id="new-int-ld"></td>
-                <td id="new-int-ld-ci"></td>
-                <td id="new-inf-ld"></td>
-                <td id="new-inf-ld-ci"></td>
-              </tr>
-              <tr>
-                <td id="new-int-mb-delta-t-minutes">Maintenance bolus</td>
-                <td id="new-int-mb"></td>
-                <td id="new-int-mb-ci"></td>
-                <td rowspan="2" colspan="2" class="bg-gray-500"></td>
-              </tr>
-              <tr>
-                <td>Total (LD + MB)</td>
-                <td colspan="2" id="new-int-total"></td>
-              </tr>
-              <tr>
-                <td>New infusion rate</td>
-                <td rowspan="2" colspan="2" class="bg-gray-500"></td>
-                <td id="new-inf-rate"></td>
-                <td id="new-inf-rate-ci"></td>
-              </tr>
-              <tr>
-                <td>New infusion rate/500</td>
-                <td colspan="2" id="new-inf-rate-500"></td>
-              </tr>
-              <tr>
-                <td>Injection (bolus or IR) in</td>
-                <td id="new-int-time"></td>
-                <td id="new-int-time-ci"></td>
-                <td id="new-inf-time"></td>
-                <td id="new-inf-time-ci"></td>
-              </tr>
-            </table>
+          <div class="mx-auto flex flex-col justify-center items-center h-full">
+            <div>
+              <table id="result-table" data-form-handler-target="result">
+                <tr>
+                  <th></th>
+                  <th colspan="2">Intermittent strategy</th>
+                  <th colspan="2">Continuous Strategy</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Value</th>
+                  <th>95% CI</th>
+                  <th>Value</th>
+                  <th>95% CI</th>
+                </tr>
+                <tr>
+                  <td>New loading dose</td>
+                  <td id="new-int-ld"></td>
+                  <td id="new-int-ld-ci"></td>
+                  <td id="new-inf-ld"></td>
+                  <td id="new-inf-ld-ci"></td>
+                </tr>
+                <tr>
+                  <td id="new-int-mb-delta-t-minutes">New maintenance bolus</td>
+                  <td id="new-int-mb"></td>
+                  <td id="new-int-mb-ci"></td>
+                  <td rowspan="2" colspan="2" class="bg-gray-500"></td>
+                </tr>
+                <tr>
+                  <td>Total (LD + MB)</td>
+                  <td colspan="2" id="new-int-total"></td>
+                </tr>
+                <tr>
+                  <td>New infusion rate</td>
+                  <td rowspan="2" colspan="2" class="bg-gray-500"></td>
+                  <td id="new-inf-rate"></td>
+                  <td id="new-inf-rate-ci"></td>
+                </tr>
+                <tr>
+                  <td>New infusion rate/500</td>
+                  <td colspan="2" id="new-inf-rate-500"></td>
+                </tr>
+                <tr>
+                  <td>Injection (bolus or IR) in</td>
+                  <td id="new-int-time"></td>
+                  <td id="new-int-time-ci"></td>
+                  <td id="new-inf-time"></td>
+                  <td id="new-inf-time-ci"></td>
+                </tr>
+                <tr>
+                  <td colspan="5"><em>CI: confidence interval, LD: loading dose, MB: maintenance bolus, IR: infusion rate</em></td>
+                </tr>
+              </table>
+
+              <div id="image-container" class="plot-container"></div>
+
+            </div>
           </div>
         </div>
       </div>
