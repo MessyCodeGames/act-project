@@ -485,6 +485,7 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   encoded_image_continuous_plot <- base64enc::dataURI(file = temp_file_continuous, mime = "image/png")
   encoded_image_intermittent_plot <- base64enc::dataURI(file = temp_file_intermittent, mime = "image/png")
 
+  deltaT_minutes <- deltaT * 60
 
   results <- list(ld_new_for_infusion = ld_new_for_inf,
                   infusion_new = inf_new,
@@ -494,6 +495,8 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
                   bolus_new = bolus_new,
                   bolus_total = round(bolusTotal, 0),
                   new_bolus_time = new_bolus_time,
+
+                  deltaT_minutes = deltaT_minutes,
 
                   plot_continuous = encoded_image_continuous_plot,
                   plot_intermittent = encoded_image_intermittent_plot)
