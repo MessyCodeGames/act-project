@@ -23,7 +23,7 @@ module.exports = {
 
         'primary': '#ADD1BA',
         'secondary': '#e5f1db',
-        'tertiary': '#ffd200',
+        'tertiary': '#fded8d',
         'quaternary': '#B0D7D6',
         'icon-color-dark': '#004661',
         'icon-color': '#B29790',
