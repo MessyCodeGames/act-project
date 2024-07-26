@@ -80,19 +80,25 @@ export default class extends Controller {
         }
       };
 
+      const imageContainer = document.getElementById('image-container');
+      if (imageContainer) {
+        imageContainer.innerHTML = '';
+      } else {
+        console.error('Image container not found.');
+      }
+
       Object.entries(data.result).forEach(([key, value]) => {
         const config = displayMapping[key];
+
         if (config && config.special === "image") {
           const img = document.createElement('img');
           img.src = value;
           img.className = "w-1/2 rounded-2xl shadow-md";
-          const imageContainer = document.getElementById('image-container');
           if (imageContainer) {
             imageContainer.appendChild(img);
-          } else {
-            console.error('Image container not found.');
           }
         }
+
         if (config) {
           const content = formatContent(config, value);
 
