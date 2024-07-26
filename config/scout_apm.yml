@@ -1,0 +1,9 @@
+common: &defaults
+  name: act-project
+  key: KrhJVZplK57T7iNgiFCJ
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
