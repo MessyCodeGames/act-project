@@ -58,7 +58,8 @@ export default class extends Controller {
         bolus_new: { label: "New maintenance bolus", unit: "UI", ci: true },
         bolus_total: { label: "Total injection (loading dose + maintenance bolus)", unit: "UI" },
         new_bolus_time: { label: "New injection in", unit: "minutes", ci: true },
-        plot: { label: "", unit: "", special: "image" },
+        plot_continuous: { label: "", unit: "", special: "image" },
+        plot_intermittent: { label: "", unit: "", special: "image" }
       };
 
       const formatContent = (config, value) => {
@@ -90,7 +91,7 @@ export default class extends Controller {
           if (config.special === "image") {
             const img = document.createElement('img');
             img.src = value;
-            img.className = "w-2/3 rounded-2xl";
+            img.className = "w-1/3 rounded-2xl";
             this.resultTarget.appendChild(img);
           } else {
             const p = document.createElement('p');
