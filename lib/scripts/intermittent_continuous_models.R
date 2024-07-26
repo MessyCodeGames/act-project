@@ -478,8 +478,8 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   temp_file_continuous <- tempfile(fileext = ".png")
   temp_file_intermittent <- tempfile(fileext = ".png")
 
-  ggsave(temp_file_continuous, plot = p_cont, width = 4, height = 3, dpi = 300)
-  ggsave(temp_file_intermittent, plot = p_int, width = 4, height = 3, dpi = 300)
+  ggsave(temp_file_continuous, plot = p_cont, width = 5, height = 4, dpi = 300)
+  ggsave(temp_file_intermittent, plot = p_int, width = 5, height = 4, dpi = 300)
 
   # Encode the image
   encoded_image_continuous_plot <- base64enc::dataURI(file = temp_file_continuous, mime = "image/png")
