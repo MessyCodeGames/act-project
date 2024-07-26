@@ -178,8 +178,7 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   Bolus_Times2 <- c(Bolus_Times, Last_ACT_Time)
 
   #### Plot data ####
-
-  TimeLine <- seq(min(ACT_Measurement_Times), (max(ACT_Measurement_Times) + 4), 0.01)
+  TimeLine <- seq(min(ACT_Measurement_Times), (max(c(ACT_Measurement_Times + 4, Perf_Time_New + deltaT * 2)) ), 0.01)
 
   OBS_graph <- Pred_Robust(eta_opti, TimeLine,
                            Bolus_Given2, Bolus_Times2, Patient_Weight,
@@ -200,7 +199,7 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
 
   #### Uncertainty measure ####
 
-  n <- 1000
+  n <- 150
 
   optimisation_robust <- optim(eta0, Distance_Robust, OBS = ACT_Values_Measured,
                                times = ACT_Measurement_Times, omega = omega,
@@ -410,8 +409,8 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   Bolus_Times2b <- c(Bolus_Times, Bolus_Time_New, seq(Bolus_Time_New + deltaT, 5, deltaT))
 
   #### Plot data ####
+  TimeLine <- seq(min(ACT_Measurement_Times), (max(c(ACT_Measurement_Times + 4, Bolus_Time_New + deltaT * 2)) ), 0.01)
 
-  TimeLine <- seq(min(ACT_Measurement_Times), (max(ACT_Measurement_Times) + 4), 0.01)
 
   OBS_graph <- Pred_Robust(eta_opti, TimeLine,
                            Bolus_Given2b, Bolus_Times2b, Patient_Weight,
@@ -430,8 +429,6 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
                           Predobs = predVobs)
 
   #### Uncertainty measure ####
-
-  n <- 1000
 
   optimisation_robust <- optim(eta0, Distance_Robust, OBS = ACT_Values_Measured,
                                times = ACT_Measurement_Times, omega = omega,
@@ -593,7 +590,6 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   new_bolus_time = c(time_new_inf, q5_time_new_inf, q95_time_new_inf)
 
   #### Plot ####
-
   p_int <- ggplot() +
     geom_hline(yintercept = ACT_Target, linetype= "dashed",
                color = "black", size= 0.5) +
