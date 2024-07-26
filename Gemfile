@@ -72,4 +72,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem 'scout_apm'
 gem "tailwindcss-rails", "~> 2.6"
