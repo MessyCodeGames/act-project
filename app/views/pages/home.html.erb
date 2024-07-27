@@ -23,54 +23,54 @@
 
   </div>
 
-
-
   <!-- FORM AND RESULTS -->
 
+  <div class="container mx-auto md:mt-16 md:max-w-8xl mt-2">
 
-  <div class="container mx-auto mt-16 max-w-8xl">
-    <div class="rounded-2xl shadow-lg p-4">
+    <div class="md:rounded-2xl md:shadow-lg p-4">
+
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
-        <h2 id="section-calcul" class="text-3xl font-bold text-center text-gray-900">Heparin prediction form</h2>
+        <h2 id="section-calcul" class="md:text-3xl text-base font-bold text-center text-gray-900">Heparin prediction form</h2>
       </div>
 
       <div data-controller="form-handler">
         <!-- Form -->
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#submitForm" } do |form| %>
-              <h2 class="text-2xl font-semibold text-left text-gray-800">1 - Setup</h2>
+              <h2 class="md:text-2xl text-sm font-semibold text-left text-gray-800">1 - Setup</h2>
 
-              <div id="patient-weight" class="flex items-center gap-2 my-2 text-xl">
-                <%= form.label :patient_weight, class: "flex items-center mr-2" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
+              <div id="patient-weight" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                <%= form.label :patient_weight, class: "flex items-center md:mr-2 mr-1" do %>
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
                     <path d="M128 176a128 128 0 1 1 256 0 128 128 0 1 1 -256 0zM391.8 64C359.5 24.9 310.7 0 256 0S152.5 24.9 120.2 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-56.2 0zM296 224c0-10.6-4.1-20.2-10.9-27.4l33.6-78.3c3.5-8.1-.3-17.5-8.4-21s-17.5 .3-21 8.4L255.7 184c-22 .1-39.7 18-39.7 40c0 22.1 17.9 40 40 40s40-17.9 40-40z"/>
                   </svg>') %>
                   Patient weight
                 <% end %>
-                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", min: "1", max: "300", required: true %>
+                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow", min: "1", max: "300", required: true %>
               </div>
 
-              <div id="act-target" class="flex items-center gap-2 my-2 text-xl">
-                <%= form.label :act_target, class: "flex items-center mr-2" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
+              <div id="act-target" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                <%= form.label :act_target, class: "flex items-center md:mr-2 mr-1" do %>
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
                     <path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
                   </svg>') %>
                   Target ACT (seconds)
                 <% end %>
-                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", required: true %>
+                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow", required: true %>
               </div>
 
-              <div id="times-between-bolus" class="flex items-center gap-2 my-2 text-xl">
-                <%= form.label :delta_t, class: "flex items-center mr-2" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
+              <div id="times-between-bolus" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                <%= form.label :delta_t, class: "flex items-center md:mr-2 mr-1" do %>
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
                     <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
                   </svg>') %>
                   Time between bolus injections (minutes)
                 <% end %>
-                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", required: true %>
+                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow", required: true %>
               </div>
 
               <div data-controller="addable moveable">
+
                 <div id="act-measured" class="flex flex-col bg-secondary rounded-2xl p-4">
                   <div data-addable-target="actValues" data-controller="deletable">
                     <br>
@@ -107,9 +107,11 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="flex">
                     <button data-action="click->addable#addActValues"  class="px-3 py-1 text-xl font-bold text-white bg-icon-color rounded hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
                   </div>
+
                 </div>
 
 
