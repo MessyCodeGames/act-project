@@ -34,7 +34,7 @@
                   </svg>') %>
                   Patient weight
                 <% end %>
-                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", min: "1", max: "300", required: true %>
+                <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", min: "1", max: "300", required: true %>
               </div>
 
               <div id="act-target" class="flex items-center gap-2 my-2 text-xl">
@@ -44,7 +44,7 @@
                   </svg>') %>
                   Target ACT (seconds)
                 <% end %>
-                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", required: true %>
+                <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", required: true %>
               </div>
 
               <div id="times-between-bolus" class="flex items-center gap-2 my-2 text-xl">
@@ -54,7 +54,7 @@
                   </svg>') %>
                   Time between bolus injections (minutes)
                 <% end %>
-                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-secondary bg-secondary-light text-secondary-dark p-2 data-hj-allow", required: true %>
+                <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow", required: true %>
               </div>
 
               <div data-controller="addable moveable">
@@ -70,25 +70,25 @@
                     <div class="flex items-center gap-2 my-2 act-row">
                       <%= form.fields_for :acts do |acts_form| %>
                         <%= acts_form.label :act_value_measured, "Measured ACT values", class:"text-xl" %>
-                        <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "data-hj-allow" %>
+                        <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
 
                         <%= acts_form.label :act_measurement_time, "Time", class:"text-xl" %>
-                        <%= acts_form.datetime_field :act_measurement_time, required: true, class: "data-hj-allow" %>
+                        <%= acts_form.datetime_field :act_measurement_time, required: true, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#actMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
-                        </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
+                          </svg>
                         </button>
                         <button data-action="click->moveable#actMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteActValues">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
                       </div>
@@ -112,25 +112,25 @@
                     <div class="flex items-center gap-2 my-2 bolus-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
                         <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"text-xl" %>
-                        <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "data-hj-allow" %>
+                        <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
 
                         <%= heparins_form.label :bolus_time, "Time", class:"text-xl" %>
-                        <%= heparins_form.datetime_field :bolus_time, class: "data-hj-allow" %>
+                        <%= heparins_form.datetime_field :bolus_time, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#bolusMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#bolusMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteBolus">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
                       </div>
@@ -148,28 +148,28 @@
                     <div class="flex items-center gap-2 my-2 infusion-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
                         <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"text-xl" %>
-                        <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)", min: "1", class: "data-hj-allow" %>
+                        <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)", min: "1", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
 
                         <%= heparins_form.label :infusion_duration, "Duration", class:"text-xl" %>
-                        <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "data-hj-allow" %>
+                        <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
 
                         <%= heparins_form.label :infusion_time, "Start time", class:"text-xl" %>
-                        <%= heparins_form.datetime_field :infusion_time, class: "data-hj-allow" %>
+                        <%= heparins_form.datetime_field :infusion_time, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
                       <% end %>
                       <div class="justify-center items-center">
                         <button data-action="click->moveable#infusionMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#infusionMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2">
-                            <path fill="#000000" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteInfusion">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark">
-                            <path fill="#000000" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
                     </div>
@@ -179,7 +179,7 @@
                   <button data-action="click->addable#addInfusion" class="px-3 py-1 text-xl font-bold text-white bg-icon-color rounded hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
                 </div>
               <div class="flex flex-col justify-center items-center">
-                <%= form.submit "Calculate next dose", class:"flex justify-center text-2xl bg-icon-color-dark text-white border-4 border-icon-color-dark font-bold py-2 px-4 rounded hover:bg-tertiary hover:text-icon-color-dark active:bg-tertiary active:scale-95 focus:outline-none focus:shadow-outline" %>
+                <%= form.submit "Calculate next dose", class:"flex justify-center text-2xl bg-icon-color-dark text-white font-bold py-2 px-4 rounded hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
                 <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" />
               </div>
             <% end %>
