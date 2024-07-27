@@ -26,7 +26,7 @@
         <!-- Form -->
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#submitForm" } do |form| %>
-              <h2 class="text-2xl font-semibold text-left text-gray-800">Setup</h2>
+              <h2 class="text-2xl font-semibold text-left text-gray-800">1 - Setup</h2>
 
               <div id="patient-weight" class="flex items-center gap-2 my-2 text-xl">
                 <%= form.label :patient_weight, class: "flex items-center mr-2" do %>
@@ -66,7 +66,7 @@
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-6 h-6 mr-2 fill-current text-icon-color-dark">
                         <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                       </svg>
-                      ACT
+                      2 - ACT
                     </h2>
                     <div class="flex items-center gap-2 my-2 act-row">
                       <%= form.fields_for :acts do |acts_form| %>
@@ -108,7 +108,7 @@
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 mr-2 fill-current text-icon-color-dark">
                         <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
                       </svg>
-                      Heparin bolus injection
+                      3 - Heparin bolus injection
                     </h2>
                     <div class="flex items-center gap-2 my-2 bolus-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
@@ -145,7 +145,7 @@
                 <div id="heparins-infusions">
                   <div data-addable-target="heparinsInfusions" data-controller="deletable">
                     <br>
-                    <h2 class="text-2xl font-semibold text-left text-gray-800">Heparin infusions</h2>
+                    <h2 class="text-2xl font-semibold text-left text-gray-800">4 - Heparin infusions</h2>
                     <div class="flex items-center gap-2 my-2 infusion-row">
                       <%= form.fields_for :heparins do |heparins_form| %>
                         <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"text-xl" %>
@@ -197,8 +197,8 @@
 
             <div>
               <div class="relative overflow-x-auto shadow-md sm:rounded-2xl">
-                <table id="result-table" data-form-handler-target="result" class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
-                  <thead class="text-xs text-gray-700 uppercase bg-light-color dark:bg-gray-700 dark:text-gray-400">
+                <table id="result-table" data-form-handler-target="result" class="w-full text-sm text-center text-gray-500">
+                  <thead class="text-xs text-gray-700 uppercase bg-light-color">
                     <tr>
                       <th scope="col" class="text-xl px-6 py-3"></th>
                       <th scope="col" class="text-xl px-6 py-3" colspan="2">Intermittent strategy</th>
@@ -213,41 +213,41 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">New loading dose</th>
+                    <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap">New loading dose</th>
                       <td class="text-xl px-6 py-4" id="new-int-ld"></td>
                       <td class="text-xl px-6 py-4" id="new-int-ld-ci"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-ld"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-ld-ci"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white" id="new-int-mb-delta-t-minutes">New maintenance bolus</th>
+                    <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap " id="new-int-mb-delta-t-minutes">New maintenance bolus</th>
                       <td class="text-xl px-6 py-4" id="new-int-mb"></td>
                       <td class="text-xl px-6 py-4" id="new-int-mb-ci"></td>
                       <td rowspan="2" colspan="2" class="bg-gray-100 px-6 py-4"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">Total (LD + MB)</th>
+                    <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap">Total (LD + MB)</th>
                       <td class="text-xl px-6 py-4" colspan="2" id="new-int-total"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">New infusion rate</th>
+                    <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap">New infusion rate</th>
                       <td rowspan="2" colspan="2" class="bg-gray-100 px-6 py-4"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-rate"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-rate-ci"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">New infusion rate/500</th>
+                    <tr class="bg-white border-b border-gray-20 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap">New infusion rate/500</th>
                       <td class="text-xl px-6 py-4" colspan="2" id="new-inf-rate-500"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 hover:bg-very-light-color dark:hover:bg-gray-600">
-                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">Injection (bolus or IR) in</th>
+                    <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
+                      <th scope="row" class="text-left text-xl px-6 py-4 text-gray-900 whitespace-nowrap">Injection (bolus or IR) in</th>
                       <td class="text-xl px-6 py-4" id="new-int-time"></td>
                       <td class="text-xl px-6 py-4" id="new-int-time-ci"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-time"></td>
                       <td class="text-xl px-6 py-4" id="new-inf-time-ci"></td>
                     </tr>
-                    <tr class="bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b border-gray-200">
                       <td colspan="5" class="text-left text-lg px-4 py-2"><em>CI: confidence interval, LD: loading dose, MB: maintenance bolus, IR: infusion rate</em></td>
                     </tr>
                   </tbody>
