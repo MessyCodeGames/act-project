@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -10,17 +10,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'h1, h2, h3, h4, a': {
+              fontFamily: ['Roboto', 'sans-serif'],
+            },
+            'p, th, td, input, textarea, select': {
+              fontFamily: ['Open Sans', 'sans-serif'],
+            },
+          },
+        },
+      },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        roboto: ['Roboto', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
       },
       colors: {
-        // 'primary': '#AEC2CD',
-        // 'secondary': '#D9EBEF',
-        // 'tertiary': '#E5BA6C',
-        // 'quaternary': '#B0D7D6',
-        // 'icon-color-dark': '#004661',
-        // 'icon-color': '#B29790',
-
         'primary': '#ADD1BA',
         'secondary': '#e5f1db',
         'tertiary': '#fded8d',
@@ -40,5 +46,5 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/container-queries'),
-  ]
-}
+  ],
+};

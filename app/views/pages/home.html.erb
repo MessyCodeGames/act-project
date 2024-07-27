@@ -10,7 +10,7 @@
     <div class="flex justify-center items-center max-w-6xl mx-auto h-full gap-6">
       <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'w-96 h-auto' %>
       <div class="flex-column">
-        <h1 class="text-4xl font-bold text-white">ACT Pred, what is it?</h1>
+        <h1 class="text-5xl font-bold text-white">ACT Pred, what is it?</h1>
         <p class="text-white text-2xl">Now that is some text describing what it does, and very well so. Not too much details, straight to the point, perfect quick explanation. Don't look at the logo it's a placeholder yo</p>
       </div>
     </div>
@@ -27,6 +27,7 @@
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#submitForm" } do |form| %>
               <h2 class="text-2xl font-semibold text-left text-gray-800">Setup</h2>
+
               <div id="patient-weight" class="flex items-center gap-2 my-2 text-xl">
                 <%= form.label :patient_weight, class: "flex items-center mr-2" do %>
                   <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 mr-2 fill-current text-icon-color-dark">
@@ -298,6 +299,15 @@
 </div>
 
 <style>
+  * {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, a {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Montserrat", sans-serif;
+  }
+
   .full-width {
     position: relative;
     left: 50%;
