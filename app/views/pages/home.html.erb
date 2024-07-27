@@ -27,7 +27,7 @@
 
   <div class="container mx-auto md:mt-16 md:max-w-8xl mt-2">
 
-    <div class="md:rounded-2xl md:shadow-lg p-4">
+    <div class="md:rounded-2xl md:shadow-lg md:p-4 p-2">
 
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
         <h2 id="section-calcul" class="md:text-3xl text-base font-bold text-center text-gray-900">Heparin prediction form</h2>
@@ -41,7 +41,7 @@
 
               <div id="patient-weight" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
                 <%= form.label :patient_weight, class: "flex items-center md:mr-2 mr-1" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark hidden md:block">
                     <path d="M128 176a128 128 0 1 1 256 0 128 128 0 1 1 -256 0zM391.8 64C359.5 24.9 310.7 0 256 0S152.5 24.9 120.2 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-56.2 0zM296 224c0-10.6-4.1-20.2-10.9-27.4l33.6-78.3c3.5-8.1-.3-17.5-8.4-21s-17.5 .3-21 8.4L255.7 184c-22 .1-39.7 18-39.7 40c0 22.1 17.9 40 40 40s40-17.9 40-40z"/>
                   </svg>') %>
                   Patient weight
@@ -51,7 +51,7 @@
 
               <div id="act-target" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
                 <%= form.label :act_target, class: "flex items-center md:mr-2 mr-1" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark hidden md:block">
                     <path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
                   </svg>') %>
                   Target ACT (seconds)
@@ -61,7 +61,7 @@
 
               <div id="times-between-bolus" class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
                 <%= form.label :delta_t, class: "flex items-center md:mr-2 mr-1" do %>
-                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
+                  <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark hidden md:block">
                     <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
                   </svg>') %>
                   Time between bolus injections (minutes)
@@ -71,45 +71,51 @@
 
               <div data-controller="addable moveable">
 
-                <div id="act-measured" class="flex flex-col bg-secondary rounded-2xl p-4">
+                <div id="act-measured" class="flex flex-col bg-secondary rounded-2xl md:p-4 p-2">
                   <div data-addable-target="actValues" data-controller="deletable">
                     <br>
-                    <h2 class="flex items-center text-2xl font-semibold text-left text-gray-800">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-6 h-6 mr-2 fill-current text-icon-color-dark">
+                    <h2 class="flex items-center md:text-2xl text-sm font-semibold text-left text-gray-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
                         <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                       </svg>
                       2 - ACT
                     </h2>
-                    <div class="flex items-center gap-2 my-2 act-row">
-                      <%= form.fields_for :acts do |acts_form| %>
-                        <%= acts_form.label :act_value_measured, "Measured ACT values", class:"text-xl" %>
-                        <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
 
-                        <%= acts_form.label :act_measurement_time, "Time", class:"text-xl" %>
-                        <%= acts_form.datetime_field :act_measurement_time, required: true, class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark p-2 focus:border-icon-color-dark data-hj-allow" %>
-                      <% end %>
-                      <div class="justify-center items-center">
+
+                    <div class="md:flex items-center">
+                      <div class="flex items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                        <%= form.fields_for :acts do |acts_form| %>
+                          <%= acts_form.label :act_value_measured, "Measured ACT values", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
+                          <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow" %>
+
+                          <%= acts_form.label :act_measurement_time, "Time", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
+                          <%= acts_form.datetime_field :act_measurement_time, required: true, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow" %>
+                        <% end %>
+                      </div>
+
+                      <div class="justify-center items-center md:flex">
                         <button data-action="click->moveable#actMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#actMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteActValues">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 ml-2 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
                       </div>
                     </div>
+
                   </div>
 
                   <div class="flex">
-                    <button data-action="click->addable#addActValues"  class="px-3 py-1 text-xl font-bold text-white bg-icon-color rounded hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
+                    <button data-action="click->addable#addActValues"  class="md:px-3 md:py-1 md:text-xl px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
                   </div>
 
                 </div>
