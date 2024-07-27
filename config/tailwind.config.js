@@ -29,6 +29,7 @@ module.exports = {
         'icon-color': '#B29790',
         'light-color': '#e7ddda',
         'very-light-color': '#f1eceb',
+        'active-color': "#611B00",
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(183deg, rgba(249,249,249,1) 0%, rgba(249,249,249,1) 39%, rgba(203,223,187,1) 100%)',
