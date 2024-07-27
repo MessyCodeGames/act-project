@@ -36,6 +36,25 @@ export default class extends Controller {
       body: newFormData
     }
 
+    // Show and hide loading gif while waiting for the promise
+    function showLoading() {
+      const loadingGif = document.getElementById('loading-gif');
+      if (loadingGif) {
+        loadingGif.style.display = 'block';
+      }
+    }
+
+    // Function to hide the loading GIF
+    function hideLoading() {
+      const loadingGif = document.getElementById('loading-gif');
+      if (loadingGif) {
+        loadingGif.style.display = 'none';
+      }
+    }
+
+    // Show the loading GIF before sending the request
+    showLoading();
+
     // Send AJAX request to the backend without reloading the page
     fetch('/calculate', resquestDetails)
     .then(response => response.json())
@@ -128,8 +147,15 @@ export default class extends Controller {
           }
         }
       });
+      // Hide the loading GIF after processing the response
+      hideLoading();
 
       this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Hide the loading GIF in case of an error
+      hideLoading();
     })
   }
 
