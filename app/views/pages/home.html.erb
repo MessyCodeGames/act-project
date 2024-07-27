@@ -178,8 +178,9 @@
                 <div class="flex">
                   <button data-action="click->addable#addInfusion" class="px-3 py-1 text-xl font-bold text-white bg-icon-color rounded hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
                 </div>
-              <div class="flex justify-center">
+              <div class="flex flex-col justify-center items-center">
                 <%= form.submit "Calculate next dose", class:"flex justify-center text-2xl bg-icon-color-dark text-white border-4 border-icon-color-dark font-bold py-2 px-4 rounded hover:bg-tertiary hover:text-icon-color-dark active:bg-tertiary active:scale-95 focus:outline-none focus:shadow-outline" %>
+                <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" />
               </div>
             <% end %>
           </div>
@@ -192,10 +193,8 @@
             <h2 class="text-3xl font-bold text-center text-gray-900">Recommandations</h2>
           </div>
           <div class="mx-auto flex flex-col justify-center items-center h-full">
+
             <div>
-
-
-
               <div class="relative overflow-x-auto shadow-md sm:rounded-2xl">
                 <table id="result-table" data-form-handler-target="result" class="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                   <thead class="text-xs text-gray-700 uppercase bg-light-color dark:bg-gray-700 dark:text-gray-400">
