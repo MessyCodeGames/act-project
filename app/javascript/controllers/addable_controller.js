@@ -28,17 +28,17 @@ export default class extends Controller {
 
       <div class="justify-center items-center md:flex">
         <button data-action="click->moveable#actMoveUp">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->moveable#actMoveDown">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->deletable#deleteActValues">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
           </svg>
         </button>
@@ -67,17 +67,17 @@ export default class extends Controller {
 
       <div class="justify-center items-center md:flex">
         <button data-action="click->moveable#bolusMoveUp">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->moveable#bolusMoveDown">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->deletable#deleteBolus">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
           </svg>
         </button>
@@ -109,17 +109,17 @@ export default class extends Controller {
       </div>
       <div class="justify-center items-center md:flex">
         <button data-action="click->moveable#infusionMoveUp">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->moveable#infusionMoveDown">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
           </svg>
         </button>
         <button data-action="click->deletable#deleteInfusion">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-4 h-4 ml-1 fill-current text-icon-color-dark hover:text-active-color active:scale-95">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-8 md:h-8 md:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark md:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
           </svg>
         </button>
