@@ -82,14 +82,14 @@
                     </h2>
 
 
-                    <div class="act-row md:flex md:items-center">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                    <div class="act-row md:flex md:items-center w-full">
+                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :acts do |acts_form| %>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= acts_form.label :act_value_measured, "Measured ACT values", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= acts_form.label :act_measurement_time, "Time", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= acts_form.datetime_field :act_measurement_time, required: true, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
@@ -132,14 +132,14 @@
                       3 - Heparin bolus injections
                     </h2>
 
-                    <div class="bolus-row md:flex md:items-center">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                    <div class="bolus-row md:flex md:items-center w-full">
+                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :heparins do |heparins_form| %>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= heparins_form.label :bolus_time, "Time", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= heparins_form.datetime_field :bolus_time, class:"w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
@@ -183,18 +183,18 @@
                       4 - Heparin infusions
                     </h2>
 
-                    <div class="md:flex md:items-center infusion-row">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5">
+                    <div class="md:flex md:items-center infusion-row w-full">
+                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :heparins do |heparins_form| %>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :infusion_rate_given, placeholder: "Infusion rate (UI per hour)", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.number_field :infusion_rate_given, placeholder: "IR (UI per hour)", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_duration, "Duration", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
-                          <div class="flex flex-row">
+                          <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_time, "Start time", class:"md:text-xl text-sm flex items-center md:mr-2 mr-1" %>
                             <%= heparins_form.datetime_field :infusion_time, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
                           </div>
