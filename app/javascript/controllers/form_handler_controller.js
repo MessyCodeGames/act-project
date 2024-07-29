@@ -64,14 +64,14 @@ export default class extends Controller {
       console.log(data);
 
       const displayMapping = {
-        ld_new_for_infusion: { cellId: "new-inf-ld", ciCellId: "new-inf-ld-ci", unit: "UI", ci: true },
-        infusion_new: { cellId: "new-inf-rate", ciCellId: "new-inf-rate-ci", unit: "UI/h", ci: true, divide_by_500: true },
-        new_infusion_time: { cellId: "new-inf-time", ciCellId: "new-inf-time-ci", unit: "minutes", ci: true },
-        ld_new: { cellId: "new-int-ld", ciCellId: "new-int-ld-ci", unit: "UI", ci: true },
-        bolus_new: { cellId: "new-int-mb", ciCellId: "new-int-mb-ci", unit: "UI", ci: true },
-        bolus_total: { cellId: "new-int-total", unit: "UI" },
-        new_bolus_time: { cellId: "new-int-time", ciCellId: "new-int-time-ci", unit: "minutes", ci: true },
-        deltaT_minutes: { cellId: "new-int-mb-delta-t-minutes", unit: "minutes", delta: true },
+        ld_new_for_infusion: { cellId: "new-inf-ld", ciCellId: "new-inf-ld-ci", unit: "UI", ci: true, smallCellId: "new-inf-ld-small", smallCiCellId: "new-inf-ld-ci-small" },
+        infusion_new: { cellId: "new-inf-rate", ciCellId: "new-inf-rate-ci", unit: "UI/h", ci: true, divide_by_500: true, smallCellId: "new-inf-rate-small", smallCiCellId: "new-inf-rate-ci-small" },
+        new_infusion_time: { cellId: "new-inf-time", ciCellId: "new-inf-time-ci", unit: "minutes", ci: true, smallCellId: "new-inf-time-small", smallCiCellId: "new-inf-time-ci-small" },
+        ld_new: { cellId: "new-int-ld", ciCellId: "new-int-ld-ci", unit: "UI", ci: true, smallCellId: "new-int-ld-small", smallCiCellId: "new-int-ld-ci-small" },
+        bolus_new: { cellId: "new-int-mb", ciCellId: "new-int-mb-ci", unit: "UI", ci: true, smallCellId: "new-int-mb-small", smallCiCellId: "new-int-mb-ci-small" },
+        bolus_total: { cellId: "new-int-total", unit: "UI", smallCellId: "new-int-total-small" },
+        new_bolus_time: { cellId: "new-int-time", ciCellId: "new-int-time-ci", unit: "minutes", ci: true, smallCellId: "new-int-time-small", smallCiCellId: "new-int-time-ci-small" },
+        deltaT_minutes: { cellId: "new-int-mb-delta-t-minutes", unit: "minutes", delta: true, smallCellId: "new-int-mb-delta-t-minutes-small" },
         plot_continuous: { label: "", unit: "", special: "image" },
         plot_intermittent: { label: "", unit: "", special: "image" }
       };
@@ -90,7 +90,7 @@ export default class extends Controller {
           };
         } else if (config.delta) {
           return {
-            main: `New maintenance bolus each ${value} ${config.unit}`
+            main: `New MB every ${value} min`
           }
         } else {
           return {
@@ -139,6 +139,32 @@ export default class extends Controller {
           }
           if (config.divide_by_500) {
             const rate500Element = document.getElementById("new-inf-rate-500");
+            if (rate500Element) {
+              rate500Element.textContent = content.rate500;
+            } else {
+              console.error(`Element with ID new-inf-rate-500 not found.`);
+            }
+          }
+
+          // Update small table cells
+          if (config.smallCellId) {
+            const smallCellElement = document.getElementById(config.smallCellId);
+            if (smallCellElement) {
+              smallCellElement.textContent = content.main;
+            } else {
+              console.error(`Element with ID ${config.smallCellId} not found.`);
+            }
+          }
+          if (config.smallCiCellId) {
+            const smallCiCellElement = document.getElementById(config.smallCiCellId);
+            if (smallCiCellElement) {
+              smallCiCellElement.textContent = content.ci;
+            } else {
+              console.error(`Element with ID ${config.smallCiCellId} not found.`);
+            }
+          }
+          if (config.divide_by_500) {
+            const rate500Element = document.getElementById("new-inf-rate-500-small");
             if (rate500Element) {
               rate500Element.textContent = content.rate500;
             } else {
