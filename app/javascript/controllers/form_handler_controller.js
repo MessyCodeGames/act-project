@@ -1,16 +1,58 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "result"]
+  static targets = ["form", "result", "actDatetimeInput", "bolusDatetimeInput", "infusionDatetimeInput"]
 
   connect() {
     console.log("Form connected!")
     console.log("Result target:", this.resultTarget)
   }
 
-  submitForm(event) {
-    event.preventDefault()
+  // Check if all datetime inputs are in chronological order
+  validateAndSubmitForm(event) {
+    event.preventDefault();
+    console.log("Form submission triggered");
+    let isValid = true;
 
+    const actDatetimeInputs = this.actDatetimeInputTargets.map(input => new Date(input.value));
+    console.log(actDatetimeInputs);
+    for (let i = 1; i < actDatetimeInputs.length; i++) {
+      if (actDatetimeInputs[i] <= actDatetimeInputs[i - 1]) {
+        isValid = false;
+        console.log("Validation failed at index:", i);
+        alert('Measured ACT Values must be in chronological order.');
+        break;
+      }
+    }
+
+    const bolusDatetimeInputs = this.bolusDatetimeInputTargets.map(input => new Date(input.value));
+    console.log(bolusDatetimeInputs);
+    for (let i = 1; i < bolusDatetimeInputs.length; i++) {
+      if (bolusDatetimeInputs[i] <= bolusDatetimeInputs[i - 1]) {
+        isValid = false;
+        alert('Heparin bolus injections must be in chronological order.');
+        break;
+      }
+    }
+
+    const infusionDatetimeInputs = this.infusionDatetimeInputTargets.map(input => new Date(input.value));
+    console.log(infusionDatetimeInputs);
+    for (let i = 1; i < infusionDatetimeInputs.length; i++) {
+      if (infusionDatetimeInputs[i] <= infusionDatetimeInputs[i - 1]) {
+        isValid = false;
+        alert('Heparin infusions must be in chronological order.');
+        break;
+      }
+    }
+
+    if (isValid) {
+      console.log("Validation passed, submitting form");
+      this.submitForm(event);
+    }
+  }
+
+  submitForm(event) {
+    // event.preventDefault()
     // Get form data
     const form = event.target
     console.log(form)
@@ -112,7 +154,7 @@ export default class extends Controller {
         if (config && config.special === "image") {
           const img = document.createElement('img');
           img.src = value;
-          img.className = "md:w-1/2 w-full max-w-full h-auto rounded-2xl shadow-md";
+          img.className = "w-full h-auto max-w-full shadow-md md:w-1/2 rounded-2xl";
           if (imageContainer) {
             imageContainer.appendChild(img);
           }
@@ -176,7 +218,12 @@ export default class extends Controller {
       // Hide the loading GIF after processing the response
       hideLoading();
 
-      this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      if (this.resultTarget) {
+        console.log('Scrolling into view:', this.resultTarget);
+        this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      } else {
+        console.error('resultTarget is not defined.');
+      }
     })
     .catch(error => {
       console.error('Error:', error);
