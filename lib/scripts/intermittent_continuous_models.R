@@ -287,19 +287,19 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
   p_cont <- ggplot() +
     geom_hline(yintercept = ACT_Target, linetype= "dashed",
               color = "black", size= 0.5) +
-    geom_vline(xintercept=Perf_Time_New,size = 1.1,color = "#088DA5",
+    geom_vline(xintercept=Perf_Time_New,size = 1.1,color = "#B29790",
               linetype = "dashed")+
     geom_ribbon(data = Udata_CI, aes(ymin= q5, ymax= q95, x= TimeLine) ,
-                fill = "#FFCC33" , alpha = 0.4) +
+                fill = "#F8BB00" , alpha = 0.4) +
     geom_ribbon(data = Udata_CI, aes(ymin= q25, ymax= q75, x= TimeLine) ,
-                fill = "#FFCC33" , alpha = 0.4) +
+                fill = "#F8BB00" , alpha = 0.4) +
     geom_line(data = subset(Line_Plot, Predobs == 0),
-              aes(x = TimeLine, y = Observations), size = 1.1, color = "blue") +
+              aes(x = TimeLine, y = Observations), size = 1.1, color = "#443A69") +
     geom_line(data = subset(Line_Plot, Predobs == 1),
-              aes(x = TimeLine, y = Observations), size = 1.1, color = "#CC3333",
+              aes(x = TimeLine, y = Observations), size = 1.1, color = "#D44D00",
               linetype = "dashed") +
     geom_point(data = Point_Plot, aes(x = M_Times, y = ACT_Values_Measured),
-                color = "darkred", size = 1.5, shape = 21, stroke = 1.2) +
+                color = "#3D2B11", size = 1.5, shape = 21, stroke = 1.2) +
     theme_bw() +
     theme(axis.text.x = element_text(face="bold", size= 11),
           axis.text.y = element_text(face="bold", size= 11),
@@ -446,21 +446,21 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
 
   #### Plot ####
   p_int <- ggplot() +
-    geom_hline(yintercept = ACT_Target, linetype= "dashed",
+    geom_hline(yintercept = ACT_Target, linetype = "dashed",
                 color = "black", size= 0.5) +
-    geom_vline(xintercept=Bolus_Time_New,size = 1.1,color = "#088DA5",
+    geom_vline(xintercept=Bolus_Time_New,size = 1.1,color = "#B29790",
                 linetype = "dashed")+
-    geom_ribbon(data = Udata_CI, aes(ymin= q5, ymax= q95, x= TimeLine) ,
-                fill = "#FFCC33" , alpha = 0.4) +
-    geom_ribbon(data = Udata_CI, aes(ymin= q25, ymax= q75, x= TimeLine) ,
-                fill = "#FFCC33" , alpha = 0.4) +
+    geom_ribbon(data = Udata_CI, aes(ymin= q5, ymax= q95, x = TimeLine) ,
+                fill = "#F8BB00" , alpha = 0.4) +
+    geom_ribbon(data = Udata_CI, aes(ymin= q25, ymax= q75, x = TimeLine) ,
+                fill = "#F8BB00" , alpha = 0.4) +
     geom_line(data = subset(Line_Plot, Predobs == 0),
-              aes(x = TimeLine, y = Observations), size = 1.1, color = "blue") +
+              aes(x = TimeLine, y = Observations), size = 1.1, color = "#443A69") +
     geom_line(data = subset(Line_Plot, Predobs == 1),
-              aes(x = TimeLine, y = Observations), size = 1.1, color = "#CC3333",
+              aes(x = TimeLine, y = Observations), size = 1.1, color = "#D44D00",
               linetype = "dashed") +
     geom_point(data = Point_Plot, aes(x = M_Times, y = ACT_Values_Measured),
-                color = "darkred", size = 1.5, shape = 21, stroke = 1.2) +
+                color = "#3D2B11", size = 1.5, shape = 21, stroke = 1.2) +
     theme_bw() +
     theme(axis.text.x = element_text(face="bold", size= 11),
           axis.text.y = element_text(face="bold", size= 11),
