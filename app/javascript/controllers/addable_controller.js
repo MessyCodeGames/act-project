@@ -15,13 +15,13 @@ export default class extends Controller {
     row.classList.add("act-row", "md:flex", "md:items-center")
 
     row.innerHTML = `
-      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-          <label for="_acts_act_value_measured" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Measured ACT values</label>
+          <label for="_acts_act_value_measured" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Measured ACT values</label>
           <input placeholder="seconds" type="number" name="[acts][act_value_measured]" id="_acts_act_value_measured" min="1" max="1000" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-          <label for="_acts_act_measurement_time" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Time</label>
+          <label for="_acts_act_measurement_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Time</label>
           <input type="datetime-local" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
@@ -54,13 +54,13 @@ export default class extends Controller {
     const row = document.createElement("div")
     row.classList.add("bolus-row", "md:flex", "md:items-center")
     row.innerHTML = `
-      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-          <label for="_heparins_bolus_given" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Heparin bolus injection</label>
+          <label for="_heparins_bolus_given" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Heparin bolus injection</label>
           <input placeholder="Total UI per shot" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given" min="1" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-          <label for="_heparins_bolus_time" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Time</label>
+          <label for="_heparins_bolus_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Time</label>
           <input type="datetime-local" name="[heparins][bolus_time]" id="_heparins_bolus_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
@@ -93,17 +93,17 @@ export default class extends Controller {
     const row = document.createElement("div")
     row.classList.add("infusion-row", "md:flex", "md:items-center")
     row.innerHTML = `
-      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-xl text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_rate_given" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Heparin infusion</label>
+        <label for="_heparins_infusion_rate_given" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Heparin infusion</label>
         <input placeholder="IR (UI per hour)" type="number" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given" min="1" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_duration" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Duration</label>
+        <label for="_heparins_infusion_duration" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Duration</label>
         <input placeholder="minutes" type="number" name="[heparins][infusion_duration]" id="_heparins_infusion_duration" min="1" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_time" class="md:text-xl text-sm flex items-center md:mr-2 mr-1">Start time</label>
+        <label for="_heparins_infusion_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Start time</label>
         <input type="datetime-local" name="[heparins][infusion_time]" id="_heparins_infusion_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
