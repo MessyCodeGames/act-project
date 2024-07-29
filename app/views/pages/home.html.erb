@@ -177,10 +177,11 @@
                 <div id="heparins-infusions" class="flex flex-col p-2 md:p-4">
                   <div data-addable-target="heparinsInfusions" data-controller="deletable">
                     <br>
-                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 md:text-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark">
+                    <h2 class="flex items-center md:text-xl text-sm font-semibold text-left text-gray-800">
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
                         <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
-                      </svg>
+                      </svg> -->
+                      <%= image_tag 'icons/infusion_icon.svg', class: 'md:w-5 md:h-5 md:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark' %>
                       4 - Heparin infusions
                     </h2>
 
@@ -231,15 +232,15 @@
             <br>
             <div class="flex flex-col items-center justify-center">
               <%= form.submit "Calculate dosing regimen", class:"flex justify-center md:text-xl text-base bg-icon-color-dark text-white font-bold md:px-4 md:py-2 px-3 py-1.5 rounded md:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
-                <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" />
+                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4', style:"display:none"%>
+                <!-- <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" /> -->
               <% end %>
             </div>
         </div>
         <br>
 
-
-        <!-- SECTION 3 -->
-        <div class="p-2 m-0 bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4">
+        <!-- SECTION 3 RESULTS -->
+        <div class="bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4 p-2 m-0">
 
           <div class="container mx-auto">
             <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl mb:mb-4">Recommandations</h2>
