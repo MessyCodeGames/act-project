@@ -22,7 +22,7 @@ export default class extends Controller {
         </div>
         <div class="flex flex-row w-full">
           <label for="_acts_act_measurement_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Time</label>
-          <input type="datetime-local" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
+          <input type="datetime-local" data-form-handler-target="actDatetimeInput" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
 
@@ -61,7 +61,7 @@ export default class extends Controller {
         </div>
         <div class="flex flex-row w-full">
           <label for="_heparins_bolus_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Time</label>
-          <input type="datetime-local" name="[heparins][bolus_time]" id="_heparins_bolus_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
+          <input type="datetime-local" data-form-handler-target="bolusDatetimeInput" name="[heparins][bolus_time]" id="_heparins_bolus_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
 
@@ -104,7 +104,7 @@ export default class extends Controller {
         </div>
         <div class="flex flex-row w-full">
         <label for="_heparins_infusion_time" class="md:text-lg text-sm flex items-center md:mr-2 mr-1">Start time</label>
-        <input type="datetime-local" name="[heparins][infusion_time]" id="_heparins_infusion_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
+        <input type="datetime-local" data-form-handler-target="infusionDatetimeInput" name="[heparins][infusion_time]" id="_heparins_infusion_time" class="w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs">
         </div>
       </div>
       <div class="justify-center items-center md:flex">
