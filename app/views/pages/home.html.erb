@@ -177,8 +177,8 @@
                 <div id="heparins-infusions" class="flex flex-col p-2 md:p-4">
                   <div data-addable-target="heparinsInfusions" data-controller="deletable">
                     <br>
-                    <h2 class="flex items-center md:text-xl text-sm font-semibold text-left text-gray-800">
-                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="md:w-5 md:h-5 md:mr-2 w:-4 h-4 mr-1 fill-current text-icon-color-dark">
+                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 md:text-xl">
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark">
                         <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
                       </svg> -->
                       <%= image_tag 'icons/infusion_icon.svg', class: 'md:w-5 md:h-5 md:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark' %>
@@ -240,10 +240,10 @@
         <br>
 
         <!-- SECTION 3 RESULTS -->
-        <div class="bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4 p-2 m-0">
+        <div class="p-2 m-0 bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4">
 
           <div class="container mx-auto">
-            <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl mb:mb-4">Recommandations</h2>
+            <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl md:mb-4">Recommandations</h2>
           </div>
 
 
@@ -398,61 +398,70 @@
     <p class="text-lg text-gray-800">Explanation of how things work</p>
   </div>
 
-  <div class="bg-secondary full-width">
-    <div class="container max-w-6xl mx-auto mt-16">
-      <h2 id="section-team" class="text-3xl font-bold text-center text-gray-900">Team</h2>
-      <p class="text-lg text-gray-800">This is gonna be the presentation of the team</p>
-      <p class="text-lg text-gray-800">With various stuff</p>
-      <p class="text-lg text-gray-800">Explanation of who is the team</p>
-      <p class="text-lg text-gray-800">And why not a contact us button</p>
+  <div class="full-width bg-secondary">
+    <div class="container max-w-6xl gap-4 p-2 m-0 mx-auto mt-16 md:grid-cols-2 md:grid md:p-4 md:justify-center">
+      <div class="flex flex-col mx-4 mb-3 justify-items-start">
+        <h2 id="section-team" class="text-3xl font-bold text-center md:mb-4 my-0.5 text-gray-900 mb-2">ACT Pred, who is it?</h2>
+        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
+        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
+      </div>
+      <!-- <p class="text-lg text-gray-800">Logo designers: ...</p> -->
+      <div class="md:items-center md:flex md:justify-center md:align-items-center">
+        <a href="mailto:actpred@actpred.com" class="w-full flex justify-center md:text-xl md:px-4 md:py-2 font-bold text-white py-1.5 px-3 active:scale-95 focus:outline-none focus:shadow-outline md:hover:bg-active-color bg-icon-color-dark rounded active:bg-active-color text-base">Contact us</a>
+      </div>
+    </div>
+    <h2 class="text-3xl font-bold text-center md:text-2xl md:mb-4 my-0.5 text-gray-900 mb-2 text-base">With the scientific support of:</h2>
+    <div class="flex flex-col h-full gap-2 p-5 mx-auto align-items-center md:flex md:flex-row md:justify-center md:max-w-6xl md:gap-6">
+      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'w-96 h-auto p-4' %>
+      <%= image_tag 'UJM-LOGO-NOIR.png', alt: 'Description of the image', class: 'w-96 h-auto p-4' %>
     </div>
   </div>
 
   <div class="container mx-auto mt-2 md:mt-16 md:w-4/5">
 
     <div class="container mx-auto">
-      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl mb:mb-4">Bibliography</h2>
+      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl md:mb-4">Bibliography</h2>
     </div>
 
     <div class="ml-5 mr-5">
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2 cursor-pointer md:hover:bg-very-light-color rounded md:px-4 md:py-2 px-2 py-1 active:scale-95 rounded-2xl shadow">
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer md:text-lg md:mb-4 md:hover:bg-very-light-color md:px-4 md:py-2 active:scale-95 rounded-2xl">
             Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. févr 2022;214:106553.
           </p>
         </div>
-        <div class="md:w-3/5 w-full mx-auto hidden smooth-toggle" data-toggle-target="togglableElement">
+        <div class="hidden w-full mx-auto md:w-3/5 smooth-toggle" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34883383/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline mb:mt-4 mb:mb-4 mt-2 mb-2">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/34883383/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline md:mt-4 md:mb-4 mt-2 mb-2">
               See on PubMed
             </a>
           </div>
-          <p class="md:text-xl text-lg text-gray-800 md:mb-4 mb-2"><strong>Abstract</strong></p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Background and objective:</strong> Activated clotting time (ACT) is a point-of-care test used to monitor the effect of unfractionated heparin (UFH) during cardiopulmonary bypass (CPB). This test sometimes returns aberrant values, which can lead to the administration of an inappropriate dosing regimen. The development of a population-robust K-PD model of UFH could allow the individualisation and automation of UFH therapy during CPB.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Methods:</strong> We conducted a prospective observational study to collect ACT measurements from patients undergoing surgery using CPB. The ACT data were split into a development and validation cohort. The development cohort was used to estimate a standard and robust population K-PD model characterised by a residual error following a normal distribution and student's t-distribution. The ACT prediction performance using Bayesian estimates of individual K-PD parameters was evaluated by comparing predicted versus observed ACTs. Using estimates of the robust K-PD model, a Bayesian individualisation strategy to automate UFH administration was proposed and evaluated using Monte Carlo simulations.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Results:</strong> A total of 295 patients were included in the study, and 1561 ACTs were collected. In patients without outlier values, Bayesian estimates (based on four ACT measurements) from both standard and robust K-PD models had similar performances, with a median prediction bias close to 0 s. In patients with outlier measurements, the use of the robust K-PD model greatly improved the prediction bias and root-mean-square error (RMSE), with a mean prediction bias of 3.25 s, IQR = [-19.9; 46.03] versus -86 s IQR = [-135.7; -63.8] for the standard model. Monte Carlo simulations showed that the robust Bayesian individualisation strategy allowed the ACT to be maintained above the target using only two to three ACT measurements.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Conclusions:</strong> The use of a robust K-PD model reduced prediction bias and RMSE in patients with outlier ACT measurements. The Bayesian individualisation strategy using robust estimates of individual parameters may help automate UFH dosing regimens. Proper clinical validation is warranted before its use in daily clinical practice.</p>
+          <p class="mb-2 text-lg text-gray-800 md:text-xl md:mb-4"><strong>Abstract</strong></p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Background and objective:</strong> Activated clotting time (ACT) is a point-of-care test used to monitor the effect of unfractionated heparin (UFH) during cardiopulmonary bypass (CPB). This test sometimes returns aberrant values, which can lead to the administration of an inappropriate dosing regimen. The development of a population-robust K-PD model of UFH could allow the individualisation and automation of UFH therapy during CPB.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Methods:</strong> We conducted a prospective observational study to collect ACT measurements from patients undergoing surgery using CPB. The ACT data were split into a development and validation cohort. The development cohort was used to estimate a standard and robust population K-PD model characterised by a residual error following a normal distribution and student's t-distribution. The ACT prediction performance using Bayesian estimates of individual K-PD parameters was evaluated by comparing predicted versus observed ACTs. Using estimates of the robust K-PD model, a Bayesian individualisation strategy to automate UFH administration was proposed and evaluated using Monte Carlo simulations.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Results:</strong> A total of 295 patients were included in the study, and 1561 ACTs were collected. In patients without outlier values, Bayesian estimates (based on four ACT measurements) from both standard and robust K-PD models had similar performances, with a median prediction bias close to 0 s. In patients with outlier measurements, the use of the robust K-PD model greatly improved the prediction bias and root-mean-square error (RMSE), with a mean prediction bias of 3.25 s, IQR = [-19.9; 46.03] versus -86 s IQR = [-135.7; -63.8] for the standard model. Monte Carlo simulations showed that the robust Bayesian individualisation strategy allowed the ACT to be maintained above the target using only two to three ACT measurements.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Conclusions:</strong> The use of a robust K-PD model reduced prediction bias and RMSE in patients with outlier ACT measurements. The Bayesian individualisation strategy using robust estimates of individual parameters may help automate UFH dosing regimens. Proper clinical validation is warranted before its use in daily clinical practice.</p>
         </div>
       </div>
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2 cursor-pointer md:hover:bg-very-light-color rounded md:px-4 md:py-2 px-2 py-1 active:scale-95 rounded-2xl shadow">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. 2 janv 2024 [cité 30 juill 2024]; Disponible sur: https://link.springer.com/10.1007/s40262-023-01334-3</p>
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer md:text-lg md:mb-4 md:hover:bg-very-light-color md:px-4 md:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. 2 janv 2024 [cité 30 juill 2024]; Disponible sur: https://link.springer.com/10.1007/s40262-023-01334-3</p>
         </div>
 
-        <div class="md:w-3/5 w-full mx-auto hidden togglableElement" data-toggle-target="togglableElement">
+        <div class="hidden w-full mx-auto md:w-3/5 togglableElement" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline mb:mt-4 mb:mb-4 mt-2 mb-2">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline md:mt-4 md:mb-4 mt-2 mb-2">
               See on PubMed
             </a>
           </div>
 
-          <p class="md:text-xl text-lg text-gray-800 md:mb-4 mb-2"><strong>Abstract</strong></p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Background and objective:</strong> Unfractionated heparin (UFH) is commonly used during cardiac surgery with a cardiopulmonary bypass to prevent blood clotting. However, empirical administration of UFH leads to variable responses. Pharmacokinetic and pharmacodynamic modeling can be used to optimize UFH dosing and perform real-time individualization. In previous studies, many factors that could influence UFH pharmacokinetics/pharmacodynamics had not been taken into account such as hemodilution or the type of UFH. Few covariates were identified probably owing to a lack of statistical power. This study aims to address these limitations through a meta-analysis of individual data from two studies.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Methods:</strong> An individual patient data meta-analysis was conducted using data from two single-center prospective observational studies, where different UFH types were used for anticoagulation. A pharmacodynamic/pharmacodynamic model of UFH was developed using a non-linear mixed-effects approach. Time-varying covariates such as hemodilution and fluid infusions during a cardiopulmonary bypass were considered.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Results:</strong> Activities of UFH's anti-activated factor/anti-thrombin were best described by a two-compartment model. Unfractionated heparin clearance was influenced by body weight and the specific UFH type. Volume of distribution was influenced by body weight and pre-operative fibrinogen levels. Pharmacodynamic data followed a log-linear model, accounting for the effect of hemodilution and the pre-operative fibrinogen level. Equations were derived from the model to personalize UFH dosing based on the targeted activated clotting time level and patient covariates.</p>
-          <p class="md:text-lg text-sm text-gray-800 md:mb-4 mb-2"><strong>Conclusions:</strong> The population model effectively characterized UFH's pharmacokinetics/pharmacodynamics in cardiopulmonary bypass patients. This meta-analysis incorporated new covariates related to UFH's pharmacokinetics/pharmacodynamics, enabling personalized dosing regimens. The proposed model holds potential for individualization using a Bayesian estimation.</p>
+          <p class="mb-2 text-lg text-gray-800 md:text-xl md:mb-4"><strong>Abstract</strong></p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Background and objective:</strong> Unfractionated heparin (UFH) is commonly used during cardiac surgery with a cardiopulmonary bypass to prevent blood clotting. However, empirical administration of UFH leads to variable responses. Pharmacokinetic and pharmacodynamic modeling can be used to optimize UFH dosing and perform real-time individualization. In previous studies, many factors that could influence UFH pharmacokinetics/pharmacodynamics had not been taken into account such as hemodilution or the type of UFH. Few covariates were identified probably owing to a lack of statistical power. This study aims to address these limitations through a meta-analysis of individual data from two studies.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Methods:</strong> An individual patient data meta-analysis was conducted using data from two single-center prospective observational studies, where different UFH types were used for anticoagulation. A pharmacodynamic/pharmacodynamic model of UFH was developed using a non-linear mixed-effects approach. Time-varying covariates such as hemodilution and fluid infusions during a cardiopulmonary bypass were considered.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Results:</strong> Activities of UFH's anti-activated factor/anti-thrombin were best described by a two-compartment model. Unfractionated heparin clearance was influenced by body weight and the specific UFH type. Volume of distribution was influenced by body weight and pre-operative fibrinogen levels. Pharmacodynamic data followed a log-linear model, accounting for the effect of hemodilution and the pre-operative fibrinogen level. Equations were derived from the model to personalize UFH dosing based on the targeted activated clotting time level and patient covariates.</p>
+          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Conclusions:</strong> The population model effectively characterized UFH's pharmacokinetics/pharmacodynamics in cardiopulmonary bypass patients. This meta-analysis incorporated new covariates related to UFH's pharmacokinetics/pharmacodynamics, enabling personalized dosing regimens. The proposed model holds potential for individualization using a Bayesian estimation.</p>
         </div>
       </div>
 
