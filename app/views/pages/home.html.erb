@@ -1,7 +1,7 @@
 <div class="w-screen m-0">
 
   <!-- BANNER -->
-  <div class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+  <div id="hero-banner" class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
     <div class="gap-2 pt-2 ml-2 md:flex md:gap-6 md:ml-12 md:pt-12">
       <a href="#section-calcul" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">Heparin prediction</a>
@@ -420,6 +420,7 @@
     </div>
   </div>
 
+  <!-- BIBLIOGRAPHY SECTION -->
   <div class="container mx-auto mt-2 md:mt-16 md:w-4/5">
 
     <div class="container mx-auto">
@@ -468,21 +469,31 @@
         </div>
       </div>
 
-
     </div>
   </div>
 
+  <!-- FOOTER SECTION -->
+  <div id="section-footer" class="container bg-primary full-width h-auto mt-2 md:mt-16 mt-8" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-  <div class="bg-primary full-width">
-    <div class="container max-w-6xl mx-auto mt-16">
-      <h2 id="section-footer" class="text-3xl font-bold text-center text-gray-900">Footer</h2>
-      <p class="text-lg text-gray-800">This is gonna be the footer</p>
-      <p class="text-lg text-gray-800">With the last informations</p>
-      <p class="text-lg text-gray-800">lorem ipsum lorem lorem</p>
-      <p class="text-lg text-gray-800">lorem lorem lorem et des fois ipsum</p>
+    <div class="flex flex-row justify-center">
+      <a href="#hero-banner" class="block">
+        <div class="p-6 flex flex-col items-center gap-2">
+          <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-64 h-auto w-32' %>
+          <h2 class="md:text-2xl text-base font-bold text-white">ACT Pred</h2>
+        </div>
+      </a>
+
+      <div class="border-l-2 border-white h-auto md:my-6 my-4"></div>
+
+      <div class="md:p-8 p-4 flex md:flex-row flex-col items-center md:gap-6 gap-1">
+        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">About us</a>
+        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Contact informations</a>
+        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Privacy policy</a>
+        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Legal notices</a>
+      </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
 <style>
