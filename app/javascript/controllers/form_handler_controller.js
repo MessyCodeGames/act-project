@@ -83,6 +83,7 @@ export default class extends Controller {
       const loadingGif = document.getElementById('loading-gif');
       if (loadingGif) {
         loadingGif.style.display = 'block';
+        loadingGif.scrollIntoView({ behavior: 'smooth', block: 'end' });
       }
     }
 
@@ -220,7 +221,7 @@ export default class extends Controller {
 
       if (this.resultTarget) {
         console.log('Scrolling into view:', this.resultTarget);
-        this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        this.resultTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
         console.error('resultTarget is not defined.');
       }
