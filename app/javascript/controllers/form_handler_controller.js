@@ -83,7 +83,19 @@ export default class extends Controller {
       const loadingGif = document.getElementById('loading-gif');
       if (loadingGif) {
         loadingGif.style.display = 'block';
-        loadingGif.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+        const targetRect = loadingGif.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Check if the target is completely or partially below the viewport
+        if (targetRect.top >= viewportHeight || targetRect.bottom > viewportHeight) {
+          console.log('Scrolling into view:', loadingGif);
+          loadingGif.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        } else {
+          console.log('Target is already in view.');
+        }
+      } else {
+        console.error('loadingGif is not defined.');
       }
     }
 
