@@ -114,8 +114,8 @@ export default class extends Controller {
         bolus_total: { cellId: "new-int-total", unit: "UI", smallCellId: "new-int-total-small" },
         new_bolus_time: { cellId: "new-int-time", ciCellId: "new-int-time-ci", unit: "minutes", ci: true, smallCellId: "new-int-time-small", smallCiCellId: "new-int-time-ci-small" },
         deltaT_minutes: { cellId: "new-int-mb-delta-t-minutes", unit: "minutes", delta: true, smallCellId: "new-int-mb-delta-t-minutes-small" },
-        plot_continuous: { label: "", unit: "", special: "image" },
-        plot_intermittent: { label: "", unit: "", special: "image" }
+        plot_intermittent: { label: "", unit: "", special: "image" },
+        plot_continuous: { label: "", unit: "", special: "image" }
       };
 
       const formatContent = (config, value) => {

@@ -1,14 +1,17 @@
 <div class="w-screen m-0">
 
   <!-- BANNER -->
-
   <div class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
     <div class="gap-2 pt-2 ml-2 md:flex md:gap-6 md:ml-12 md:pt-12">
       <a href="#section-calcul" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">Heparin prediction</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
       <a href="#section-tutorial" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">Tutorial</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
       <a href="#section-team" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">Team</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
       <a href="#section-biblio" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">Bibliography</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
       <a href="#section-footer" class="text-sm text-white md:text-2xl md:hover:text-icon-color-dark">More</a>
     </div>
 
@@ -232,7 +235,7 @@
             <br>
             <div class="flex flex-col items-center justify-center">
               <%= form.submit "Calculate dosing regimen", class:"flex justify-center md:text-xl text-base bg-icon-color-dark text-white font-bold md:px-4 md:py-2 px-3 py-1.5 rounded md:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
-                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4', style:"display:none"%>
+                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-8 md:w-auto', style:"display:none"%>
                 <!-- <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" /> -->
               <% end %>
             </div>
@@ -240,7 +243,7 @@
         <br>
 
         <!-- SECTION 3 RESULTS -->
-        <div class="p-2 m-0 bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4">
+        <div class="p-3 m-0 bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4">
 
           <div class="container mx-auto">
             <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-2xl md:mb-4">Recommandations</h2>

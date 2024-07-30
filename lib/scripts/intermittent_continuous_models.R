@@ -498,8 +498,8 @@ Robust_ACT_Continuous_Intermittent <- function(ACT_Target, ACT_Values_Measured, 
 
                   deltaT_minutes = deltaT_minutes,
 
-                  plot_continuous = encoded_image_continuous_plot,
-                  plot_intermittent = encoded_image_intermittent_plot)
+                  plot_intermittent = encoded_image_intermittent_plot,
+                  plot_continuous = encoded_image_continuous_plot)
 
   return(results)
 }
