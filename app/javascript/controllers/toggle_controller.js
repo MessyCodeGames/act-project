@@ -13,8 +13,6 @@ export default class extends Controller {
 
     this.buttonActiveTarget.classList.toggle("bg-light-color");
     this.buttonActiveTarget.classList.toggle("md:hover:bg-very-light-color");
-    this.buttonActiveTarget.classList.toggle("md:hover:bg-icon-color");
-    this.buttonActiveTarget.classList.toggle("md:hover:text-white");
     this.buttonActiveTarget.classList.toggle("scale-95")
     this.buttonActiveTarget.classList.toggle("active:scale-90")
   }
