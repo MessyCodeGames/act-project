@@ -2,25 +2,25 @@
 
   <!-- BANNER -->
 
-  <div id="hero-banner" class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+  <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-2 ml-2 md:flex md:gap-6 md:ml-12 md:pt-12">
-      <a href="#section-calcul" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Heparin prediction</a>
-      <a href="#section-calcul" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Pred</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-tutorial" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Tutorial</a>
-      <a href="#section-tutorial" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Tuto</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-team" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark">Team</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-biblio" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Bibliography</a>
-      <a href="#section-biblio" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Biblio</a>
+    <div class="gap-2 pt-2 ml-2 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
+      <a href="#section-calcul" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
+      <a href="#section-calcul" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Pred</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-tutorial" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Tutorial</a>
+      <a href="#section-tutorial" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Tuto</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-team" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark">Team</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-biblio" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Bibliography</a>
+      <a href="#section-biblio" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Biblio</a>
     </div>
 
     <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
       <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-96 h-auto w-48' %>
 
-      <div class="lg:flex lg:flex-col">
+      <div class="mx-auto lg:flex lg:flex-col">
         <h1 class="text-2xl font-bold text-white lg:text-4xl">ACT Pred, what is it?</h1>
         <p class="text-base text-white lg:text-xl">Now that is some text describing what it does, and very well so. Not too much details, straight to the point, perfect quick explanation. Don't look at the logo it's a placeholder yo</p>
       </div>
@@ -30,7 +30,7 @@
 
   <!-- FORM AND RESULTS -->
 
-  <div class="container mx-auto mt-2 lg:mt-16 lg:w-4/5 bg-white lg:rounded-2xl lg:shadow-lg"> <!-- lg:max-w-8xl -->
+  <div class="container mx-auto mt-2 bg-white lg:mt-12 lg:w-4/5 lg:rounded-2xl lg:shadow-lg"> <!-- lg:max-w-8xl -->
 
     <div class="p-2 lg:p-4">
 
@@ -43,7 +43,7 @@
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#validateAndSubmitForm" } do |form| %>
               <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6">
-                <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup <em class="lg:text-sm text-xs font-normal">(required)</em></h2>
+                <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup <em class="text-xs font-normal lg:text-sm">(required)</em></h2>
                 <div id="patient-weight" class="flex items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5">
                   <%= form.label :patient_weight, class: "flex items-center lg:mr-2 mr-1" do %>
                     <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark lg:block">
@@ -84,7 +84,7 @@
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                         <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                       </svg>
-                      2 - ACT&nbsp;<em class="lg:text-sm text-xs font-normal">(required)</em>
+                      2 - ACT&nbsp;<em class="text-xs font-normal lg:text-sm">(required)</em>
                     </h2>
 
 
@@ -396,33 +396,33 @@
     </div>
   </div>
 
-  <div class="container mx-auto mt-16 container max-w-6xl">
+  <div class="container mx-auto mt-8 mb-4 lg:mb-8 lg:mt-12">
     <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
-    <p class="lg:text-base text-sm text-gray-800">This is gonna be the tutorial spot</p>
-    <p class="lg:text-base text-sm text-gray-800">With various stuff</p>
-    <p class="lg:text-base text-sm text-gray-800">Explanation of how things work</p>
+    <p class="text-sm text-gray-800 lg:text-base">This is gonna be the tutorial spot</p>
+    <p class="text-sm text-gray-800 lg:text-base">With various stuff</p>
+    <p class="text-sm text-gray-800 lg:text-base">Explanation of how things work</p>
   </div>
 
-  <div class="mx-auto mt-2 full-width bg-secondary">
-    <div class="container max-w-6xl gap-5 p-2 pb-4 m-0 mx-auto md:grid-cols-2 md:grid md:p-4 md:justify-center md:w-4/5">
-      <div class="flex flex-col mx-4 mt-4 mb-3 justify-items-start">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4 md:text-start">ACT Pred, who is it?</h2>
-        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
-        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
+  <div class="mx-auto full-width bg-secondary lg:py-4">
+    <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
+      <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
       </div>
       <!-- <p class="text-lg text-gray-800">Logo designers: ...</p> -->
-      <div class="flex items-center justify-center align-items-center">
+      <div class="flex items-center justify-center align-items-center lg:basis-1/3">
         <a href="mailto:actpred@actpred.com" class="flex justify-center text-base font-bold text-white lg:text-lg bg-icon-color-dark px-3 lg:px-4 lg:py-2 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Contact us</a>
       </div>
     </div>
-    <h2 class="mb-0 text-base font-bold text-center text-gray-900 md:text-xl">With the scientific support of:</h2>
-    <div class="flex flex-row justify-center w-full h-full gap-6 my-4">
-      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-auto md:h-28 w-36 h-auto pb-4' %>
-      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'md:w-auto md:h-28 w-36 h-auto pb-4' %>
+    <h2 class="mb-0 text-base font-bold text-center text-gray-900 lg:text-xl">With the scientific support of:</h2>
+    <div class="flex flex-row justify-center w-full h-full gap-6 mt-4">
+      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-28 w-36 h-auto pb-4' %>
+      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-28 w-36 h-auto pb-4' %>
     </div>
   </div>
 
-  <div class="container pt-2 mx-auto mt-2 lg:mt-16 lg:w-4/5">
+  <div class="container mx-auto lg:mt-12 lg:w-4/5">
 
     <div class="container mx-auto my-4">
       <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Bibliography</h2>
@@ -432,7 +432,7 @@
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer bg-white lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">
             Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. feb 2022;214:106553.
           </p>
         </div>
@@ -452,7 +452,7 @@
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer bg-white lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
         </div>
 
         <div class="hidden w-full mx-auto lg:w-3/5 togglableElement" data-toggle-target="togglableElement">
@@ -474,19 +474,19 @@
   </div>
 
   <!-- FOOTER SECTION -->
-  <div id="section-footer" class="bg-primary full-width h-auto mt-2 lg:mt-16 mt-8" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+  <div id="section-footer" class="h-auto mt-2 mt-8 bg-primary full-width lg:mt-12" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
     <div class="flex flex-row justify-center">
       <a href="#hero-banner" class="block">
-        <div class="p-6 flex flex-col items-center gap-2">
+        <div class="flex flex-col items-center gap-2 p-6">
           <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-64 h-auto w-32' %>
-          <h2 class="lg:text-2xl text-base font-bold text-white">ACT Pred</h2>
+          <h2 class="text-base font-bold text-white lg:text-2xl">ACT Pred</h2>
         </div>
       </a>
 
-      <div class="border-l-2 border-white h-auto lg:my-6 my-4"></div>
+      <div class="h-auto my-4 border-l-2 border-white lg:my-6"></div>
 
-      <div class="lg:p-8 p-4 flex lg:flex-row flex-col items-center lg:gap-6 gap-1">
+      <div class="flex flex-col items-center gap-1 p-4 lg:p-8 lg:flex-row lg:gap-6">
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">About us</a>
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Contact informations</a>
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Privacy policy</a>
