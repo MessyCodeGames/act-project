@@ -15,14 +15,14 @@ export default class extends Controller {
     row.classList.add("act-row", "lg:flex", "lg:items-center")
 
     row.innerHTML = `
-      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-          <label for="_acts_act_value_measured" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Measured ACT values</label>
-          <input placeholder="seconds" type="number" name="[acts][act_value_measured]" id="_acts_act_value_measured" min="1" max="1000" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+          <label for="_acts_act_value_measured" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Measured ACT values</label>
+          <input placeholder="seconds" type="number" name="[acts][act_value_measured]" required="required" id="_acts_act_value_measured" min="1" max="1000" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-          <label for="_acts_act_measurement_time" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Time</label>
-          <input type="datetime-local" data-form-handler-target="actDatetimeInput" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+          <label for="_acts_act_measurement_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Time</label>
+          <input type="datetime-local" data-form-handler-target="actDatetimeInput" required="required" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
       </div>
 
@@ -54,13 +54,13 @@ export default class extends Controller {
     const row = document.createElement("div")
     row.classList.add("bolus-row", "lg:flex", "lg:items-center")
     row.innerHTML = `
-      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-          <label for="_heparins_bolus_given" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Heparin bolus injection</label>
+          <label for="_heparins_bolus_given" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Heparin bolus injection</label>
           <input placeholder="Total UI per shot" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-          <label for="_heparins_bolus_time" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Time</label>
+          <label for="_heparins_bolus_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Time</label>
           <input type="datetime-local" data-form-handler-target="bolusDatetimeInput" name="[heparins][bolus_time]" id="_heparins_bolus_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
       </div>
@@ -93,17 +93,17 @@ export default class extends Controller {
     const row = document.createElement("div")
     row.classList.add("infusion-row", "lg:flex", "lg:items-center")
     row.innerHTML = `
-      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
+      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_rate_given" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Heparin infusion</label>
+        <label for="_heparins_infusion_rate_given" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Heparin infusion</label>
         <input placeholder="IR (UI per hour)" type="number" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_duration" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Duration</label>
+        <label for="_heparins_infusion_duration" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Duration</label>
         <input placeholder="minutes" type="number" name="[heparins][infusion_duration]" id="_heparins_infusion_duration" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
-        <label for="_heparins_infusion_time" class="lg:text-lg text-sm flex items-center lg:mr-2 mr-1">Start time</label>
+        <label for="_heparins_infusion_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Start time</label>
         <input type="datetime-local" data-form-handler-target="infusionDatetimeInput" name="[heparins][infusion_time]" id="_heparins_infusion_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
       </div>
