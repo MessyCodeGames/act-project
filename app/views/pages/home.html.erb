@@ -1,24 +1,24 @@
 <div class="w-screen m-0">
 
   <!-- BANNER -->
-  <div id="hero-banner" class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+  <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-2 ml-2 md:flex md:gap-6 md:ml-12 md:pt-12">
-      <a href="#section-calcul" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Heparin prediction</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-tutorial" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Tutorial</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-team" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Team</a>
-      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
-      <a href="#section-biblio" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Bibliography</a>
+    <div class="gap-2 pt-2 ml-2 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
+      <a href="#section-calcul" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Heparin prediction</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-tutorial" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Tutorial</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-team" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Team</a>
+      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
+      <a href="#section-biblio" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Bibliography</a>
     </div>
 
-    <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto md:flex-row md:justify-center md:max-w-6xl md:gap-6">
-      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-96 h-auto w-48' %>
+    <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
+      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-96 h-auto w-48' %>
 
-      <div class="md:flex md:flex-col">
-        <h1 class="text-2xl font-bold text-white md:text-4xl">ACT Pred, what is it?</h1>
-        <p class="text-base text-white md:text-xl">Now that is some text describing what it does, and very well so. Not too much details, straight to the point, perfect quick explanation. Don't look at the logo it's a placeholder yo</p>
+      <div class="lg:flex lg:flex-col">
+        <h1 class="text-2xl font-bold text-white lg:text-4xl">ACT Pred, what is it?</h1>
+        <p class="text-base text-white lg:text-xl">Now that is some text describing what it does, and very well so. Not too much details, straight to the point, perfect quick explanation. Don't look at the logo it's a placeholder yo</p>
       </div>
     </div>
 
@@ -26,91 +26,91 @@
 
   <!-- FORM AND RESULTS -->
 
-  <div class="container mx-auto mt-2 md:mt-16 md:w-4/5"> <!-- md:max-w-8xl -->
+  <div class="container mx-auto mt-2 lg:mt-16 lg:w-4/5"> <!-- lg:max-w-8xl -->
 
-    <div class="p-2 md:rounded-2xl md:shadow-lg md:p-4">
+    <div class="p-2 lg:rounded-2xl lg:shadow-lg lg:p-4">
 
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
-        <h2 id="section-calcul" class="text-base font-bold text-center text-gray-900 md:text-xl">Heparin prediction form</h2>
+        <h2 id="section-calcul" class="text-base font-bold text-center text-gray-900 lg:text-xl">Heparin prediction form</h2>
       </div>
 
       <div data-controller="form-handler">
         <!-- Form -->
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#validateAndSubmitForm" } do |form| %>
-              <div class="flex flex-col p-2 pt-4 pb-4 md:p-4 md:pt-6 md:pb-6">
-                <h2 class="text-sm font-semibold text-left text-gray-800 md:text-lg">1 - Setup</h2>
-                <div id="patient-weight" class="flex items-center md:gap-2 md:my-2 md:text-base text-sm gap-0.5 my-0.5">
-                  <%= form.label :patient_weight, class: "flex items-center md:mr-2 mr-1" do %>
-                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark md:block">
+              <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6">
+                <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup <em class="lg:text-sm text-xs font-normal">(required)</em></h2>
+                <div id="patient-weight" class="flex items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5">
+                  <%= form.label :patient_weight, class: "flex items-center lg:mr-2 mr-1" do %>
+                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark lg:block">
                       <path d="M128 176a128 128 0 1 1 256 0 128 128 0 1 1 -256 0zM391.8 64C359.5 24.9 310.7 0 256 0S152.5 24.9 120.2 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-56.2 0zM296 224c0-10.6-4.1-20.2-10.9-27.4l33.6-78.3c3.5-8.1-.3-17.5-8.4-21s-17.5 .3-21 8.4L255.7 184c-22 .1-39.7 18-39.7 40c0 22.1 17.9 40 40 40s40-17.9 40-40z"/>
                     </svg>') %>
                     Patient weight
                   <% end %>
-                  <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs", min: "1", max: "300", required: true %>
+                  <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", min: "1", max: "300", required: true %>
                 </div>
 
-                <div id="act-target" class="flex items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5">
-                  <%= form.label :act_target, class: "flex items-center md:mr-2 mr-1" do %>
-                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark md:block">
+                <div id="act-target" class="flex items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5">
+                  <%= form.label :act_target, class: "flex items-center lg:mr-2 mr-1" do %>
+                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark lg:block">
                       <path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
                     </svg>') %>
                     Target ACT (seconds)
                   <% end %>
-                  <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs", required: true %>
+                  <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", required: true %>
                 </div>
 
-                <div id="times-between-bolus" class="flex items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5">
-                  <%= form.label :delta_t, class: "flex items-center md:mr-2 mr-1" do %>
-                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark md:block">
+                <div id="times-between-bolus" class="flex items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5">
+                  <%= form.label :delta_t, class: "flex items-center lg:mr-2 mr-1" do %>
+                    <%= raw('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="hidden h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark lg:block">
                       <path d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/>
                     </svg>') %>
                     Time between bolus injections (minutes)
                   <% end %>
-                  <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs", required: true %>
+                  <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", required: true %>
                 </div>
               </div>
               <div data-controller="addable moveable">
 
                 <!-- ACT measurement part -->
-                <div id="act-measured" class="flex flex-col p-2 pt-4 pb-4 bg-secondary rounded-2xl md:p-4 md:pt-6 md:pb-6">
+                <div id="act-measured" class="flex flex-col p-4 -mx-2 pt-4 pb-4 bg-[#f0fbe7] lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
                   <div data-addable-target="actValues" data-controller="deletable">
 
-                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 md:text-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark">
+                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                         <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                       </svg>
-                      2 - ACT
+                      2 - ACT&nbsp;<em class="lg:text-sm text-xs font-normal">(required)</em>
                     </h2>
 
 
-                    <div class="w-full act-row md:flex md:items-center">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
+                    <div class="w-full act-row lg:flex lg:items-center">
+                      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :acts do |acts_form| %>
                           <div class="flex flex-row w-full">
-                            <%= acts_form.label :act_value_measured, "Measured ACT values", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= acts_form.label :act_value_measured, "Measured ACT values", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
-                            <%= acts_form.label :act_measurement_time, "Time", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= acts_form.datetime_field :act_measurement_time, required: true, data: { form_handler_target: "actDatetimeInput" }, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= acts_form.label :act_measurement_time, "Time", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= acts_form.datetime_field :act_measurement_time, required: true, data: { form_handler_target: "actDatetimeInput" }, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                         <% end %>
                       </div>
 
-                      <div class="items-center justify-center md:flex">
+                      <div class="items-center justify-center lg:flex">
                         <button data-action="click->moveable#actMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#actMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteActValues">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
@@ -119,48 +119,48 @@
                   </div>
 
                   <div class="flex">
-                    <button data-action="click->addable#addActValues"  class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
+                    <button data-action="click->addable#addActValues"  class="lg:px-3 lg:py-1 lg:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
                   </div>
                 </div>
 
                 <!-- HEPARIN BOLUS INJECTION PART -->
-                <div id="bolus-injection"  class="flex flex-col p-2 md:p-4">
+                <div id="bolus-injection"  class="flex flex-col p-2 lg:p-4">
                   <div data-addable-target="heparinsValues" data-controller="deletable">
                   <br>
-                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 md:text-xl">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark">
+                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                         <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
                       </svg>
                       3 - Heparin bolus injections
                     </h2>
 
-                    <div class="w-full bolus-row md:flex md:items-center">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
+                    <div class="w-full bolus-row lg:flex lg:items-center">
+                      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :heparins do |heparins_form| %>
                           <div class="flex flex-row w-full">
-                            <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
-                            <%= heparins_form.label :bolus_time, "Time", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.datetime_field :bolus_time, data: { form_handler_target: "bolusDatetimeInput" }, class:"w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.label :bolus_time, "Time", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= heparins_form.datetime_field :bolus_time, data: { form_handler_target: "bolusDatetimeInput" }, class:"w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                         <% end %>
                       </div>
 
-                      <div class="items-center justify-center md:flex">
+                      <div class="items-center justify-center lg:flex">
                         <button data-action="click->moveable#bolusMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#bolusMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteBolus">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
@@ -169,54 +169,54 @@
                   </div>
 
                   <div class="flex">
-                    <button data-action="click->addable#addBolus"  class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add a bolus</button>
+                    <button data-action="click->addable#addBolus"  class="lg:px-3 lg:py-1 lg:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add a bolus</button>
                   </div>
                 </div>
 
 
                 <!-- HEPARIN INFUSION PART -->
-                <div id="heparins-infusions" class="flex flex-col p-2 md:p-4">
+                <div id="heparins-infusions" class="flex flex-col p-2 lg:p-4">
                   <div data-addable-target="heparinsInfusions" data-controller="deletable">
                     <br>
-                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 md:text-xl">
-                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current md:w-5 md:h-5 md:mr-2 w:-4 text-icon-color-dark">
+                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-xl">
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                         <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
                       </svg> -->
-                      <%= image_tag 'icons/infusion_icon.svg', class: 'md:w-5 md:h-5 md:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark' %>
+                      <%= image_tag 'icons/infusion_icon.svg', class: 'lg:w-5 lg:h-5 lg:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark' %>
                       4 - Heparin infusions
                     </h2>
 
-                    <div class="w-full md:flex md:items-center infusion-row">
-                      <div class="flex md:flex-row flex-col md:items-center md:gap-2 md:my-2 md:text-lg text-sm gap-0.5 my-0.5 w-full">
+                    <div class="w-full lg:flex lg:items-center infusion-row">
+                      <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-lg text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :heparins do |heparins_form| %>
                           <div class="flex flex-row w-full">
-                            <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :infusion_rate_given, placeholder: "IR (UI per hour)", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= heparins_form.number_field :infusion_rate_given, placeholder: "IR (UI per hour)", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
-                            <%= heparins_form.label :infusion_duration, "Duration", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.label :infusion_duration, "Duration", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
-                            <%= heparins_form.label :infusion_time, "Start time", class:"md:text-lg text-sm flex items-center md:mr-2 mr-1" %>
-                            <%= heparins_form.datetime_field :infusion_time, data: { form_handler_target: "infusionDatetimeInput" }, class: "w-full max-w-full md:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark md:p-2 p-1 focus:border-icon-color-dark data-hj-allow md:text-base text-xs" %>
+                            <%= heparins_form.label :infusion_time, "Start time", class:"lg:text-lg text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= heparins_form.datetime_field :infusion_time, data: { form_handler_target: "infusionDatetimeInput" }, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                         <% end %>
                       </div>
 
-                      <div class="items-center justify-center md:flex">
+                      <div class="items-center justify-center lg:flex">
                         <button data-action="click->moveable#infusionMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->moveable#infusionMoveDown">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteInfusion">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current md:w-8 md:h-8 md:ml-2 text-icon-color-dark md:hover:text-active-color active:scale-95">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
                           </svg>
                         </button>
@@ -225,15 +225,15 @@
                   </div>
 
                 <div class="flex">
-                  <button data-action="click->addable#addInfusion" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
+                  <button data-action="click->addable#addInfusion" class="lg:px-3 lg:py-1 lg:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
                 </div>
               </div>
             </div>
 
             <br>
             <div class="flex flex-col items-center justify-center">
-              <%= form.submit "Calculate dosing regimen", class:"flex justify-center md:text-lg text-base bg-icon-color-dark text-white font-bold md:px-4 md:py-2 px-3 py-1.5 rounded md:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
-                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-8 md:w-auto', style:"display:none"%>
+              <%= form.submit "Calculate dosing regimen", class:"flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
+                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-8 lg:w-auto', style:"display:none"%>
                 <!-- <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" /> -->
               <% end %>
             </div>
@@ -241,72 +241,72 @@
         <br>
 
         <!-- SECTION 3 RESULTS -->
-        <div class="p-3 m-0 bg-secondary adaptative-width rounded-2xl md:shadow-lg md:p-4">
+        <div class="p-3 m-0 bg-secondary adaptative-width rounded-2xl lg:shadow-lg lg:p-4">
 
           <div class="container mx-auto">
-            <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4" data-form-handler-target="result">Recommandations</h2>
+            <h2 class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4" data-form-handler-target="result">Recommandations</h2>
           </div>
 
 
           <div class="mx-auto overflow-x-auto shadow-md rounded-2xl">
-            <table id="result-table" class="hidden w-full text-center text-gray-500 md:table rounded-2xl">
+            <table id="result-table" class="hidden w-full text-center text-gray-500 lg:table rounded-2xl">
               <thead class="text-gray-700 bg-light-color">
                 <tr>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4"></th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" colspan="2">Intermittent strategy</th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" colspan="2">Continuous strategy</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4"></th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" colspan="2">Intermittent strategy</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" colspan="2">Continuous strategy</th>
                 </tr>
                 <tr>
                   <th scope="col"></th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4">Value</th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4">95% CI</th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4">Value</th>
-                  <th scope="col" class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4">95% CI</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4">Value</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4">95% CI</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4">Value</th>
+                  <th scope="col" class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4">95% CI</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap">New loading dose</th>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-ld"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-ld-ci"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-ld"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-ld-ci"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap">New loading dose</th>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-ld"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-ld-ci"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-ld"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-ld-ci"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap " id="new-int-mb-delta-t-minutes">New maintenance bolus</th>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-mb"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-mb-ci"></td>
-                  <td rowspan="2" colspan="2" class="px-2 py-1 bg-gray-100 md:px-6 md:py-4"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap " id="new-int-mb-delta-t-minutes">New maintenance bolus</th>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-mb"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-mb-ci"></td>
+                  <td rowspan="2" colspan="2" class="px-2 py-1 bg-gray-100 lg:px-6 lg:py-4"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap">Total (LD + MB)</th>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" colspan="2" id="new-int-total"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap">Total (LD + MB)</th>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" colspan="2" id="new-int-total"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap">New infusion rate</th>
-                  <td rowspan="2" colspan="2" class="px-2 py-1 bg-gray-100 md:px-6 md:py-4"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-rate"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-rate-ci"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap">New infusion rate</th>
+                  <td rowspan="2" colspan="2" class="px-2 py-1 bg-gray-100 lg:px-6 lg:py-4"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-rate"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-rate-ci"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-20 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap">New infusion rate/500</th>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" colspan="2" id="new-inf-rate-500"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap">New infusion rate/500</th>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" colspan="2" id="new-inf-rate-500"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
-                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 md:text-lg md:px-6 md:py-4 whitespace-nowrap">Injection (bolus or IR) in</th>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-time"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-int-time-ci"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-time"></td>
-                  <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" id="new-inf-time-ci"></td>
+                  <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 lg:text-lg lg:px-6 lg:py-4 whitespace-nowrap">Injection (bolus or IR) in</th>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-time"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-int-time-ci"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-time"></td>
+                  <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" id="new-inf-time-ci"></td>
                 </tr>
                 <tr class="bg-white border-b border-gray-200">
-                  <td colspan="5" class="px-2 py-1 text-xs text-left md:text-base md:px-6 md:py-4"><em>CI: confidence interval, LD: loading dose, MB: maintenance bolus, IR: infusion rate</em></td>
+                  <td colspan="5" class="px-2 py-1 text-xs text-left lg:text-base lg:px-6 lg:py-4"><em>CI: confidence interval, LD: loading dose, MB: maintenance bolus, IR: infusion rate</em></td>
                 </tr>
               </tbody>
             </table>
 
             <!-- Split tables for small screens -->
-            <div class="block md:hidden">
+            <div class="block lg:hidden">
               <!-- First part of the table -->
               <table class="w-full mb-4 text-center text-gray-500">
                 <thead class="text-gray-700 bg-light-color">
@@ -369,7 +369,7 @@
                   </tr>
                   <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
                     <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 whitespace-nowrap">New IR/500</th>
-                    <td class="px-2 py-1 text-sm md:text-lg md:px-6 md:py-4" colspan="2" id="new-inf-rate-500-small"></td>
+                    <td class="px-2 py-1 text-sm lg:text-lg lg:px-6 lg:py-4" colspan="2" id="new-inf-rate-500-small"></td>
                   </tr>
                   <tr class="bg-white border-b border-gray-200 hover:bg-very-light-color">
                     <th scope="row" class="px-2 py-1 text-sm text-left text-gray-900 whitespace-nowrap">Injection in</th>
@@ -384,85 +384,85 @@
             </div>
           </div>
 
-          <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-2 plot-container md:flex-row md:mt-4 md:gap-2"></div>
+          <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-2 plot-container lg:flex-row lg:mt-4 lg:gap-2"></div>
           <br>
-          <div><button id="print-to-pdf" style="display:none" class="flex justify-center md:text-xl text-base bg-icon-color-dark text-white font-bold md:px-4 md:py-2 px-3 py-1.5 rounded md:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Print to PDF</button></div>
+          <div><button id="print-to-pdf" style="display:none" class="flex justify-center lg:text-xl text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Print to PDF</button></div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="container mx-auto mt-16">
-    <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4">Tutorial</h2>
+    <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
     <p class="text-2xl text-gray-800">This is gonna be the tutorial spot</p>
     <p class="text-lg text-gray-800">With various stuff</p>
     <p class="text-lg text-gray-800">Explanation of how things work</p>
   </div>
 
   <div class="pt-2 mx-auto mt-2 full-width bg-secondary">
-    <div class="container max-w-6xl gap-5 p-2 m-0 mx-auto md:grid-cols-2 md:grid md:p-4 md:justify-center">
+    <div class="container max-w-6xl gap-5 p-2 m-0 mx-auto lg:grid-cols-2 lg:grid lg:p-4 lg:justify-center">
       <div class="flex flex-col mx-4 my-4 mb-3 justify-items-start">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4">ACT Pred, who is it?</h2>
-        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
-        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">ACT Pred, who is it?</h2>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
       </div>
       <!-- <p class="text-lg text-gray-800">Logo designers: ...</p> -->
       <div class="flex items-center justify-center align-items-center">
-        <a href="mailto:actpred@actpred.com" class="flex justify-center text-base font-bold text-white md:text-lg bg-icon-color-dark px-3 md:px-4 md:py-2 py-1.5 rounded md:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Contact us</a>
+        <a href="mailto:actpred@actpred.com" class="flex justify-center text-base font-bold text-white lg:text-lg bg-icon-color-dark px-3 lg:px-4 lg:py-2 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Contact us</a>
       </div>
     </div>
-    <h2 class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4">With the scientific support of:</h2>
-    <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto md:flex md:flex-row md:justify-center md:max-w-6xl md:gap-6">
-      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-auto md:h-40 w-96 h-auto p-4' %>
-      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'md:w-auto md:h-40 w-96 h-auto p-4' %>
+    <h2 class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">With the scientific support of:</h2>
+    <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
+      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-40 w-96 h-auto p-4' %>
+      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-40 w-96 h-auto p-4' %>
     </div>
   </div>
 
-  <div class="container pt-2 mx-auto mt-2 md:mt-16 md:w-4/5">
+  <div class="container pt-2 mx-auto mt-2 lg:mt-16 lg:w-4/5">
 
     <div class="container mx-auto my-4">
-      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4">Bibliography</h2>
+      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Bibliography</h2>
     </div>
 
     <div class="ml-5 mr-5">
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer md:text-lg md:mb-4 md:hover:bg-very-light-color md:px-4 md:py-2 active:scale-95 rounded-2xl">
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer lg:text-lg lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">
             Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. févr 2022;214:106553.
           </p>
         </div>
-        <div class="hidden w-full mx-auto md:w-3/5 smooth-toggle" data-toggle-target="togglableElement">
+        <div class="hidden w-full mx-auto lg:w-3/5 smooth-toggle" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/34883383/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline md:mt-4 md:mb-4 mt-2 mb-2">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/34883383/" target="_blank" rel="noopener noreferrer" class="lg:px-3 lg:py-1 lg:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 lg:mb-4 mt-2 mb-2">
               See on PubMed
             </a>
           </div>
-          <p class="mb-2 text-lg text-gray-800 md:text-xl md:mb-4"><strong>Abstract</strong></p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Background and objective:</strong> Activated clotting time (ACT) is a point-of-care test used to monitor the effect of unfractionated heparin (UFH) during cardiopulmonary bypass (CPB). This test sometimes returns aberrant values, which can lead to the administration of an inappropriate dosing regimen. The development of a population-robust K-PD model of UFH could allow the individualisation and automation of UFH therapy during CPB.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Methods:</strong> We conducted a prospective observational study to collect ACT measurements from patients undergoing surgery using CPB. The ACT data were split into a development and validation cohort. The development cohort was used to estimate a standard and robust population K-PD model characterised by a residual error following a normal distribution and student's t-distribution. The ACT prediction performance using Bayesian estimates of individual K-PD parameters was evaluated by comparing predicted versus observed ACTs. Using estimates of the robust K-PD model, a Bayesian individualisation strategy to automate UFH administration was proposed and evaluated using Monte Carlo simulations.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Results:</strong> A total of 295 patients were included in the study, and 1561 ACTs were collected. In patients without outlier values, Bayesian estimates (based on four ACT measurements) from both standard and robust K-PD models had similar performances, with a median prediction bias close to 0 s. In patients with outlier measurements, the use of the robust K-PD model greatly improved the prediction bias and root-mean-square error (RMSE), with a mean prediction bias of 3.25 s, IQR = [-19.9; 46.03] versus -86 s IQR = [-135.7; -63.8] for the standard model. Monte Carlo simulations showed that the robust Bayesian individualisation strategy allowed the ACT to be maintained above the target using only two to three ACT measurements.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Conclusions:</strong> The use of a robust K-PD model reduced prediction bias and RMSE in patients with outlier ACT measurements. The Bayesian individualisation strategy using robust estimates of individual parameters may help automate UFH dosing regimens. Proper clinical validation is warranted before its use in daily clinical practice.</p>
+          <p class="mb-2 text-lg text-gray-800 lg:text-xl lg:mb-4"><strong>Abstract</strong></p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Background and objective:</strong> Activated clotting time (ACT) is a point-of-care test used to monitor the effect of unfractionated heparin (UFH) during cardiopulmonary bypass (CPB). This test sometimes returns aberrant values, which can lead to the administration of an inappropriate dosing regimen. The development of a population-robust K-PD model of UFH could allow the individualisation and automation of UFH therapy during CPB.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Methods:</strong> We conducted a prospective observational study to collect ACT measurements from patients undergoing surgery using CPB. The ACT data were split into a development and validation cohort. The development cohort was used to estimate a standard and robust population K-PD model characterised by a residual error following a normal distribution and student's t-distribution. The ACT prediction performance using Bayesian estimates of individual K-PD parameters was evaluated by comparing predicted versus observed ACTs. Using estimates of the robust K-PD model, a Bayesian individualisation strategy to automate UFH administration was proposed and evaluated using Monte Carlo simulations.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Results:</strong> A total of 295 patients were included in the study, and 1561 ACTs were collected. In patients without outlier values, Bayesian estimates (based on four ACT measurements) from both standard and robust K-PD models had similar performances, with a median prediction bias close to 0 s. In patients with outlier measurements, the use of the robust K-PD model greatly improved the prediction bias and root-mean-square error (RMSE), with a mean prediction bias of 3.25 s, IQR = [-19.9; 46.03] versus -86 s IQR = [-135.7; -63.8] for the standard model. Monte Carlo simulations showed that the robust Bayesian individualisation strategy allowed the ACT to be maintained above the target using only two to three ACT measurements.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Conclusions:</strong> The use of a robust K-PD model reduced prediction bias and RMSE in patients with outlier ACT measurements. The Bayesian individualisation strategy using robust estimates of individual parameters may help automate UFH dosing regimens. Proper clinical validation is warranted before its use in daily clinical practice.</p>
         </div>
       </div>
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer md:text-lg md:mb-4 md:hover:bg-very-light-color md:px-4 md:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. 2 janv 2024 [cité 30 juill 2024]; Disponible sur: https://link.springer.com/10.1007/s40262-023-01334-3</p>
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 rounded shadow cursor-pointer lg:text-lg lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
         </div>
 
-        <div class="hidden w-full mx-auto md:w-3/5 togglableElement" data-toggle-target="togglableElement">
+        <div class="hidden w-full mx-auto lg:w-3/5 togglableElement" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="md:px-3 md:py-1 md:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded md:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline md:mt-4 md:mb-4 mt-2 mb-2">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="lg:px-3 lg:py-1 lg:text-lg px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 lg:mb-4 mt-2 mb-2">
               See on PubMed
             </a>
           </div>
 
-          <p class="mb-2 text-lg text-gray-800 md:text-xl md:mb-4"><strong>Abstract</strong></p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Background and objective:</strong> Unfractionated heparin (UFH) is commonly used during cardiac surgery with a cardiopulmonary bypass to prevent blood clotting. However, empirical administration of UFH leads to variable responses. Pharmacokinetic and pharmacodynamic modeling can be used to optimize UFH dosing and perform real-time individualization. In previous studies, many factors that could influence UFH pharmacokinetics/pharmacodynamics had not been taken into account such as hemodilution or the type of UFH. Few covariates were identified probably owing to a lack of statistical power. This study aims to address these limitations through a meta-analysis of individual data from two studies.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Methods:</strong> An individual patient data meta-analysis was conducted using data from two single-center prospective observational studies, where different UFH types were used for anticoagulation. A pharmacodynamic/pharmacodynamic model of UFH was developed using a non-linear mixed-effects approach. Time-varying covariates such as hemodilution and fluid infusions during a cardiopulmonary bypass were considered.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Results:</strong> Activities of UFH's anti-activated factor/anti-thrombin were best described by a two-compartment model. Unfractionated heparin clearance was influenced by body weight and the specific UFH type. Volume of distribution was influenced by body weight and pre-operative fibrinogen levels. Pharmacodynamic data followed a log-linear model, accounting for the effect of hemodilution and the pre-operative fibrinogen level. Equations were derived from the model to personalize UFH dosing based on the targeted activated clotting time level and patient covariates.</p>
-          <p class="mb-2 text-sm text-gray-800 md:text-lg md:mb-4"><strong>Conclusions:</strong> The population model effectively characterized UFH's pharmacokinetics/pharmacodynamics in cardiopulmonary bypass patients. This meta-analysis incorporated new covariates related to UFH's pharmacokinetics/pharmacodynamics, enabling personalized dosing regimens. The proposed model holds potential for individualization using a Bayesian estimation.</p>
+          <p class="mb-2 text-lg text-gray-800 lg:text-xl lg:mb-4"><strong>Abstract</strong></p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Background and objective:</strong> Unfractionated heparin (UFH) is commonly used during cardiac surgery with a cardiopulmonary bypass to prevent blood clotting. However, empirical administration of UFH leads to variable responses. Pharmacokinetic and pharmacodynamic modeling can be used to optimize UFH dosing and perform real-time individualization. In previous studies, many factors that could influence UFH pharmacokinetics/pharmacodynamics had not been taken into account such as hemodilution or the type of UFH. Few covariates were identified probably owing to a lack of statistical power. This study aims to address these limitations through a meta-analysis of individual data from two studies.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Methods:</strong> An individual patient data meta-analysis was conducted using data from two single-center prospective observational studies, where different UFH types were used for anticoagulation. A pharmacodynamic/pharmacodynamic model of UFH was developed using a non-linear mixed-effects approach. Time-varying covariates such as hemodilution and fluid infusions during a cardiopulmonary bypass were considered.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Results:</strong> Activities of UFH's anti-activated factor/anti-thrombin were best described by a two-compartment model. Unfractionated heparin clearance was influenced by body weight and the specific UFH type. Volume of distribution was influenced by body weight and pre-operative fibrinogen levels. Pharmacodynamic data followed a log-linear model, accounting for the effect of hemodilution and the pre-operative fibrinogen level. Equations were derived from the model to personalize UFH dosing based on the targeted activated clotting time level and patient covariates.</p>
+          <p class="mb-2 text-sm text-gray-800 lg:text-lg lg:mb-4"><strong>Conclusions:</strong> The population model effectively characterized UFH's pharmacokinetics/pharmacodynamics in cardiopulmonary bypass patients. This meta-analysis incorporated new covariates related to UFH's pharmacokinetics/pharmacodynamics, enabling personalized dosing regimens. The proposed model holds potential for individualization using a Bayesian estimation.</p>
         </div>
       </div>
 
@@ -470,23 +470,24 @@
   </div>
 
   <!-- FOOTER SECTION -->
-  <div id="section-footer" class="container bg-primary full-width h-auto mt-2 md:mt-16 mt-8" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+
+  <div id="section-footer" class="bg-primary full-width h-auto mt-2 lg:mt-16 mt-8" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
     <div class="flex flex-row justify-center">
       <a href="#hero-banner" class="block">
         <div class="p-6 flex flex-col items-center gap-2">
-          <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-64 h-auto w-32' %>
-          <h2 class="md:text-2xl text-base font-bold text-white">ACT Pred</h2>
+          <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-64 h-auto w-32' %>
+          <h2 class="lg:text-2xl text-base font-bold text-white">ACT Pred</h2>
         </div>
       </a>
 
-      <div class="border-l-2 border-white h-auto md:my-6 my-4"></div>
+      <div class="border-l-2 border-white h-auto lg:my-6 my-4"></div>
 
-      <div class="md:p-8 p-4 flex md:flex-row flex-col items-center md:gap-6 gap-1">
-        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">About us</a>
-        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Contact informations</a>
-        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Privacy policy</a>
-        <a href="" class="text-sm text-white md:text-xl md:hover:text-icon-color-dark">Legal notices</a>
+      <div class="lg:p-8 p-4 flex lg:flex-row flex-col items-center lg:gap-6 gap-1">
+        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">About us</a>
+        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Contact informations</a>
+        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Privacy policy</a>
+        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Legal notices</a>
       </div>
     </div>
 
