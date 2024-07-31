@@ -167,7 +167,7 @@ export default class extends Controller {
         if (config && config.special === "image") {
           const img = document.createElement('img');
           img.src = value;
-          img.className = "w-full h-auto max-w-full shadow-md md:w-1/2 rounded-2xl";
+          img.className = "w-full h-auto max-w-full shadow-md lg:w-1/2 rounded-2xl";
           if (imageContainer) {
             imageContainer.appendChild(img);
           }
