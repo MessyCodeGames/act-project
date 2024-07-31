@@ -1,16 +1,20 @@
 <div class="w-screen m-0">
 
   <!-- BANNER -->
-  <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-2 ml-2 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
-      <a href="#section-calcul" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Heparin prediction</a>
-      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
-      <a href="#section-tutorial" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Tutorial</a>
-      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
-      <a href="#section-team" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Team</a>
-      <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
-      <a href="#section-biblio" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Bibliography</a>
+  <div id="hero-banner" class="h-auto md:h-96 bg-primary md:flex md:flex-col md:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+
+    <div class="gap-2 pt-2 ml-2 md:flex md:gap-6 md:ml-12 md:pt-12">
+      <a href="#section-calcul" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Heparin prediction</a>
+      <a href="#section-calcul" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Pred</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
+      <a href="#section-tutorial" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Tutorial</a>
+      <a href="#section-tutorial" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Tuto</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
+      <a href="#section-team" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark">Team</a>
+      <span class="text-sm text-white md:text-2xl md:hidden"> | </span>
+      <a href="#section-biblio" class="hidden text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:block">Bibliography</a>
+      <a href="#section-biblio" class="text-sm font-bold text-white md:text-xl md:hover:text-icon-color-dark md:hidden">Biblio</a>
     </div>
 
     <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
@@ -399,22 +403,22 @@
     <p class="text-lg text-gray-800">Explanation of how things work</p>
   </div>
 
-  <div class="pt-2 mx-auto mt-2 full-width bg-secondary">
-    <div class="container max-w-6xl gap-5 p-2 m-0 mx-auto lg:grid-cols-2 lg:grid lg:p-4 lg:justify-center">
-      <div class="flex flex-col mx-4 my-4 mb-3 justify-items-start">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">ACT Pred, who is it?</h2>
-        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
-        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
+  <div class="mx-auto mt-2 full-width bg-secondary">
+    <div class="container max-w-6xl gap-5 p-2 pb-4 m-0 mx-auto md:grid-cols-2 md:grid md:p-4 md:justify-center md:w-4/5">
+      <div class="flex flex-col mx-4 mt-4 mb-3 justify-items-start">
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 md:text-xl md:mb-4 md:text-start">ACT Pred, who is it?</h2>
+        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
+        <p class="text-sm text-base text-gray-800 md:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
       </div>
       <!-- <p class="text-lg text-gray-800">Logo designers: ...</p> -->
       <div class="flex items-center justify-center align-items-center">
         <a href="mailto:actpred@actpred.com" class="flex justify-center text-base font-bold text-white lg:text-lg bg-icon-color-dark px-3 lg:px-4 lg:py-2 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Contact us</a>
       </div>
     </div>
-    <h2 class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">With the scientific support of:</h2>
-    <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
-      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-40 w-96 h-auto p-4' %>
-      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-40 w-96 h-auto p-4' %>
+    <h2 class="mb-0 text-base font-bold text-center text-gray-900 md:text-xl">With the scientific support of:</h2>
+    <div class="flex flex-row justify-center w-full h-full gap-6 my-4">
+      <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'md:w-auto md:h-28 w-36 h-auto pb-4' %>
+      <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'md:w-auto md:h-28 w-36 h-auto pb-4' %>
     </div>
   </div>
 
@@ -470,7 +474,6 @@
   </div>
 
   <!-- FOOTER SECTION -->
-
   <div id="section-footer" class="bg-primary full-width h-auto mt-2 lg:mt-16 mt-8" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
     <div class="flex flex-row justify-center">
@@ -487,7 +490,7 @@
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">About us</a>
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Contact informations</a>
         <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Privacy policy</a>
-        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Legal notices</a>
+        <a href="" class="text-sm text-white lg:text-xl lg:hover:text-icon-color-dark">Legal notices</a> 
       </div>
     </div>
 
