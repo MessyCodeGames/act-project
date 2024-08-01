@@ -91,16 +91,14 @@
 
                 <!-- ACT measurement part -->
                 <div id="act-measured" class="flex flex-col p-4 -mx-2 pt-4 pb-4 bg-[#f0fbe7] lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
+                  <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
+                      <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
+                    </svg>
+                    2 - ACT&nbsp;<em class="text-xs font-normal lg:text-sm">(required)</em>
+                  </h2>
+
                   <div data-addable-target="actValues" data-controller="deletable">
-
-                    <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
-                        <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
-                      </svg>
-                      2 - ACT&nbsp;<em class="text-xs font-normal lg:text-sm">(required)</em>
-                    </h2>
-
-
                     <div class="w-full act-row lg:flex lg:items-center">
                       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :acts do |acts_form| %>
@@ -116,14 +114,14 @@
                       </div>
 
                       <div class="items-center justify-center lg:flex">
-                        <button data-action="click->moveable#actMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
-                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
-                          </svg>
-                        </button>
                         <button data-action="click->moveable#actMoveDown">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          </svg>
+                        </button>
+                        <button data-action="click->moveable#actMoveUp">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteActValues">
@@ -166,14 +164,14 @@
                       </div>
 
                       <div class="items-center justify-center lg:flex">
-                        <button data-action="click->moveable#bolusMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
-                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
-                          </svg>
-                        </button>
                         <button data-action="click->moveable#bolusMoveDown">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          </svg>
+                        </button>
+                        <button data-action="click->moveable#bolusMoveUp">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteBolus">
@@ -222,14 +220,14 @@
                       </div>
 
                       <div class="items-center justify-center lg:flex">
-                        <button data-action="click->moveable#infusionMoveUp">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
-                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
-                          </svg>
-                        </button>
                         <button data-action="click->moveable#infusionMoveDown">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
                             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
+                          </svg>
+                        </button>
+                        <button data-action="click->moveable#infusionMoveUp">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 ml-1 fill-current lg:w-8 lg:h-8 lg:ml-2 text-icon-color-dark lg:hover:text-active-color active:scale-95">
+                            <path fill="icon-color-dark" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm11.3-395.3l112 112c4.6 4.6 5.9 11.5 3.5 17.4s-8.3 9.9-14.8 9.9l-64 0 0 96c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-96-64 0c-6.5 0-12.3-3.9-14.8-9.9s-1.1-12.9 3.5-17.4l112-112c6.2-6.2 16.4-6.2 22.6 0z"/>
                           </svg>
                         </button>
                         <button data-action="click->deletable#deleteInfusion">
