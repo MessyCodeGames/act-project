@@ -6,70 +6,48 @@ export default class extends Controller {
     console.log("Moveable controller connected!")
   }
 
-  // Move a row up
   actMoveUp(event) {
-    event.preventDefault()
-    console.log("Move up", event.target.closest('.act-row'))
-    const row = event.target.closest('.act-row')
-    console.log("Previous row", row.previousElementSibling)
-    const previousRow = row.previousElementSibling
-    if (previousRow && previousRow.classList.contains('act-row')) {
-      row.parentNode.insertBefore(row, previousRow)
-    }
+    this.moveUp(event, 'act-row')
   }
 
-  // Move a row down
   actMoveDown(event) {
-    event.preventDefault()
-    console.log("Move down", event.target.closest('.act-row'))
-    const row = event.target.closest('.act-row')
-    console.log("Next row", row.nextElementSibling)
-    const nextRow = row.nextElementSibling
-    if (nextRow && nextRow.classList.contains('act-row')) {
-      row.parentNode.insertBefore(nextRow, row)
-    }
+    this.moveDown(event, 'act-row')
   }
 
   bolusMoveUp(event) {
-    event.preventDefault()
-    console.log("Move up", event.target.closest('.bolus-row'))
-    const row = event.target.closest('.bolus-row')
-    console.log("Previous row", row.previousElementSibling)
-    const previousRow = row.previousElementSibling
-    if (previousRow && previousRow.classList.contains('bolus-row')) {
-      row.parentNode.insertBefore(row, previousRow)
-    }
+    this.moveUp(event, 'bolus-row')
   }
 
   bolusMoveDown(event) {
-    event.preventDefault()
-    console.log("Move down", event.target.closest('.bolus-row'))
-    const row = event.target.closest('.bolus-row')
-    console.log("Next row", row.nextElementSibling)
-    const nextRow = row.nextElementSibling
-    if (nextRow && nextRow.classList.contains('bolus-row')) {
-      row.parentNode.insertBefore(nextRow, row)
-    }
+    this.moveDown(event, 'bolus-row')
   }
 
   infusionMoveUp(event) {
+    this.moveUp(event, 'infusion-row')
+  }
+
+  infusionMoveDown(event) {
+    this.moveDown(event, 'infusion-row')
+  }
+
+  moveUp(event, class_name) {
     event.preventDefault()
-    console.log("Move up", event.target.closest('.infusion-row'))
-    const row = event.target.closest('.infusion-row')
+    console.log("Move up", event.target.closest(`.${class_name}`))
+    const row = event.target.closest(`.${class_name}`)
     console.log("Previous row", row.previousElementSibling)
     const previousRow = row.previousElementSibling
-    if (previousRow && previousRow.classList.contains('infusion-row')) {
+    if (previousRow && previousRow.classList.contains(class_name)) {
       row.parentNode.insertBefore(row, previousRow)
     }
   }
 
-  infusionMoveDown(event) {
+  moveDown(event, class_name) {
     event.preventDefault()
-    console.log("Move down", event.target.closest('.infusion-row'))
-    const row = event.target.closest('.infusion-row')
+    console.log("Move down", event.target.closest(`.${class_name}`))
+    const row = event.target.closest(`.${class_name}`)
     console.log("Next row", row.nextElementSibling)
     const nextRow = row.nextElementSibling
-    if (nextRow && nextRow.classList.contains('infusion-row')) {
+    if (nextRow && nextRow.classList.contains(class_name)) {
       row.parentNode.insertBefore(nextRow, row)
     }
   }
