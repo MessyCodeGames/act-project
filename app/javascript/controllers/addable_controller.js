@@ -26,7 +26,7 @@ export default class extends Controller {
         </div>
       </div>
 
-      <div class="justify-center items-center lg:flex">
+      <div class="lg:justify-center items-center flex justify-end">
         <button data-action="click->moveable#actMoveDown" data-moveable-target="moveDownButton">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="lg:w-8 lg:h-8 lg:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark lg:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
@@ -65,7 +65,7 @@ export default class extends Controller {
         </div>
       </div>
 
-      <div class="justify-center items-center lg:flex">
+      <div class="lg:justify-center items-center flex justify-end">
         <button data-action="click->moveable#bolusMoveDown">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="lg:w-8 lg:h-8 lg:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark lg:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
@@ -107,7 +107,7 @@ export default class extends Controller {
         <input type="datetime-local" data-form-handler-target="infusionDatetimeInput" name="[heparins][infusion_time]" id="_heparins_infusion_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
       </div>
-      <div class="justify-center items-center lg:flex">
+      <div class="lg:justify-center items-center flex justify-end">
         <button data-action="click->moveable#infusionMoveDown">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="lg:w-8 lg:h-8 lg:ml-2 w-6 h-6 ml-1 fill-current text-icon-color-dark lg:hover:text-active-color active:scale-95">
             <path fill="icon-color-dark" d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM244.7 395.3l-112-112c-4.6-4.6-5.9-11.5-3.5-17.4s8.3-9.9 14.8-9.9l64 0 0-96c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 96 64 0c6.5 0 12.3 3.9 14.8 9.9s1.1 12.9-3.5 17.4l-112 112c-6.2 6.2-16.4 6.2-22.6 0z"/>
