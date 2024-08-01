@@ -23,7 +23,7 @@
       <div class="flex flex-col items-center gap-2 mx-auto lg:gap-4 lg:items-start">
         <h1 class="text-2xl font-bold text-white lg:text-4xl">ACTdose, what is it?</h1>
         <p class="text-base text-white lg:text-xl"><strong>ACTdose</strong> is an interactive tool
-          dedicated to estimating the <strong>individual pharmacodynamics of unfractionated heparin</strong>
+          dedicated to estimating the <strong>individual pharmacodynamics of unfractionated heparin (UFH)</strong>
           in cardiac surgery using a <strong>Bayesian approach</strong> with <strong>activated clotting time (ACT) measurements</strong>
         </p>
         <p class="text-base text-white lg:text-xl">
@@ -407,13 +407,47 @@
     </div>
   </div>
 
-  <div class="container mx-auto mt-8 mb-4 lg:mb-8 lg:mt-12">
-    <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
-    <p class="text-sm text-gray-800 lg:text-base">This is gonna be the tutorial spot</p>
-    <p class="text-sm text-gray-800 lg:text-base">With various stuff</p>
-    <p class="text-sm text-gray-800 lg:text-base">Explanation of how things work</p>
+
+  <!-- TUTORIAL -->
+  <div class="container mx-auto lg:w-4/5 mt-8 mb-4 lg:mb-8 lg:mt-12">
+
+    <div class="container mx-auto my-4">
+      <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
+    </div>
+
+    <div class="flex flex-col mx-5">
+      <div class="flex flex-row items-center gap-4 mx-auto">
+        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
+        <p class="text-sm text-gray-800 lg:text-base">1 - Enter the required informations concerning patient (bodyweight) and treatment (target ACT, desired inter bolus interval)</p>
+      </div>
+
+      <div class="flex flex-row items-center gap-4 mx-auto">
+        <p class="text-sm text-gray-800 lg:text-base">2 - Enter the time and result of previous ACT measurements</p>
+        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
+      </div>
+
+      <div class="flex flex-row items-center gap-4 mx-auto">
+        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
+        <p class="text-sm text-gray-800 lg:text-base">3 -Enter the time and amount of previous UFH bolus</p>
+      </div>
+
+      <div class="flex flex-row items-center gap-4 mx-auto">
+        <p class="text-sm text-gray-800 lg:text-base">4 - Enter the start time, duration and infusion rate of previous UFH bolus</p>
+        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
+      </div>
+      <br>
+      <p class="text-sm text-gray-800 lg:text-base">Once the data has been entered, click on the button “Calculate dosing regimen” to calculate an optimized UFH dosing regimen based on ACT measurements</p>
+      <p class="text-sm text-gray-800 lg:text-base">The results contain dosing recommendation for both Intermittent dosing strategy (based on iterative bolus) and continuous dosing strategy (based on continuous infusion)</p>
+
+      <div class="flex flex-row gap-4 mx-auto">
+        <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+        <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+      </div>
+    </div>
   </div>
 
+
+  <!-- TEAM -->
   <div class="mx-auto full-width bg-secondary lg:py-4">
     <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
       <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
@@ -433,13 +467,15 @@
     </div>
   </div>
 
+
+  <!-- BIBLIOGRAPHY -->
   <div class="container mx-auto lg:mt-12 lg:w-4/5">
 
     <div class="container mx-auto my-4">
       <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Bibliography</h2>
     </div>
 
-    <div class="ml-5 mr-5">
+    <div class="mx-5">
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
@@ -556,6 +592,27 @@
 
 .togglable-element.expanded {
   height: auto; /* This will be dynamically set by JavaScript */
+}
+
+.sketchy {
+    display: inline-block;
+    border: 3px solid #333333;
+
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    position: relative;
+
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
 }
 
 @media (min-width: 768px) {
