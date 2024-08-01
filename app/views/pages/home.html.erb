@@ -436,7 +436,7 @@
             Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. feb 2022;214:106553.
           </p>
         </div>
-        <div class="hidden w-full mx-auto lg:w-3/5 smooth-toggle" data-toggle-target="togglableElement">
+        <div class="w-full mx-auto lg:w-3/5 smooth-toggle togglable-element" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
             <a href="https://pubmed.ncbi.nlm.nih.gov/34883383/" target="_blank" rel="noopener noreferrer" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 lg:mb-4 mt-2 mb-2">
               See on PubMed
@@ -455,7 +455,7 @@
           <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
         </div>
 
-        <div class="hidden w-full mx-auto lg:w-3/5 togglableElement" data-toggle-target="togglableElement">
+        <div class="w-full mx-auto lg:w-3/5 togglable-element" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
             <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 lg:mb-4 mt-2 mb-2">
               See on PubMed
@@ -537,14 +537,14 @@
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.smooth-toggle.hidden {
-  opacity: 0;
-  visibility: hidden;
+.togglable-element {
+  overflow: hidden;
+  transition: height 0.3s ease;
+  height: 0;
 }
 
-.smooth-toggle:not(.hidden) {
-  opacity: 1;
-  visibility: visible;
+.togglable-element.expanded {
+  height: auto; /* This will be dynamically set by JavaScript */
 }
 
 @media (min-width: 768px) {
