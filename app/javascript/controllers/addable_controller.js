@@ -19,11 +19,11 @@ export default class extends Controller {
       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
           <label for="_acts_act_value_measured" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Measured ACT values</label>
-          <input placeholder="seconds" type="number" name="[acts][act_value_measured]" required="required" id="_acts_act_value_measured" min="1" max="1000" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+          <input placeholder="seconds" type="number" name="[acts][act_value_measured]" data-form-handler-target="actValueMeasured" id="_acts_act_value_measured" min="1" max="1000" class="out-of-range:border-red-500 w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
           <label for="_acts_act_measurement_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Time</label>
-          <input type="datetime-local" data-form-handler-target="actDatetimeInput" required="required" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+          <input type="datetime-local" data-form-handler-target="actDatetimeInput" name="[acts][act_measurement_time]" id="_acts_act_measurement_time" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
       </div>
 
