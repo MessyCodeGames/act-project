@@ -771,37 +771,37 @@
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  if (typeof typewriterEffect === 'undefined') {
+    const typewriterEffect = async (selector, phrases, sleepTime = 200) => {
+      const textElement = document.querySelector(selector);
+      let curPhraseIndex = 0;
 
-  const typewriterEffect = async (selector, phrases, sleepTime = 200) => {
-  const textElement = document.querySelector(selector);
-  let curPhraseIndex = 0;
+      const writeLoop = async () => {
+        while (true) {
+          let curWord = phrases[curPhraseIndex];
 
-  const writeLoop = async () => {
-    while (true) {
-      let curWord = phrases[curPhraseIndex];
+          for (let i = 0; i < curWord.length; i++) {
+            textElement.innerText = curWord.substring(0, i + 1);
+            await sleep(sleepTime);
+          }
 
-      for (let i = 0; i < curWord.length; i++) {
-        textElement.innerText = curWord.substring(0, i + 1);
-        await sleep(sleepTime);
-      }
+          await sleep(500);
 
-      await sleep(500);
+          for (let i = curWord.length; i > 0; i--) {
+            textElement.innerText = curWord.substring(0, i - 1);
+            await sleep(sleepTime);
+          }
 
-      for (let i = curWord.length; i > 0; i--) {
-        textElement.innerText = curWord.substring(0, i - 1);
-        await sleep(sleepTime);
-      }
+          await sleep(500);
 
-      await sleep(500);
+          curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
+        }
+      };
+      writeLoop();
+    };
 
-      curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
-    }
-  };
-
-  writeLoop();
-};
-typewriterEffect('#writing-weight', ['80', '65', '72', '110']);
-typewriterEffect('#writing-act', ['380', '405', '430', '410']);
-typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
-
+    typewriterEffect('#writing-weight', ['80', '65', '72', '110']);
+    typewriterEffect('#writing-act', ['380', '405', '430', '410']);
+    typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
+  }
 </script>
