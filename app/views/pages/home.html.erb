@@ -4,9 +4,9 @@
 
   <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-2 ml-2 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
+    <div class="gap-2 pt-4 ml-6 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
       <a href="#section-calcul" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
-      <a href="#section-calcul" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Pred</a>
+      <a href="#section-calcul" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Prediction</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
       <a href="#section-tutorial" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Tutorial</a>
       <a href="#section-tutorial" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Tuto</a>
@@ -50,7 +50,7 @@
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
         <h2 id="section-calcul" class="text-base font-bold text-center text-gray-900 lg:text-xl">Heparin prediction form</h2>
       </div>
-
+      <a href="#section-tutorial" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">How does it work?</a>
       <div data-controller="form-handler">
         <!-- Form -->
         <div data-form-handler-target="form">
@@ -249,7 +249,7 @@
             <br>
             <div class="flex flex-col items-center justify-center">
               <%= form.submit "Calculate dosing regimen", class:"flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
-                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-8 lg:w-auto', style:"display:none"%>
+                <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-12 lg:w-auto', style:"display:none"%>
                 <!-- <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" /> -->
               <% end %>
             </div>
@@ -402,6 +402,9 @@
 
           <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-2 plot-container lg:flex-row lg:mt-4 lg:gap-2"></div>
           <br>
+          <div class="flex justify-center">
+            <a href="#section-result-interpretation" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-4 mb-2">How to interpret the results?</a>
+          </div>
           <div><button id="print-to-pdf" style="display:none" class="flex justify-center lg:text-xl text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Print to PDF</button></div>
         </div>
       </div>
@@ -438,18 +441,22 @@
           <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>In section 1, enter informations about:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Patient's body weight in kg</p>
-          <p class="text-sm text-gray-800 lg:text-base">The target ACT recquired by the surgery, the ACT threshold you wish to be at or above, in seconds</p>
-          <p class="text-sm text-gray-800 lg:text-base">The time between heparin bolus injections in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
+          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>First in section 1, enter informations about:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Patient's body weight</strong> in kg</p>
+          <p class="text-sm text-gray-800 lg:text-base">The <strong>target ACT recquired by the surgery</strong>, the ACT threshold you wish to be at or above, in seconds</p>
+          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1">The <strong>time between heparin bolus injections</strong> in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
       </div>
 
+      <br class="lg:hidden">
+      <hr class="lg:hidden">
+      <br>
+
       <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
         <div class="flex flex-col align-start lg:w-1/2 hidden lg:block">
           <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Then in section 2:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the ACT measurements in seconds, with their measurement times (date, hour and minutes), in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
         <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
@@ -478,11 +485,14 @@
         </div>
         <div class="flex flex-col align-start lg:hidden">
           <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Then:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the ACT measurements in seconds, with their measurement times (date, hour and minutes), in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
       </div>
 
+      <br class="lg:hidden">
+      <hr class="lg:hidden">
+      <br>
 
       <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
         <div class="flex flex-col justify-center items-center p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
@@ -504,33 +514,45 @@
           <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Finally in section 3 and 4:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the time of administration and amount of administered UFH bolus in UI</p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the start time, duration in minutes and infusion rate in UI per hour of previous UFH infusions administered</p>
+          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Last data entries in sections 3 and 4:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>time</strong> of administration <strong>and amount of administered UFH bolus</strong> in UI</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>start time</strong>, <strong>duration</strong> in minutes <strong>and infusion rate</strong> in UI per hour of previous <strong>UFH infusions administered</strong></p>
         </div>
       </div>
 
-
+      <br class="lg:hidden">
+      <hr class="lg:hidden">
       <br>
-      <p class="text-sm text-gray-800 lg:text-base">Once the data has been entered, click on the button “Calculate dosing regimen” to calculate an optimized UFH dosing regimen based on ACT measurements</p>
-      <p class="text-sm text-gray-800 lg:text-base">The results contain dosing recommendation for both Intermittent dosing strategy (based on iterative bolus) and continuous dosing strategy (based on continuous infusion)</p>
 
-      <div class="flex flex-row gap-4 mx-auto">
-        <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
-        <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+      <div class="flex flex-col justify-center align-items-center mx-auto lg:w-4/5 lg:mb-4 mb-2">
+        <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-center"><strong>Finally:</strong></p>
+        <p class="text-sm lg:text-base text-gray-800 lg:mb-2 mb-1">Click on <span class="text-sm lg:text-base bg-icon-color-dark text-white font-bold lg:px-2 lg:py-1 px-1 py-0.5 rounded">Calculate dosing regimen</span> to <strong>calculate an optimized UFH dosing regimen</strong> based on ACT measurements</p>
+        <p class="text-sm text-gray-800 lg:text-base">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent dosing strategy</strong> (based on iterative bolus) and <strong>continuous dosing strategy</strong> (based on continuous infusion)</p>
       </div>
 
-      <div class="mx-5 mb-4">
-      <p class="lg:my-2 lg:text-base text-sm">
-        The pharmacodynamic model of UFH during cardiac surgery used in this application was developed using
-        pharmacodynamic data from more than 200 patients. The model was developed using non-linear
-        mixed effect modelling approach
-      </p>
-      <p class="lg:my-2 lg:text-base text-sm block relative">
-        All details concerning the pharmacokinetic model were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold lg:hover:text-icon-color-dark">bibliography section
-        of the website</a>
-      </p>
-    </div>
+      <div data-controller="toggle">
+        <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
+          <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">How to interpret the results</p>
+        </div>
+        <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
+          <div class="mx-5 mb-4">
+            <div class="flex flex-row gap-4 mx-auto">
+              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+            </div>
+            <p class="lg:my-2 lg:text-base text-sm">
+              The pharmacodynamic models of UFH during cardiac surgery used in this application were developed using
+              pharmacodynamic data from more than 200 patients. The models were developed using non-linear
+              mixed effect modelling approach
+            </p>
+            <p class="lg:my-2 lg:text-base text-sm block relative">
+              All details concerning the pharmacokinetic models were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold lg:hover:text-icon-color-dark">bibliography section
+              of the website</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -589,7 +611,6 @@
         <div data-action="click->toggle#fire">
           <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
         </div>
-
         <div class="w-full mx-auto lg:w-3/5 togglable-element" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
             <a href="https://pubmed.ncbi.nlm.nih.gov/38169065/" target="_blank" rel="noopener noreferrer" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 lg:mb-4 mt-2 mb-2">
