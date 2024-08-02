@@ -524,31 +524,60 @@
       <hr class="lg:hidden">
       <br>
 
-      <div class="flex flex-col justify-center align-items-center mx-auto lg:w-4/5 lg:mb-4 mb-2">
+      <div class="flex flex-col justify-center align-items-center mx-auto lg:w-3/5 lg:mb-4 mb-2">
         <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-center"><strong>Finally:</strong></p>
         <p class="text-sm lg:text-base text-gray-800 lg:mb-2 mb-1">Click on <span class="text-sm lg:text-base bg-icon-color-dark text-white font-bold lg:px-2 lg:py-1 px-1 py-0.5 rounded">Calculate dosing regimen</span> to <strong>calculate an optimized UFH dosing regimen</strong> based on ACT measurements</p>
         <p class="text-sm text-gray-800 lg:text-base">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent dosing strategy</strong> (based on iterative bolus) and <strong>continuous dosing strategy</strong> (based on continuous infusion)</p>
       </div>
 
+      <br class="lg:hidden">
+      <hr class="lg:hidden">
+      <br>
+
       <div data-controller="toggle">
+
         <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
           <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Details on interpreting results</p>
         </div>
+
         <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
-          <div class="mx-5 mb-4">
-            <div class="flex flex-row gap-4 mx-auto">
-              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
-              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'w-1/2 h-auto rounded-2xl shadow-lg' %>
+          <div class="lg:mx-4 mb-4">
+            <div class="flex flex-col gap-4 mx-auto">
+              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
+              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Table interpretation:</h2>
+              <p class="text-sm text-gray-800 lg:text-base text-left">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and</strong> a <strong>continous UFH dosing strategy</strong></p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The loading dose (LD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to reach the desired target ACT</strong></p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The maintenance bolus (MD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to stay above the desired ACT target</strong> threshold value during the period of time defined in section 1 (example: MB to administer every 30 or 60 minutes to stay above target ACT)</p>
+              <p class="text-sm text-gray-800 lg:text-base">Total (LD + MD) is simply the sum of the loading dose and the maintenance bolus to admninister for the intermittent dosing strategy</p>
+              <p class="text-sm text-gray-800 lg:text-base">For the continuous dosing strategy, <strong>the infusion rate (IR) to stay at the desired ACT target</strong> during surgey is displayed in UI per hour</p>
+              <p class="text-sm text-gray-800 lg:text-base">Finally, for both dosing strategies, <strong>the time to wait before the next recommended LD, MD and IR to administere is displayed</strong>. This waiting time starts at the time of the last measured ACT</p>
+
+              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
+              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The horizontal black dotted line</strong> represents the <strong>target ACT</strong> threshold chosen for the surgery</p>
+              <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>he measured ACT values</strong></p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The blue solid line</strong> corresponds to <strong>fitted ACT values</strong> using using dosing history, patient bodyweigth and ACT measurements</p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The red dotted line</strong> corresponds to <strong>predicted ACT values</strong> using the individualized UFH dosing regimen, continuous or intermittent</p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The vertical brown dotted line</strong> represent the <strong>time for the next injection</strong>, LD, MB and or IR</p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The beautiful golden yellow ribbons</strong> correpond to the <strong>50% and 90% confidence intervals</strong></p>
+
+
+              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Methodology:</h2>
+              <p class="text-sm text-gray-800 lg:text-base">
+                The <strong>pharmacodynamic models of UFH during cardiac surgery</strong> used in this application were developed using
+                <strong>pharmacodynamic data from more than 200 patients</strong>. The models were developed using <strong>non-linear
+                mixed effect modelling approach</strong>
+              </p>
+              <p class="text-sm text-gray-800 lg:text-base">
+                All details concerning the pharmacokinetic models were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold text-icon-color-dark lg:hover:text-active-color">bibliography section
+                of the website</a>
+              </p>
+              <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
+                <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Fold section</p>
+              </div>
             </div>
-            <p class="lg:my-2 lg:text-base text-sm">
-              The pharmacodynamic models of UFH during cardiac surgery used in this application were developed using
-              pharmacodynamic data from more than 200 patients. The models were developed using non-linear
-              mixed effect modelling approach
-            </p>
-            <p class="lg:my-2 lg:text-base text-sm block relative">
-              All details concerning the pharmacokinetic models were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold lg:hover:text-icon-color-dark">bibliography section
-              of the website</a>
-            </p>
+
+
           </div>
         </div>
       </div>
