@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { updateMoveableButtons } from "../modules/updateMoveableButtons.js"
+import { updateMoveableButtons } from "../modules/updateMoveableButtons"
 
 export default class extends Controller {
 
