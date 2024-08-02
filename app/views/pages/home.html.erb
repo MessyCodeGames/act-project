@@ -64,7 +64,7 @@
                     </svg>') %>
                     Patient weight
                   <% end %>
-                  <%= form.number_field :patient_weight, placeholder: "kg", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", min: "1", max: "300", required: true %>
+                  <%= form.number_field :patient_weight, placeholder: "kg", data: { form_handler_target: "patientWeight" }, class: "out-of-range:border-red-500 flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", min: "1", max: "300"%>
                 </div>
 
                 <div id="act-target" class="flex items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5">
@@ -74,7 +74,7 @@
                     </svg>') %>
                     Target ACT (seconds)
                   <% end %>
-                  <%= form.number_field :act_target, value: "400", min: "1", max: "1000", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", required: true %>
+                  <%= form.number_field :act_target, value: "400", min: "1", max: "1000", data: { form_handler_target: "actTarget" }, class: "out-of-range:border-red-500 flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                 </div>
 
                 <div id="times-between-bolus" class="flex items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5">
@@ -84,7 +84,7 @@
                     </svg>') %>
                     Time between bolus injections (minutes)
                   <% end %>
-                  <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", required: true %>
+                  <%= form.number_field :delta_t, value: "30", min: "0", data: { form_handler_target: "timesBetweenBolus" }, class: "out-of-range:border-red-500 flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                 </div>
               </div>
               <div data-controller="addable moveable">
@@ -104,11 +104,11 @@
                         <%= form.fields_for :acts do |acts_form| %>
                           <div class="flex flex-row w-full">
                             <%= acts_form.label :act_value_measured, "Measured ACT values", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
-                            <%= acts_form.number_field :act_value_measured, placeholder: "seconds", min: "1", max: "1000", required: true, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                            <%= acts_form.number_field :act_value_measured, data: { form_handler_target: "actValueMeasured" }, placeholder: "seconds", min: "1", max: "1000", class: "out-of-range:border-red-500 w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
                             <%= acts_form.label :act_measurement_time, "Time", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
-                            <%= acts_form.datetime_field :act_measurement_time, required: true, data: { form_handler_target: "actDatetimeInput" }, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                            <%= acts_form.datetime_field :act_measurement_time, data: { form_handler_target: "actDatetimeInput" }, class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                         <% end %>
                       </div>

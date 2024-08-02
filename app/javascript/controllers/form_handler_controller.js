@@ -1,19 +1,59 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["form", "result", "actDatetimeInput", "bolusDatetimeInput", "infusionDatetimeInput"]
+  static targets = ["form", "result", "actValueMeasured", "patientWeight", "actTarget", "timesBetweenBolus", "actDatetimeInput", "bolusDatetimeInput", "infusionDatetimeInput"]
 
   connect() {
     console.log("Form connected!")
     console.log("Result target:", this.resultTarget)
   }
 
-  // Check if all datetime inputs are in chronological order
   validateAndSubmitForm(event) {
     event.preventDefault();
     console.log("Form submission triggered");
-    let isValid = true;
+    this.clearErrors();
 
+    let isValid = true;
+    let validInputs = true;
+    const actValuesMeasured = this.actValueMeasuredTargets;
+    const actMeasurementTimes = this.actDatetimeInputTargets;
+
+    // Check if all inputs are valid
+    // Check if all ACT values are between 1 and 1000
+    actValuesMeasured.forEach((actValueMeasured, index) => {
+      if (actValueMeasured.value < 1 || actValueMeasured.value > 1000) {
+        actValueMeasured.classList.add("border-red-500");
+        validInputs = false;
+      }
+    });
+
+    // Check if all ACT measurement times are filled
+    actMeasurementTimes.forEach((actMeasurementTime, index) => {
+      if (!actMeasurementTime.value) {
+        actMeasurementTime.classList.add("border-red-500");
+        validInputs = false;
+      }
+    });
+
+    if (!this.patientWeightTarget.value) {
+      console.log(this.patientWeightTarget);
+      this.patientWeightTarget.classList.add("border-red-500");
+      console.log(validInputs, this.patientWeightTarget.classList);
+      // alert('Patient weight must be greater than 0.');
+      validInputs = false;
+    }
+    if (!this.actTargetTarget.value) {
+      this.actTargetTarget.classList.add("border-red-500");
+      // alert('ACT target must be greater than 0.');
+      validInputs = false;
+    }
+    if (!this.timesBetweenBolusTarget.value) {
+      this.timesBetweenBolusTarget.classList.add("border-red-500");
+      // alert('Times between bolus injections must be greater than 0.');
+      validInputs = false;
+    }
+
+    // Check if all datetime inputs are in chronological order
     const actDatetimeInputs = this.actDatetimeInputTargets.map(input => new Date(input.value));
     console.log(actDatetimeInputs);
     for (let i = 1; i < actDatetimeInputs.length; i++) {
@@ -45,10 +85,27 @@ export default class extends Controller {
       }
     }
 
-    if (isValid) {
+    if (isValid && validInputs) {
       console.log("Validation passed, submitting form");
       this.submitForm(event);
     }
+  }
+
+  clearErrors() {
+    const actValuesMeasured = this.actValueMeasuredTargets;
+    const actMeasurementTimes = this.actDatetimeInputTargets;
+
+    actValuesMeasured.forEach((actValueMeasured, index) => {
+      actValueMeasured.classList.remove("border-red-500");
+    });
+
+    actMeasurementTimes.forEach((actMeasurementTime, index) => {
+      actMeasurementTime.classList.remove("border-red-500");
+    });
+
+    this.patientWeightTarget.classList.remove("border-red-500");
+    this.actTargetTarget.classList.remove("border-red-500");
+    this.timesBetweenBolusTarget.classList.remove("border-red-500");
   }
 
   submitForm(event) {
