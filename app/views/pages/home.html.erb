@@ -87,10 +87,11 @@
                   <%= form.number_field :delta_t, value: "30", min: "0", class: "flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs", required: true %>
                 </div>
               </div>
-              <div data-controller="addable moveable">
 
-                <!-- ACT measurement part -->
-                <div id="act-measured" class="flex flex-col p-4 -mx-2 pt-4 pb-4 bg-[#f0fbe7] lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
+
+              <!-- ACT measurement part -->
+              <div data-controller="addable moveable">
+                <div id="act-measured" class="flex flex-col p-4 -mx-2 pt-4 pb-4 bg-light-green lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
                   <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                       <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
@@ -415,26 +416,119 @@
       <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
     </div>
 
+    <div class="z-500 relative">
+      <p class="lg:my-2 lg:text-base text-sm">
+        The pharmacodynamic model of UFH during cardiac surgery used in this application was developed using
+        pharmacodynamic data from more than 200 patients. The model was developed using non-linear
+        mixed effect modelling approach
+      </p>
+      <p class="lg:my-2 lg:text-base text-sm block z-500 relative">
+        All details concerning the pharmacokinetic model were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold lg:hover:text-icon-color-dark">bibliography section
+        of the website</a>
+      </p>
+    </div>
+
+    <br>
+
     <div class="flex flex-col mx-5">
-      <div class="flex flex-row items-center gap-4 mx-auto">
-        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
-        <p class="text-sm text-gray-800 lg:text-base">1 - Enter the required informations concerning patient (bodyweight) and treatment (target ACT, desired inter bolus interval)</p>
+
+      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
+        <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
+          <div class="z-10">
+            <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup</h2>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Patient weight</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">85</p>
+            </div>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Target ACT (s)</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">400</p>
+            </div>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time between bolus injections (min)</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:pr-24 pr-12 lg:text-base text-xs">30</p>
+            </div>
+          </div>
+          <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
+        </div>
+        <div class="flex flex-col align-start lg:w-1/2">
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Enter informations about:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Patient's body weight in kg</p>
+          <p class="text-sm text-gray-800 lg:text-base">The target ACT recquired by the surgery, the ACT threshold you wish to be at or above, in seconds</p>
+          <p class="text-sm text-gray-800 lg:text-base">The time between heparin bolus injections in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
+          <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
+        </div>
       </div>
 
-      <div class="flex flex-row items-center gap-4 mx-auto">
-        <p class="text-sm text-gray-800 lg:text-base">2 - Enter the time and result of previous ACT measurements</p>
-        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
+      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
+        <div class="flex flex-col align-start lg:w-1/2 hidden lg:block">
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Then:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Time of the previous ACT measurements, with date, hour and minute, in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
+        </div>
+        <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
+          <div class="z-10">
+            <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">2 - ACT</h2>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">120</p>
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 10:10</p>
+            </div>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">380</p>
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:00</p>
+            </div>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">425</p>
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:20</p>
+            </div>
+          </div>
+          <div class="fun-border absolute inset-0 bg-light-green z-8 parallax"></div>
+        </div>
+        <div class="flex flex-col align-start lg:hidden">
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Then:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Time of the previous ACT measurements, with date, hour and minute, in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
+        </div>
       </div>
 
-      <div class="flex flex-row items-center gap-4 mx-auto">
-        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
-        <p class="text-sm text-gray-800 lg:text-base">3 -Enter the time and amount of previous UFH bolus</p>
+
+      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
+        <div class="flex flex-col justify-center items-center p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
+          <div class="z-10">
+            <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">3 - Heparin bolus injections</h2>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5 flex-1">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">10000</p>
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 10:50</p>
+            </div>
+            <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">3200</p>
+              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:15</p>
+            </div>
+          </div>
+          <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
+        </div>
+        <div class="flex flex-col align-start lg:w-1/2">
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Finally in section 3 and 4:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the time and amount of previous UFH bolus</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the start time, duration and infusion rate of previous UFH bolus</p>
+        </div>
       </div>
 
-      <div class="flex flex-row items-center gap-4 mx-auto">
-        <p class="text-sm text-gray-800 lg:text-base">4 - Enter the start time, duration and infusion rate of previous UFH bolus</p>
-        <%= image_tag 'tuto/setup_tuto.png', alt: 'Description of the image', class: 'lg:w-72 h-auto w-48 rounded-2xl shadow-lg' %>
-      </div>
+
+
+
+
+
       <br>
       <p class="text-sm text-gray-800 lg:text-base">Once the data has been entered, click on the button “Calculate dosing regimen” to calculate an optimized UFH dosing regimen based on ACT measurements</p>
       <p class="text-sm text-gray-800 lg:text-base">The results contain dosing recommendation for both Intermittent dosing strategy (based on iterative bolus) and continuous dosing strategy (based on continuous infusion)</p>
@@ -594,25 +688,17 @@
   height: auto; /* This will be dynamically set by JavaScript */
 }
 
-.sketchy {
-    display: inline-block;
-    border: 3px solid #333333;
+.fun-border {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
 
-    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-    position: relative;
+.fun-border-2 {
+  border-radius: 29% 71% 25% 75% / 70% 41% 59% 30%  ;
+}
 
-    &::before {
-        content: '';
-        border: 2px solid #353535;
-        display: block;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-    }
+.parallax {
+  transform: translateY(var(--parallax-offset, 0));
+  transition: transform 0.2s ease-out;
 }
 
 @media (min-width: 768px) {
@@ -642,3 +728,18 @@
   }
 }
 </style>
+
+<script>
+  document.addEventListener('scroll', function() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    const viewportHeight = window.innerHeight;
+
+    parallaxElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const elementCenter = rect.top + rect.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      const offset = (elementCenter - viewportCenter) * 0.05; // Adjust the multiplier for desired effect
+      el.style.setProperty('--parallax-offset', `${offset}px`);
+    });
+  });
+</script>
