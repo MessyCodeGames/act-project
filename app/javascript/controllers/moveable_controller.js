@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { updateMoveableButtons } from "./updateMoveableButtons"
 
 export default class extends Controller {
 
@@ -8,26 +9,38 @@ export default class extends Controller {
 
   actMoveUp(event) {
     this.moveUp(event, 'act-row')
+    const rows = document.querySelectorAll('.act-row')
+    updateMoveableButtons(rows);
   }
 
   actMoveDown(event) {
     this.moveDown(event, 'act-row')
+    const rows = document.querySelectorAll('.act-row')
+    updateMoveableButtons(rows);
   }
 
   bolusMoveUp(event) {
     this.moveUp(event, 'bolus-row')
+    const rows = document.querySelectorAll('.bolus-row')
+    updateMoveableButtons(rows);
   }
 
   bolusMoveDown(event) {
     this.moveDown(event, 'bolus-row')
+    const rows = document.querySelectorAll('.bolus-row')
+    updateMoveableButtons(rows);
   }
 
   infusionMoveUp(event) {
     this.moveUp(event, 'infusion-row')
+    const rows = document.querySelectorAll('.infusion-row')
+    updateMoveableButtons(rows);
   }
 
   infusionMoveDown(event) {
     this.moveDown(event, 'infusion-row')
+    const rows = document.querySelectorAll('.infusion-row')
+    updateMoveableButtons(rows);
   }
 
   moveUp(event, class_name) {

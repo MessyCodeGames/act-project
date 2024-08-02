@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { updateMoveableButtons } from "./updateMoveableButtons"
 
 export default class extends Controller {
 
@@ -8,25 +9,25 @@ export default class extends Controller {
 
   // Delete a row from the ACT values form
   deleteActValues(event) {
-    event.preventDefault()
-    const row = event.target.closest(".act-row")
-    console.log("Delete ACT row", row)
-    row.remove()
+    this.deleteField(event, ".act-row")
   }
 
   // Delete a row from the heparins values form
   deleteBolus(event) {
-    event.preventDefault()
-    const row = event.target.closest(".bolus-row")
-    console.log("Delete bolus row", row)
-    row.remove()
+    this.deleteField(event, ".bolus-row")
   }
 
   // Delete a row from the heparins infusions form
   deleteInfusion(event) {
+    this.deleteField(event, ".infusion-row")
+  }
+
+  deleteField(event, class_name) {
     event.preventDefault()
-    const row = event.target.closest(".infusion-row")
-    console.log("Delete infusion row", row)
+    const row = event.target.closest(class_name)
+    console.log("Delete row", row)
     row.remove()
+    const rows = document.querySelectorAll(class_name)
+    updateMoveableButtons(rows);
   }
 }
