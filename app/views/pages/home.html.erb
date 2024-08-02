@@ -555,7 +555,7 @@
               <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The horizontal black dotted line</strong> represents the <strong>target ACT</strong> threshold chosen for the surgery</p>
-              <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>he measured ACT values</strong></p>
+              <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>the measured ACT values</strong></p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The blue solid line</strong> corresponds to <strong>fitted ACT values</strong> using using dosing history, patient bodyweigth and ACT measurements</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The red dotted line</strong> corresponds to <strong>predicted ACT values</strong> using the individualized UFH dosing regimen, continuous or intermittent</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The vertical brown dotted line</strong> represent the <strong>time for the next injection</strong>, LD, MB and or IR</p>
@@ -591,15 +591,17 @@
     <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
       <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
         <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
-        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
-        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> This app has been developped and designed by Edouard Ollier, Julien Lanoiselée and Robin
+          Chaux from INSERM unit U1059 (https://sainbiose-lab.fr)</p>
+        <br>
+        <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Web developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
       </div>
       <!-- <p class="text-lg text-gray-800">Logo designers: ...</p> -->
       <div class="flex items-center justify-center align-items-center lg:basis-1/3">
         <a href="mailto:actpred@actpred.com" class="flex justify-center text-base font-bold text-white lg:text-lg bg-icon-color-dark px-3 lg:px-4 lg:py-2 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Contact us</a>
       </div>
     </div>
-    <h2 class="mb-0 text-base font-bold text-center text-gray-900 lg:text-xl">With the scientific support of:</h2>
+    <h2 class="mb-0 text-sm font-bold text-center text-gray-900 lg:text-lg">With the scientific support of:</h2>
     <div class="flex flex-row justify-center w-full h-full gap-6 mt-4">
       <%= image_tag 'Logo_CHU.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-28 w-36 h-auto pb-4' %>
       <%= image_tag 'UJM_LOGO.png', alt: 'Description of the image', class: 'lg:w-auto lg:h-28 w-36 h-auto pb-4' %>
