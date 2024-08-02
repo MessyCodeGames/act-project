@@ -416,7 +416,7 @@
       <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
     </div>
 
-    <div class="z-500 relative">
+    <div class="z-500 relative mx-5 mb-4">
       <p class="lg:my-2 lg:text-base text-sm">
         The pharmacodynamic model of UFH during cardiac surgery used in this application was developed using
         pharmacodynamic data from more than 200 patients. The model was developed using non-linear
@@ -452,7 +452,7 @@
           <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
-          <p class="text-sm text-gray-800 lg:text-base"><strong>Enter informations about:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base"><strong>In section 1, enter informations about:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Patient's body weight in kg</p>
           <p class="text-sm text-gray-800 lg:text-base">The target ACT recquired by the surgery, the ACT threshold you wish to be at or above, in seconds</p>
           <p class="text-sm text-gray-800 lg:text-base">The time between heparin bolus injections in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
@@ -462,12 +462,12 @@
 
       <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
         <div class="flex flex-col align-start lg:w-1/2 hidden lg:block">
-          <p class="text-sm text-gray-800 lg:text-base"><strong>Then:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Time of the previous ACT measurements, with date, hour and minute, in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base"><strong>Then in section 2:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the ACT measurements in seconds, with their measurement times (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
         <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
-          <div class="z-10">
+          <div class="z-20 relative">
             <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">2 - ACT</h2>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
@@ -488,11 +488,11 @@
               <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:20</p>
             </div>
           </div>
-          <div class="fun-border absolute inset-0 bg-light-green z-8 parallax"></div>
+          <div class="fun-border-2 absolute inset-0 bg-light-green z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:hidden">
           <p class="text-sm text-gray-800 lg:text-base"><strong>Then:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Time of the previous ACT measurements, with date, hour and minute, in chronological order</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the ACT measurements in seconds, with their measurement times (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
       </div>
@@ -519,14 +519,10 @@
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
           <p class="text-sm text-gray-800 lg:text-base"><strong>Finally in section 3 and 4:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the time and amount of previous UFH bolus</p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the start time, duration and infusion rate of previous UFH bolus</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the time of administration and amount of administered UFH bolus in UI</p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the start time, duration in minutes and infusion rate in UI per hour of previous UFH infusions administered</p>
         </div>
       </div>
-
-
-
-
 
 
       <br>
