@@ -48,7 +48,7 @@
     <div class="p-2 lg:p-4">
 
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
-        <h2 id="section-calcul" class="text-base font-bold text-center text-gray-900 lg:text-xl">Heparin prediction form</h2>
+        <h2 id="section-calcul" class="text-base font-bold text-center text-icon-color-dark lg:text-xl">Heparin prediction form</h2>
       </div>
       <a href="#section-tutorial" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">How does it work?</a>
       <div data-controller="form-handler">
@@ -260,7 +260,7 @@
         <div class="p-3 m-0 bg-secondary adaptative-width rounded-2xl lg:shadow-lg lg:p-4">
 
           <div class="container mx-auto">
-            <h2 class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4" data-form-handler-target="result">Recommandations</h2>
+            <h2 class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4" data-form-handler-target="result">Recommandations</h2>
           </div>
 
 
@@ -416,7 +416,7 @@
   <div class="container mx-auto mt-8 mb-4 lg:w-4/5 lg:mb-8 lg:mt-12">
 
     <div class="container mx-auto my-4">
-      <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Tutorial</h2>
+      <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4">Tutorial</h2>
     </div>
 
     <div class="flex flex-col mx-5">
@@ -427,7 +427,7 @@
             <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup</h2>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Patient weight</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">85</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-weight"></span><span class="cursor">|</span></p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Target ACT (s)</p>
@@ -466,25 +466,25 @@
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
               <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">120</p>
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 10:10</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 10:10</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">380</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">380&nbsp&nbsp</p>
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:00</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:00</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">425</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-act"></span><span class="cursor">|</span></p>
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:20</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:20</p>
             </div>
           </div>
           <div class="fun-border absolute inset-0 bg-light-green z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:hidden">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Then:</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1"><strong>Then in section 2:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
@@ -502,13 +502,13 @@
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
               <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">10000</p>
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 10:50</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 10:50</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">3200</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-bolus"></span><span class="cursor">|</span></p>
               <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">10/10/2024 11:15</p>
+              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:15</p>
             </div>
           </div>
           <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
@@ -532,7 +532,7 @@
 
       <div data-controller="toggle">
         <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
-          <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">How to interpret the results</p>
+          <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Details on interpreting results</p>
         </div>
         <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
           <div class="mx-5 mb-4">
@@ -561,7 +561,7 @@
   <div class="mx-auto full-width bg-secondary lg:py-4">
     <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
       <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
         <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> Edouard Ollier, MD PhD, Robin Chaux, MD, Julien Lanoiselée, MD PhD</p>
         <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Developers:</strong> Robin Chaux, Thanh Truc Pham, Timothé Carrier</p>
       </div>
@@ -582,7 +582,7 @@
   <div class="container mx-auto lg:mt-12 lg:w-4/5">
 
     <div class="container mx-auto my-4">
-      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-gray-900 lg:text-xl lg:mb-4">Bibliography</h2>
+      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4">Bibliography</h2>
     </div>
 
     <div class="mx-5">
@@ -590,7 +590,7 @@
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
           <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">
-            Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. feb 2022;214:106553.
+            Chaux R, Lanoiselée J, Magand C, Zufferey P, Delavenne X, Ollier E. <strong>Robust K-PD model for activated clotting time prediction and UFH dose individualisation during cardiopulmonary bypass.</strong> Comput Methods Programs Biomed. feb 2022;214:106553
           </p>
         </div>
         <div class="w-full mx-auto lg:w-3/5 smooth-toggle togglable-element" data-toggle-target="togglableElement">
@@ -609,7 +609,7 @@
 
       <div data-controller="toggle">
         <div data-action="click->toggle#fire">
-          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet [Internet]. jan 2 2024; Available on: https://link.springer.com/10.1007/s40262-023-01334-3</p>
+          <p data-toggle-target="buttonActive" class="px-2 py-1 mb-2 text-sm text-gray-800 bg-white rounded shadow cursor-pointer lg:text-base lg:mb-4 lg:hover:bg-very-light-color lg:px-4 lg:py-2 active:scale-95 rounded-2xl">Gibert A, Lanoiselée J, Gouin-Thibault I, Pontis A, Azarnoush K, Petrosyan A, et al. <strong>Factors Influencing Unfractionated Heparin Pharmacokinetics and Pharmacodynamics During a Cardiopulmonary Bypass.</strong> Clin Pharmacokinet. jan 2 2024</p>
         </div>
         <div class="w-full mx-auto lg:w-3/5 togglable-element" data-toggle-target="togglableElement">
           <div class="flex flex-col items-center justify-center">
@@ -707,13 +707,22 @@
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
-.fun-border-2 {
-  border-radius: 29% 71% 25% 75% / 70% 41% 59% 30%  ;
-}
-
 .parallax {
   transform: translateY(var(--parallax-offset, 0));
   transition: transform 0.2s ease-out;
+}
+
+.cursor {
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -757,4 +766,42 @@
       el.style.setProperty('--parallax-offset', `${offset}px`);
     });
   });
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
+  const typewriterEffect = async (selector, phrases, sleepTime = 200) => {
+  const textElement = document.querySelector(selector);
+  let curPhraseIndex = 0;
+
+  const writeLoop = async () => {
+    while (true) {
+      let curWord = phrases[curPhraseIndex];
+
+      for (let i = 0; i < curWord.length; i++) {
+        textElement.innerText = curWord.substring(0, i + 1);
+        await sleep(sleepTime);
+      }
+
+      await sleep(500);
+
+      for (let i = curWord.length; i > 0; i--) {
+        textElement.innerText = curWord.substring(0, i - 1);
+        await sleep(sleepTime);
+      }
+
+      await sleep(500);
+
+      curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
+    }
+  };
+
+  writeLoop();
+};
+typewriterEffect('#writing-weight', ['80', '65', '72', '110']);
+typewriterEffect('#writing-act', ['380', '405', '430', '410']);
+typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
+
 </script>
