@@ -543,7 +543,9 @@
         <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
           <div class="lg:mx-4 mb-4">
             <div class="flex flex-col gap-4 mx-auto">
-              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
+              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
+              <%= image_tag 'tuto/table_sm.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto mx-4 lg:hidden' %>
+
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Table interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base text-left">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and a continous UFH dosing strategy</strong></p>
 
@@ -553,7 +555,9 @@
               <p class="text-sm text-gray-800 lg:text-base">For the continuous dosing strategy, <strong>the infusion rate (IR)</strong> corresponds to <strong>the UFH infusion rate in UI per hour to keep the ACT values at the desired ACT target</strong> during surgey</p>
               <p class="text-sm text-gray-800 lg:text-base">Finally, for both dosing strategies, the last table row corresponds to <strong>the time to wait before the next recommended LD, MD and IR to administer</strong>. This waiting time starts at the time of the last measured ACT</p>
 
-              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
+              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
+              <%= image_tag 'tuto/plot_solo.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:hidden mx-4' %>
+
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The horizontal black dotted line</strong> represents the <strong>target ACT</strong> threshold chosen for the surgery</p>
               <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>the measured ACT values</strong></p>
