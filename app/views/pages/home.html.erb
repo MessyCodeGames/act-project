@@ -4,7 +4,7 @@
 
   <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-4 ml-6 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
+    <div class="gap-2 pt-4 ml-4 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
       <a href="#section-calcul" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
       <a href="#section-calcul" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Prediction</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
@@ -481,7 +481,7 @@
               <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:20</p>
             </div>
           </div>
-          <div class="fun-border absolute inset-0 bg-light-green z-8 parallax"></div>
+          <div class="fun-border-2 absolute inset-0 bg-light-green z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:hidden">
           <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Section 2:</strong></p>
@@ -516,7 +516,7 @@
         <div class="flex flex-col align-start lg:w-1/2">
           <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Sections 3 and 4:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>time</strong> of administration <strong>and amount of administered UFH bolus</strong> in UI</p>
-          <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>start time</strong>, <strong>duration</strong> in minutes <strong>and infusion rate</strong> in UI per hour of previous <strong>UFH infusions administered</strong></p>
+          <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>start time</strong>, <strong>duration</strong> in minutes <strong>and infusion rate</strong> in UI per hour of <strong>UFH infusions administered</strong></p>
         </div>
       </div>
 
@@ -527,7 +527,7 @@
       <div class="flex flex-col justify-center align-items-center mx-auto lg:w-3/5 lg:mb-4 mb-2">
         <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 text-center"><strong>Run calculations:</strong></p>
         <p class="text-sm lg:text-base text-gray-800 lg:mb-2 mb-1">Press <span class="text-sm lg:text-base bg-icon-color-dark text-white font-bold lg:px-2 lg:py-1 px-1 py-0.5 rounded">Calculate dosing regimen</span> to <strong>calculate an optimized UFH dosing regimen</strong> based on ACT measurements</p>
-        <p class="text-sm text-gray-800 lg:text-base">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent dosing strategy</strong> (based on iterative bolus) and <strong>continuous dosing strategy</strong> (based on continuous infusion)</p>
+        <p class="text-sm text-gray-800 lg:text-base">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent UFH dosing strategy</strong> (based on iterative bolus) and <strong>continuous UFH dosing strategy</strong> (based on continuous infusion)</p>
       </div>
 
       <br class="lg:hidden">
@@ -546,11 +546,12 @@
               <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Table interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base text-left">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and a continous UFH dosing strategy</strong></p>
-              <p class="text-sm text-gray-800 lg:text-base"><strong>The loading dose (LD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to reach the desired target ACT</strong></p>
+
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The loading dose (LD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to reach the desired target ACT</strong> if the last measured ACT was below the ACT target</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The maintenance bolus (MD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to stay above the desired ACT target</strong> threshold during the period of time defined in section 1 (example: MB to administer every 30 or 60 minutes to stay above target ACT)</p>
-              <p class="text-sm text-gray-800 lg:text-base">Total (LD + MD) is simply the sum of the loading dose and the maintenance bolus to admninister for the intermittent dosing strategy</p>
-              <p class="text-sm text-gray-800 lg:text-base">For the continuous dosing strategy, <strong>the infusion rate (IR) to stay at the desired ACT target</strong> during surgey is displayed in UI per hour</p>
-              <p class="text-sm text-gray-800 lg:text-base">Finally, for both dosing strategies, <strong>the time to wait before the next recommended LD, MD and IR to administere is displayed</strong>. This waiting time starts at the time of the last measured ACT</p>
+              <p class="text-sm text-gray-800 lg:text-base">Total (LD + MD) is the sum of the loading dose and the maintenance bolus to admninister for the intermittent dosing strategy</p>
+              <p class="text-sm text-gray-800 lg:text-base">For the continuous dosing strategy, <strong>the infusion rate (IR)</strong> corresponds to <strong>the UFH infusion rate in UI per hour to keep the ACT values at the desired ACT target</strong> during surgey</p>
+              <p class="text-sm text-gray-800 lg:text-base">Finally, for both dosing strategies, the last table row corresponds to <strong>the time to wait before the next recommended LD, MD and IR to administer</strong>. This waiting time starts at the time of the last measured ACT</p>
 
               <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto' %>
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
@@ -558,19 +559,18 @@
               <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>the measured ACT values</strong></p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The blue solid line</strong> corresponds to <strong>fitted ACT values</strong> using using dosing history, patient bodyweigth and ACT measurements</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The red dotted line</strong> corresponds to <strong>predicted ACT values</strong> using the individualized UFH dosing regimen, continuous or intermittent</p>
-              <p class="text-sm text-gray-800 lg:text-base"><strong>The vertical brown dotted line</strong> represent the <strong>time for the next injection</strong>, LD, MB and or IR</p>
+              <p class="text-sm text-gray-800 lg:text-base"><strong>The vertical brown dotted line</strong> represents the <strong>time for the next injection</strong>, LD, MB and or IR</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The beautiful golden yellow ribbons</strong> correpond to the <strong>50% and 90% confidence intervals</strong></p>
 
 
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Methodology:</h2>
               <p class="text-sm text-gray-800 lg:text-base">
-                The <strong>pharmacodynamic models of UFH during cardiac surgery</strong> used in this application were developed using
-                <strong>pharmacodynamic data from more than 200 patients</strong>. The models were developed using <strong>non-linear
-                mixed effect modelling approach</strong>
+                The pharmacodynamic models of UFH during cardiac surgery used in this application were developed using
+                pharmacodynamic data from more than 200 patients. The models were developed using non-linear
+                mixed effect modelling approach, and are robust to outlier ACT measurements
               </p>
               <p class="text-sm text-gray-800 lg:text-base">
-                All details concerning the pharmacokinetic models were presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold text-icon-color-dark lg:hover:text-active-color">bibliography section
-                of the website</a>
+                All details concerning the pharmacokinetic models are presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold text-icon-color-dark lg:hover:text-active-color">bibliography section</a>
               </p>
               <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
                 <a href="#section-result-interpretation" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Fold section</a>
@@ -738,6 +738,10 @@
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
+.fun-border-2 {
+  border-radius: 30% 70% 85% 15% / 61% 45% 55% 39%;
+}
+
 .parallax {
   transform: translateY(var(--parallax-offset, 0));
   transition: transform 0.2s ease-out;
@@ -803,36 +807,49 @@
   }
 
   if (typeof typewriterEffect === 'undefined') {
-    const typewriterEffect = async (selector, phrases, sleepTime = 200) => {
-      const textElement = document.querySelector(selector);
-      let curPhraseIndex = 0;
+  const typewriterEffect = (selector, phrases, sleepTime = 200) => {
+    const textElement = document.querySelector(selector);
+    let curPhraseIndex = 0;
+    let curCharIndex = 0;
+    let isDeleting = false;
 
-      const writeLoop = async () => {
-        while (true) {
-          let curWord = phrases[curPhraseIndex];
+    const type = async () => {
+      const curWord = phrases[curPhraseIndex];
+      if (isDeleting) {
+        textElement.innerText = curWord.substring(0, curCharIndex - 1);
+        curCharIndex--;
+      } else {
+        textElement.innerText = curWord.substring(0, curCharIndex + 1);
+        curCharIndex++;
+      }
 
-          for (let i = 0; i < curWord.length; i++) {
-            textElement.innerText = curWord.substring(0, i + 1);
-            await sleep(sleepTime);
-          }
+      if (!isDeleting && curCharIndex === curWord.length) {
+        isDeleting = true;
+        await sleep(1000); // Pause before deleting
+      } else if (isDeleting && curCharIndex === 0) {
+        isDeleting = false;
+        curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
+        await sleep(1000); // Pause before typing next word
+      }
 
-          await sleep(500);
-
-          for (let i = curWord.length; i > 0; i--) {
-            textElement.innerText = curWord.substring(0, i - 1);
-            await sleep(sleepTime);
-          }
-
-          await sleep(500);
-
-          curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
-        }
-      };
-      writeLoop();
+      setTimeout(type, sleepTime);
     };
 
-    typewriterEffect('#writing-weight', ['80', '65', '72', '110']);
-    typewriterEffect('#writing-act', ['380', '405', '430', '410']);
-    typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
-  }
+    // Intersection Observer to trigger the animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          type();
+          observer.unobserve(entry.target); // Stop observing once the animation starts
+        }
+      });
+    });
+
+    observer.observe(textElement);
+  };
+
+  typewriterEffect('#writing-weight', ['80', '65', '72', '110']);
+  typewriterEffect('#writing-act', ['380', '405', '430', '410']);
+  typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
+}
 </script>
