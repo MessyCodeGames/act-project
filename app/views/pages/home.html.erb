@@ -403,7 +403,7 @@
           <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-2 plot-container lg:flex-row lg:mt-4 lg:gap-2"></div>
           <br>
           <div class="flex justify-center">
-            <a href="#section-result-interpretation" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-4 mb-2">How to interpret the results?</a>
+            <a href="#section-result-interpretation" id="interpret-link" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-4 mb-2">How to interpret the results?</a>
           </div>
           <div><button id="print-to-pdf" style="display:none" class="flex justify-center lg:text-xl text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Print to PDF</button></div>
         </div>
@@ -856,4 +856,16 @@
   typewriterEffect('#writing-act', ['380', '405', '430', '410']);
   typewriterEffect('#writing-bolus', ['3500', '2000', '5200', '4350']);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const interpretLink = document.getElementById('interpret-link');
+  const toggleButton = document.querySelector('#section-result-interpretation p');
+
+  interpretLink.addEventListener('click', (event) => {
+    // Wait for the browser to scroll to the section
+    setTimeout(() => {
+      toggleButton.click();
+    }, 100);
+  });
+});
 </script>
