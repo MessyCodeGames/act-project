@@ -74,7 +74,7 @@
                     </svg>') %>
                     Target ACT (seconds)
                   <% end %>
-                  <%= form.number_field :act_target, value: "400", min: "1", max: "1000", data: { form_handler_target: "actTarget" }, class: "out-of-range:border-red-500 flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                  <%= form.number_field :act_target, required: true, value: "400", min: "1", max: "1000", data: { form_handler_target: "actTarget" }, class: "out-of-range:border-red-500 flex-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                 </div>
 
                 <div id="times-between-bolus" class="flex items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5">
@@ -91,7 +91,7 @@
 
               <!-- ACT measurement part -->
               <div data-controller="addable moveable">
-                <div id="act-measured" class="flex flex-col p-4 -mx-2 pt-4 pb-4 bg-light-green lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
+                <div id="act-measured" class="flex flex-col p-4 pt-4 pb-4 -mx-2 bg-light-green lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
                   <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
                       <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
@@ -421,30 +421,30 @@
 
     <div class="flex flex-col mx-5">
 
-      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
-        <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
+      <div class="flex flex-col items-center gap-4 mx-auto lg:flex-row">
+        <div class="relative flex flex-col p-2 py-4 lg:px-4 lg:py-6 lg:w-1/2">
           <div class="z-10">
             <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">1 - Setup</h2>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Patient weight</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-weight"></span><span class="cursor">|</span></p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Patient weight</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base"><span id="writing-weight"></span><span class="cursor">|</span></p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Target ACT (s)</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">400</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Target ACT (s)</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base">400</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time between bolus injections (min)</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:pr-24 pr-12 lg:text-base text-xs">30</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time between bolus injections (min)</p>
+              <p class="flex-1 p-1 pr-12 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:pr-24 lg:text-base">30</p>
             </div>
           </div>
-          <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
+          <div class="absolute inset-0 fun-border bg-very-light-color z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Section 1:</strong></p>
+          <p class="mb-1 text-sm text-center text-gray-800 lg:text-base lg:mb-2 lg:text-left"><strong>Section 1:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>patient's body weight</strong> in kg</p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>target ACT recquired by the surgery</strong>, the ACT threshold you wish to be at or above, in seconds</p>
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1">Enter the <strong>time between heparin bolus injections</strong> in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
+          <p class="mb-1 text-sm text-gray-800 lg:text-base lg:mb-2">Enter the <strong>time between heparin bolus injections</strong> in minutes for the intermittent bolus dosing regimen, such as every 30 or 60 min</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
       </div>
@@ -453,38 +453,38 @@
       <hr class="lg:hidden">
       <br>
 
-      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
-        <div class="flex flex-col align-start lg:w-1/2 hidden lg:block">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Section 2:</strong></p>
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
+      <div class="flex flex-col items-center gap-4 mx-auto lg:flex-row">
+        <div class="flex flex-col hidden align-start lg:w-1/2 lg:block">
+          <p class="mb-1 text-sm text-center text-gray-800 lg:text-base lg:mb-2 lg:text-left"><strong>Section 2:</strong></p>
+          <p class="mb-1 text-sm text-gray-800 lg:text-base lg:mb-2">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
-        <div class="flex flex-col p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
-          <div class="z-20 relative">
+        <div class="relative flex flex-col p-2 py-4 lg:px-4 lg:py-6 lg:w-1/2">
+          <div class="relative z-20">
             <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg">2 - ACT</h2>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">120</p>
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 10:10</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base">120</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base whitespace-nowrap">30/10/2024 10:10</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">380&nbsp&nbsp</p>
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:00</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base">380&nbsp&nbsp</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base whitespace-nowrap">30/10/2024 11:00</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">ACT measurement</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-act"></span><span class="cursor">|</span></p>
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:20</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">ACT measurement</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base"><span id="writing-act"></span><span class="cursor">|</span></p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base whitespace-nowrap">30/10/2024 11:20</p>
             </div>
           </div>
-          <div class="fun-border-2 absolute inset-0 bg-light-green z-8 parallax"></div>
+          <div class="absolute inset-0 fun-border-2 bg-light-green z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:hidden">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Section 2:</strong></p>
+          <p class="mb-1 text-sm text-center text-gray-800 lg:text-base lg:mb-2 lg:text-left"><strong>Section 2:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>ACT measurements</strong> in seconds, <strong>with their measurement times</strong> (date, hour and minutes), in chronological order</p>
           <p class="text-sm text-gray-800 lg:text-base"><em>Those informations are mandatory for the models to compute</em></p>
         </div>
@@ -494,27 +494,27 @@
       <hr class="lg:hidden">
       <br>
 
-      <div class="flex lg:flex-row flex-col items-center gap-4 mx-auto">
-        <div class="flex flex-col justify-center items-center p-2 py-4 lg:px-4 lg:py-6 relative lg:w-1/2">
+      <div class="flex flex-col items-center gap-4 mx-auto lg:flex-row">
+        <div class="relative flex flex-col items-center justify-center p-2 py-4 lg:px-4 lg:py-6 lg:w-1/2">
           <div class="z-10">
             <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mb">3 - Heparin bolus injections</h2>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5 flex-1">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs">10000</p>
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 10:50</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Heparin bolus</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base">10000</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base whitespace-nowrap">30/10/2024 10:50</p>
             </div>
             <div class="flex flex-row items-center lg:gap-2 gap-0.5 my-0.5">
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Heparin bolus</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs"><span id="writing-bolus"></span><span class="cursor">|</span></p>
-              <p class="lg:my-2 lg:text-base text-sm flex items-center whitespace-nowrap">Time</p>
-              <p class="flex-1 rounded-lg border-2 border-quaternary bg-beige-color text-secondary-dark lg:p-2 p-1 lg:text-base text-xs whitespace-nowrap">30/10/2024 11:15</p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Heparin bolus</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base"><span id="writing-bolus"></span><span class="cursor">|</span></p>
+              <p class="flex items-center text-sm lg:my-2 lg:text-base whitespace-nowrap">Time</p>
+              <p class="flex-1 p-1 text-xs border-2 rounded-lg border-quaternary bg-beige-color text-secondary-dark lg:p-2 lg:text-base whitespace-nowrap">30/10/2024 11:15</p>
             </div>
           </div>
-          <div class="fun-border absolute inset-0 bg-very-light-color z-8 parallax"></div>
+          <div class="absolute inset-0 fun-border bg-very-light-color z-8 parallax"></div>
         </div>
         <div class="flex flex-col align-start lg:w-1/2">
-          <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 lg:text-left text-center"><strong>Sections 3 and 4:</strong></p>
+          <p class="mb-1 text-sm text-center text-gray-800 lg:text-base lg:mb-2 lg:text-left"><strong>Sections 3 and 4:</strong></p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>time</strong> of administration <strong>and amount of administered UFH bolus</strong> in UI</p>
           <p class="text-sm text-gray-800 lg:text-base">Enter the <strong>start time</strong>, <strong>duration</strong> in minutes <strong>and infusion rate</strong> in UI per hour of <strong>UFH infusions administered</strong></p>
         </div>
@@ -524,10 +524,10 @@
       <hr class="lg:hidden">
       <br>
 
-      <div class="flex flex-col justify-center align-items-center mx-auto lg:w-3/5 lg:mb-4 mb-2">
-        <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1 text-center"><strong>Run calculations:</strong></p>
-        <p class="text-sm lg:text-base text-gray-800 lg:mb-2 mb-1">Press <span class="text-sm lg:text-base bg-icon-color-dark text-white font-bold lg:px-2 lg:py-1 px-1 py-0.5 rounded">Calculate dosing regimen</span> to <strong>calculate an optimized UFH dosing regimen</strong> based on ACT measurements</p>
-        <p class="text-sm text-gray-800 lg:text-base lg:mb-2 mb-1">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent UFH dosing strategy</strong> (based on iterative bolus) and <strong>continuous UFH dosing strategy</strong> (based on continuous infusion)</p>
+      <div class="flex flex-col justify-center mx-auto mb-2 align-items-center lg:w-3/5 lg:mb-4">
+        <p class="mb-1 text-sm text-center text-gray-800 lg:text-base lg:mb-2"><strong>Run calculations:</strong></p>
+        <p class="mb-1 text-sm text-gray-800 lg:text-base lg:mb-2">Press <span class="text-sm lg:text-base bg-icon-color-dark text-white font-bold lg:px-2 lg:py-1 px-1 py-0.5 rounded">Calculate dosing regimen</span> to <strong>calculate an optimized UFH dosing regimen</strong> based on ACT measurements</p>
+        <p class="mb-1 text-sm text-gray-800 lg:text-base lg:mb-2">The results contain <strong>dosing recommendations</strong> for both <strong>Intermittent UFH dosing strategy</strong> (based on iterative bolus) and <strong>continuous UFH dosing strategy</strong> (based on continuous infusion)</p>
         <p class="text-sm text-[#FF0808] lg:text-base"><em>Please note that no data is stored on the site. Refreshing or exiting the page will cause you to lose your session!</em></p>
       </div>
 
@@ -542,13 +542,13 @@
         </div>
 
         <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
-          <div class="lg:mx-4 mb-4">
+          <div class="mb-4 lg:mx-4">
             <div class="flex flex-col gap-4 mx-auto">
               <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
               <%= image_tag 'tuto/table_sm.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto mx-4 lg:hidden' %>
 
-              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Table interpretation:</h2>
-              <p class="text-sm text-gray-800 lg:text-base text-left">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and a continous UFH dosing strategy</strong></p>
+              <h2 class="mx-auto text-sm font-semibold text-left text-gray-800 lg:text-lg">Table interpretation:</h2>
+              <p class="text-sm text-left text-gray-800 lg:text-base">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and a continous UFH dosing strategy</strong></p>
 
               <p class="text-sm text-gray-800 lg:text-base"><strong>The loading dose (LD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to reach the desired target ACT</strong> if the last measured ACT was below the ACT target</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The maintenance bolus (MD)</strong> corresponds to the <strong>intravenous UFH bolus to administer to stay above the desired ACT target</strong> threshold during the period of time defined in section 1 (example: MB to administer every 30 or 60 minutes to stay above target ACT)</p>
@@ -559,23 +559,23 @@
               <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
               <%= image_tag 'tuto/plot_solo.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:hidden mx-4' %>
 
-              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
+              <h2 class="mx-auto text-sm font-semibold text-left text-gray-800 lg:text-lg">Plot interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The horizontal black dotted line</strong> represents the <strong>target ACT</strong> threshold chosen for the surgery</p>
-              <p class="text-sm text-gray-800 lg:text-base text-left"><strong>The brown circles</strong> represent <strong>the measured ACT values</strong></p>
+              <p class="text-sm text-left text-gray-800 lg:text-base"><strong>The brown circles</strong> represent <strong>the measured ACT values</strong></p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The blue solid line</strong> corresponds to <strong>fitted ACT values</strong> using using dosing history, patient body weigth and ACT measurements</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The red dotted line</strong> corresponds to <strong>predicted ACT values</strong> using the individualized UFH dosing regimen, continuous or intermittent</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The vertical brown dotted line</strong> represents the <strong>time for the next injection</strong>, LD, MB and or IR</p>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The beautiful golden yellow ribbons</strong> correpond to the <strong>50% and 90% confidence intervals</strong></p>
 
 
-              <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Methodology:</h2>
+              <h2 class="mx-auto text-sm font-semibold text-left text-gray-800 lg:text-lg">Methodology:</h2>
               <p class="text-sm text-gray-800 lg:text-base">
                 The pharmacodynamic models of UFH during cardiac surgery used in this application were developed using
                 pharmacodynamic data from more than 200 patients. The models were developed using non-linear
                 mixed effect modelling approach, and are robust to outlier ACT measurements
               </p>
               <p class="text-sm text-gray-800 lg:text-base">
-                All details concerning the pharmacokinetic models are presented in the <a href="#section-biblio" class="lg:my-2 lg:text-base text-sm font-bold text-icon-color-dark lg:hover:text-active-color">bibliography section</a>
+                All details concerning the pharmacokinetic models are presented in the <a href="#section-biblio" class="text-sm font-bold lg:my-2 lg:text-base text-icon-color-dark lg:hover:text-active-color">bibliography section</a>
               </p>
               <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
                 <a href="#section-result-interpretation" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Fold section</a>

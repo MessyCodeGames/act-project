@@ -20,7 +20,7 @@ export default class extends Controller {
 
     // Check if all inputs are valid
     // Check if all ACT values are between 1 and 1000
-    actValuesMeasured.forEach((actValueMeasured, index) => {
+    actValuesMeasured.forEach((actValueMeasured) => {
       if (actValueMeasured.value < 1 || actValueMeasured.value > 1000) {
         actValueMeasured.classList.add("border-red-500");
         validInputs = false;
@@ -28,27 +28,35 @@ export default class extends Controller {
     });
 
     // Check if all ACT measurement times are filled
-    actMeasurementTimes.forEach((actMeasurementTime, index) => {
+    actMeasurementTimes.forEach((actMeasurementTime) => {
       if (!actMeasurementTime.value) {
         actMeasurementTime.classList.add("border-red-500");
         validInputs = false;
       }
     });
 
-    if (!this.patientWeightTarget.value) {
-      console.log(this.patientWeightTarget);
-      this.patientWeightTarget.classList.add("border-red-500");
-      console.log(validInputs, this.patientWeightTarget.classList);
+    const patientWeight = this.patientWeightTarget;
+    if (!patientWeight.value) {
+      patientWeight.classList.add("border-red-500");
+      console.log(validInputs, patientWeight.classList);
       // alert('Patient weight must be greater than 0.');
+
+      // Custom error message for the input field but it doesn't work
+      // patientWeight.setCustomValidity('Patient weight is required.');
       validInputs = false;
+      console.log(validInputs);
     }
-    if (!this.actTargetTarget.value) {
-      this.actTargetTarget.classList.add("border-red-500");
+
+    const actTarget = this.actTargetTarget;
+    if (!actTarget.value) {
+      this.actTarget.classList.add("border-red-500");
       // alert('ACT target must be greater than 0.');
       validInputs = false;
     }
-    if (!this.timesBetweenBolusTarget.value) {
-      this.timesBetweenBolusTarget.classList.add("border-red-500");
+
+    const timesBetweenBolus = this.timesBetweenBolusTarget;
+    if (!timesBetweenBolus.value) {
+      this.timesBetweenBolus.classList.add("border-red-500");
       // alert('Times between bolus injections must be greater than 0.');
       validInputs = false;
     }
@@ -85,7 +93,14 @@ export default class extends Controller {
       }
     }
 
-    if (isValid && validInputs) {
+    if (!isValid || !validInputs) {
+      const redBorderElement = document.querySelector('.border-red-500');
+      if (redBorderElement) {
+        console.log('Scrolling into view:', redBorderElement);
+        alert ('Please fill in all required fields.');
+        redBorderElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else if (isValid && validInputs) {
       console.log("Validation passed, submitting form");
       this.submitForm(event);
     }
