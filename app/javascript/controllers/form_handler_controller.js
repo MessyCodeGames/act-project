@@ -65,10 +65,14 @@ export default class extends Controller {
     const actDatetimeInputs = this.actDatetimeInputTargets.map(input => new Date(input.value));
     console.log(actDatetimeInputs);
     for (let i = 1; i < actDatetimeInputs.length; i++) {
-      if (actDatetimeInputs[i] <= actDatetimeInputs[i - 1]) {
+      // Check if the ACT values are in chronological order
+      // Check if the time difference between the first and last ACT value is less than 4.5 hours
+      if (actDatetimeInputs[i] <= actDatetimeInputs[i - 1] || actDatetimeInputs[actDatetimeInputs.length - 1] - actDatetimeInputs[0] > 16200000) {
         isValid = false;
+        console.log(actDatetimeInputs[i], actDatetimeInputs[i - 1]);
+        console.log(actDatetimeInputs[actDatetimeInputs.length - 1] - actDatetimeInputs[0]);
         console.log("Validation failed at index:", i);
-        alert('Measured ACT Values must be in chronological order.');
+        alert('Measured ACT Values must be in chronological order and within 4.5 hours.');
         break;
       }
     }
@@ -76,9 +80,9 @@ export default class extends Controller {
     const bolusDatetimeInputs = this.bolusDatetimeInputTargets.map(input => new Date(input.value));
     console.log(bolusDatetimeInputs);
     for (let i = 1; i < bolusDatetimeInputs.length; i++) {
-      if (bolusDatetimeInputs[i] <= bolusDatetimeInputs[i - 1]) {
+      if (bolusDatetimeInputs[i] <= bolusDatetimeInputs[i - 1] || bolusDatetimeInputs[bolusDatetimeInputs.length - 1] - bolusDatetimeInputs[0] > 16200000) {
         isValid = false;
-        alert('Heparin bolus injections must be in chronological order.');
+        alert('Heparin bolus injections must be in chronological order and within 4.5 hours.');
         break;
       }
     }
@@ -86,9 +90,9 @@ export default class extends Controller {
     const infusionDatetimeInputs = this.infusionDatetimeInputTargets.map(input => new Date(input.value));
     console.log(infusionDatetimeInputs);
     for (let i = 1; i < infusionDatetimeInputs.length; i++) {
-      if (infusionDatetimeInputs[i] <= infusionDatetimeInputs[i - 1]) {
+      if (infusionDatetimeInputs[i] <= infusionDatetimeInputs[i - 1] || infusionDatetimeInputs[infusionDatetimeInputs.length - 1] - infusionDatetimeInputs[0] > 16200000) {
         isValid = false;
-        alert('Heparin infusions must be in chronological order.');
+        alert('Heparin infusions must be in chronological order and within 4.5 hours.');
         break;
       }
     }
