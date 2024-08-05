@@ -285,7 +285,7 @@ export default class extends Controller {
           }
         }
       });
-      // Hide the loading GIF after processing the response
+      
       hideLoading();
 
       if (this.resultTarget) {

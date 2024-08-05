@@ -2,19 +2,19 @@
 
   <!-- BANNER -->
 
-  <div id="hero-banner" class="h-auto lg:h-96 bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
+  <div id="hero-banner" class="h-auto bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 pt-4 ml-4 lg:flex lg:gap-6 lg:ml-12 lg:pt-12">
-      <a href="#section-calcul" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
-      <a href="#section-calcul" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Prediction</a>
+    <div class="gap-2 lg:flex lg:gap-6 lg:ml-5 ml-4 lg:pt-5 pt-4">
+      <a href="#section-calcul" class="hidden text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
+      <a href="#section-calcul" class="text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Prediction</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
       <a href="#section-tutorial" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Tutorial</a>
-      <a href="#section-tutorial" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Tuto</a>
+      <a href="#section-tutorial" class="text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Tuto</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
-      <a href="#section-team" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark">Team</a>
+      <a href="#section-team" class="text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark">Team</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
       <a href="#section-biblio" class="hidden text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Bibliography</a>
-      <a href="#section-biblio" class="text-sm font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Biblio</a>
+      <a href="#section-biblio" class="text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Biblio</a>
     </div>
 
     <div class="flex flex-col items-center h-full gap-2 p-5 mx-auto lg:flex-row lg:justify-center lg:max-w-6xl lg:gap-6">
@@ -48,7 +48,7 @@
     <div class="p-2 lg:p-4">
 
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
-        <h2 id="section-calcul" class="text-base font-bold text-center text-icon-color-dark lg:text-xl">Heparin prediction form</h2>
+        <h2 id="section-calcul" class="font-bold text-center text-icon-color-dark lg:text-2xl text-base">Heparin prediction form</h2>
       </div>
       <a href="#section-tutorial" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">How does it work?</a>
       <div data-controller="form-handler">
@@ -135,7 +135,7 @@
                   </div>
 
                   <div class="flex justify-center">
-                    <button data-action="click->addable#addActValues"  class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
+                    <button data-action="click->addable#addActValues"  class="lg:mt-2 lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an ACT measurement</button>
                   </div>
                 </div>
 
@@ -185,7 +185,7 @@
                   </div>
 
                   <div class="flex justify-center">
-                    <button data-action="click->addable#addBolus"  class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add a bolus</button>
+                    <button data-action="click->addable#addBolus"  class="lg:mt-2 lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add a bolus</button>
                   </div>
                 </div>
 
@@ -241,14 +241,14 @@
                   </div>
 
                 <div class="flex justify-center">
-                  <button data-action="click->addable#addInfusion" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
+                  <button data-action="click->addable#addInfusion" class="lg:mt-2 lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline">Add an infusion</button>
                 </div>
               </div>
             </div>
 
             <br>
             <div class="flex flex-col items-center justify-center">
-              <%= form.submit "Calculate dosing regimen", class:"flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
+              <%= form.submit "Calculate dosing regimen", class:"lg:mb-5 flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
                 <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'mt-4 w-12 lg:w-auto', style:"display:none"%>
                 <!-- <img id="loading-gif" class="mt-4" style="display:none" src="http://chimplyimage.appspot.com/images/samples/classic-spinner/animatedCircle.gif" /> -->
               <% end %>
@@ -260,7 +260,7 @@
         <div class="p-3 m-0 bg-secondary adaptative-width rounded-2xl lg:shadow-lg lg:p-4">
 
           <div class="container mx-auto">
-            <h2 class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4" data-form-handler-target="result">Recommandations</h2>
+            <h2 class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4" data-form-handler-target="result">Recommandations</h2>
           </div>
 
 
@@ -400,10 +400,10 @@
             </div>
           </div>
 
-          <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-2 plot-container lg:flex-row lg:mt-4 lg:gap-2"></div>
-          <br>
+          <div id="image-container" class="flex flex-col items-center justify-center gap-1 plot-container lg:flex-row lg:mt-6 mt-4 mb-2 lg:gap-2"></div>
+
           <div class="flex justify-center">
-            <a href="#section-result-interpretation" id="interpret-link" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-4 mb-2">How to interpret the results?</a>
+            <a href="#section-result-interpretation" id="interpret-link" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-8 lg:mb-4 mt-3 mb-2">How to interpret the results?</a>
           </div>
           <div><button id="print-to-pdf" style="display:none" class="flex justify-center lg:text-xl text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline">Print to PDF</button></div>
         </div>
@@ -416,7 +416,7 @@
   <div class="container mx-auto mt-8 mb-4 lg:w-4/5 lg:mb-8 lg:mt-12">
 
     <div class="container mx-auto my-4">
-      <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4">Tutorial</h2>
+      <h2 id="section-tutorial" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4">Tutorial</h2>
     </div>
 
     <div class="flex flex-col mx-5">
@@ -538,14 +538,14 @@
       <div data-controller="toggle">
 
         <div id="section-result-interpretation" class="flex justify-center" data-action="click->toggle#fire">
-          <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-6 mb-3">Details on interpreting results</p>
+          <p class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mb-8 mb-6">Details on interpreting results</p>
         </div>
 
         <div class="smooth-toggle togglable-element" data-toggle-target="togglableElement">
           <div class="lg:mx-4 mb-4">
             <div class="flex flex-col gap-4 mx-auto">
-              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
-              <%= image_tag 'tuto/table_sm.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto mx-4 lg:hidden' %>
+              <%= image_tag 'tuto/result_table_tuto.png', alt: 'Description of the image', class: 'w-4/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
+              <%= image_tag 'tuto/table_sm.png', alt: 'Description of the image', class: 'w-4/5 h-auto rounded-2xl shadow-lg mx-auto mx-4 lg:hidden' %>
 
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Table interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base text-left">The table presents the <strong>model's recommandations for</strong> both <strong>an intermittent UFH dosing strategy and a continous UFH dosing strategy</strong></p>
@@ -556,8 +556,8 @@
               <p class="text-sm text-gray-800 lg:text-base">For the continuous dosing strategy, <strong>the infusion rate (IR)</strong> corresponds to <strong>the UFH infusion rate in UI per hour to keep the ACT values at the desired ACT target</strong> during surgey</p>
               <p class="text-sm text-gray-800 lg:text-base">Finally, for both dosing strategies, the last table row corresponds to <strong>the time to wait before the next recommended LD, MD and IR to administer</strong>. This waiting time starts at the time of the last measured ACT</p>
 
-              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
-              <%= image_tag 'tuto/plot_solo.png', alt: 'Description of the image', class: 'lg:w-4/5 w-5/5 h-auto rounded-2xl shadow-lg mx-auto lg:hidden mx-4' %>
+              <%= image_tag 'tuto/plots_tuto.png', alt: 'Description of the image', class: 'w-4/5 h-auto rounded-2xl shadow-lg mx-auto lg:block hidden' %>
+              <%= image_tag 'tuto/plot_solo.png', alt: 'Description of the image', class: 'w-4/5 h-auto rounded-2xl shadow-lg mx-auto lg:hidden mx-4' %>
 
               <h2 class="text-sm font-semibold text-left text-gray-800 lg:text-lg mx-auto">Plot interpretation:</h2>
               <p class="text-sm text-gray-800 lg:text-base"><strong>The horizontal black dotted line</strong> represents the <strong>target ACT</strong> threshold chosen for the surgery</p>
@@ -595,7 +595,7 @@
   <div class="mx-auto full-width bg-secondary lg:py-4">
     <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
       <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
         <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> This app has been developped and designed by Edouard Ollier, Julien Lanoiselée and Robin
           Chaux from INSERM unit U1059 (https://sainbiose-lab.fr)</p>
         <br>
@@ -618,7 +618,7 @@
   <div class="container mx-auto lg:mt-12 lg:w-4/5">
 
     <div class="container mx-auto my-4">
-      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-xl lg:mb-4">Bibliography</h2>
+      <h2 id="section-biblio" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4">Bibliography</h2>
     </div>
 
     <div class="mx-5">
