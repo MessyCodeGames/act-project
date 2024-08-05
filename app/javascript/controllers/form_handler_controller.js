@@ -72,7 +72,7 @@ export default class extends Controller {
         console.log(actDatetimeInputs[i], actDatetimeInputs[i - 1]);
         console.log(actDatetimeInputs[actDatetimeInputs.length - 1] - actDatetimeInputs[0]);
         console.log("Validation failed at index:", i);
-        alert('Measured ACT Values must be in chronological order and within 10 hours.');
+        alert('Measured ACT Values must be in chronological order and within 4.5 hours.');
         break;
       }
     }
@@ -82,7 +82,7 @@ export default class extends Controller {
     for (let i = 1; i < bolusDatetimeInputs.length; i++) {
       if (bolusDatetimeInputs[i] <= bolusDatetimeInputs[i - 1] || bolusDatetimeInputs[bolusDatetimeInputs.length - 1] - bolusDatetimeInputs[0] > 16200000) {
         isValid = false;
-        alert('Heparin bolus injections must be in chronological order.');
+        alert('Heparin bolus injections must be in chronological order and within 4.5 hours.');
         break;
       }
     }
@@ -92,7 +92,7 @@ export default class extends Controller {
     for (let i = 1; i < infusionDatetimeInputs.length; i++) {
       if (infusionDatetimeInputs[i] <= infusionDatetimeInputs[i - 1] || infusionDatetimeInputs[infusionDatetimeInputs.length - 1] - infusionDatetimeInputs[0] > 16200000) {
         isValid = false;
-        alert('Heparin infusions must be in chronological order.');
+        alert('Heparin infusions must be in chronological order and within 4.5 hours.');
         break;
       }
     }
