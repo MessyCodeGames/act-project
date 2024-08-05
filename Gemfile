@@ -26,6 +26,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Open3 for safety against input code injection
+gem 'open3'
+
 # Use R code in Ruby
 # gem "rinruby"
 # gem "rinruby", "~> 2.1"
