@@ -21,7 +21,7 @@
 
       <div class="flex flex-col items-center gap-2 mx-auto lg:gap-4 lg:items-start">
         <h1 class="text-2xl font-bold text-white lg:text-4xl">optiACT, what is it?</h1>
-        <p class="text-base text-white lg:text-xl"><strong>ACTdose</strong> is an interactive tool
+        <p class="text-base text-white lg:text-xl"><strong>optiACT</strong> is an interactive tool
           dedicated to estimating the <strong>individual pharmacodynamics of unfractionated heparin (UFH)</strong>
           in cardiac surgery using a <strong>Bayesian approach</strong> with <strong>activated clotting time (ACT) measurements</strong>
         </p>
@@ -52,7 +52,7 @@
       <div data-controller="form-handler">
         <div class="flex gap-4">
           <a href="#section-tutorial" class="flex items-center lg:px-3 lg:py-2 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">
-          <svg class="lg:mr-3 mr-2 w-4 h-6 fill-current lg:w-6 lg:h-6 text-beige-color lg:hover:text-active-color active:scale-95" width="389.00003" height="389" viewBox="0 0 102.92292 102.92291" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
+          <svg class="lg:mr-3 mr-2 w-4 h-6 fill-current lg:w-6 lg:h-6 text-beige-color active:scale-95" width="389.00003" height="389" viewBox="0 0 102.92292 102.92291" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
             <g id="layer1" transform="translate(-101.80102,-49.305001)">
               <path
                 d="m 148.49998,64.981562 a 40.018227,40.018227 0 0 0 -40.01823,40.018228 40.018227,40.018227 0 0 0 40.01823,40.01823 40.018227,40.018227 0 0 0 40.01823,-40.01823 40.018227,40.018227 0 0 0 -40.01823,-40.018228 z m -10.44123,22.099943 c 1.93238,0.07825 3.88476,0.896044 5.40536,2.434994 l 5.09788,5.159374 5.17591,-5.114416 c 3.0779,-3.041191 7.84037,-3.169905 10.67842,-0.288354 2.83805,2.88155 2.64537,7.649629 -0.43253,10.69082 l -5.15938,5.097877 5.11442,5.17591 c 3.04119,3.0779 3.16939,7.84089 0.28784,10.67894 -2.88155,2.83805 -7.64963,2.64485 -10.69082,-0.43305 l -5.09788,-5.15937 -5.17592,5.11441 c -3.07789,3.04119 -7.84036,3.16939 -10.67841,0.28784 -2.83805,-2.88155 -2.64537,-7.64963 0.43253,-10.69082 l 5.15937,-5.09788 -5.1139,-5.175912 c -3.04119,-3.077898 -3.1699,-7.840367 -0.28835,-10.678418 1.44077,-1.419025 3.35309,-2.080198 5.28546,-2.001945 z"
@@ -69,7 +69,7 @@
             </g>
           </svg>  <span>How does it work?</span></a>
           <button data-action="click->form-handler#loadSession" class="flex items-center justify-items-end lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">
-          <svg class="lg:mr-3 mr-2 w-4 h-6 fill-current lg:w-6 lg:h-6 text-beige-color lg:hover:text-active-color active:scale-95" width="402.34375" height="402.34378" viewBox="0 0 106.45345 106.45346" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
+          <svg class="lg:mr-3 mr-2 w-4 h-6 fill-current lg:w-6 lg:h-6 text-beige-color active:scale-95" width="402.34375" height="402.34378" viewBox="0 0 106.45345 106.45346" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
             <defs
               id="defs1" /><g
               id="layer1"
@@ -150,7 +150,7 @@
                       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :acts do |acts_form| %>
                           <div class="flex flex-row w-full">
-                            <%= acts_form.label :act_value_measured, "Measured ACT values", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
+                            <%= acts_form.label :act_value_measured, "Measured ACT value", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
                             <%= acts_form.number_field :act_value_measured, data: { form_handler_target: "actValueMeasured" }, placeholder: "seconds", min: "1", max: "1000", class: "out-of-range:border-red-500 w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
@@ -316,38 +316,10 @@
             <div class="flex flex-col items-center justify-center">
               <%= button_tag type: 'submit', class: "lg:mb-6 mb-4 flex justify-center items-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" do %>
                 <svg
-                  class="lg:mr-3 mr-2 w-6 h-6 fill-current lg:w-8 lg:h-8 text-beige-color lg:hover:text-active-color active:scale-95"
-                  width="510.07129"
-                  height="469.40924"
-                  viewBox="0 0 134.95636 124.19786"
-                  version="1.1"
-                  id="svg1"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <sodipodi:namedview
-                    id="namedview1"
-                    pagecolor="#ffffff"
-                    bordercolor="#000000"
-                    borderopacity="0.25"
-                    inkscape:showpageshadow="2"
-                    inkscape:pageopacity="0.0"
-                    inkscape:pagecheckerboard="0"
-                    inkscape:deskcolor="#d1d1d1"
-                    inkscape:document-units="px"
-                    inkscape:zoom="0.70710678"
-                    inkscape:cx="309.71277"
-                    inkscape:cy="365.57421"
-                    inkscape:window-width="1920"
-                    inkscape:window-height="1017"
-                    inkscape:window-x="-8"
-                    inkscape:window-y="-8"
-                    inkscape:window-maximized="1"
-                    inkscape:current-layer="layer1" />
+                  class="lg:mr-3 mr-2 w-6 h-6 fill-current lg:w-8 lg:h-8 text-beige-color active:scale-95" width="510.07129" height="469.40924" viewBox="0 0 134.95636 124.19786" xmlns="http://www.w3.org/2000/svg">
                   <defs
                     id="defs1" />
                   <g
-                    inkscape:label="Layer 1"
-                    inkscape:groupmode="layer"
-                    id="layer1"
                     transform="translate(-57.550659,-33.479142)">
                     <path
                       style="fill:none;stroke:currentColor;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"

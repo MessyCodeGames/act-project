@@ -33,6 +33,7 @@ class PagesController < ApplicationController
     else
       infusion_times = calculate_params[:infusion_times].split(",").map { |time_string| DateTime.parse(time_string) }
       infusion_times_minutes = infusion_times.map { |time| ((time - act_measurement_times[0]) * 1440).to_i }
+      infusion_durations = calculate_params[:infusion_durations].split(",")
     end
 
     # Path to the R script
