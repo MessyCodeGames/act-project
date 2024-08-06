@@ -138,8 +138,8 @@
               <!-- ACT measurement part -->
               <div data-controller="addable moveable">
                 <div id="act-measured" class="flex flex-col p-4 pt-4 pb-4 -mx-2 bg-light-green lg:px-8 lg:pt-6 lg:pb-6 lg:-mx-4"> <!-- rounded-2xl -->
-                  <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
+                  <h2 class="flex flex-row items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 h-4 text-icon-color-dark">
                       <path d="M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16s-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z"/>
                     </svg>
                     2 - ACT&nbsp;<em class="text-xs font-normal lg:text-sm">(required)</em>
@@ -251,10 +251,15 @@
                   <div data-addable-target="heparinsInfusions" data-controller="deletable" data-form-handler-target="infusionValues">
                     <br>
                     <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
-                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
-                        <path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-72-72L295 73c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55L422.1 56 407 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0zM210.3 155.7l61.1-61.1c.3 .3 .6 .7 1 1l16 16 56 56 56 56 16 16c.3 .3 .6 .6 1 1l-191 191c-10.5 10.5-24.7 16.4-39.6 16.4l-88.8 0L41 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l57-57 0-88.8c0-14.9 5.9-29.1 16.4-39.6l43.3-43.3 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57 41.4-41.4 57 57c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-57-57z"/>
-                      </svg> -->
-                      <%= image_tag 'icons/infusion_icon.svg', class: 'lg:w-5 lg:h-5 lg:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark' %>
+                      <svg  class="lg:w-5 lg:h-5 lg:mr-2 w-4 h-4 mr-1 fill-current text-icon-color-dark" width="623.64209" height="623.63574" viewBox="0 0 165.0053 165.00362" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg">
+                        <defs id="defs1" />
+                        <g id="layer1" transform="translate(-65.996787,-22.476921)">
+                          <path
+                            id="path1"
+                            style="opacity:1;stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="m 221.62678,22.479248 c -0.30702,-0.0081 -0.6117,0.005 -0.91209,0.04031 -28.18466,3.314889 -48.65594,5.638717 -73.0927,5.643583 -21.48199,0.0043 -40.94603,-2.57257 -64.257054,-4.935616 -4.814656,-0.488063 -17.345194,4.932814 -17.345194,9.558073 0,0 4.251015,39.923763 4.247803,59.960681 -0.0032,19.946631 -4.247803,59.688861 -4.247803,59.688861 -0.403725,5.67288 4.578285,10.26552 10.265523,10.26552 l 47.377985,3.28352 v 11.52385 c 0,5.52478 4.44774,9.97251 9.97252,9.97251 h 29.72842 c 5.52478,0 9.97251,-4.44773 9.97251,-9.97251 v -11.58741 l 47.37799,-3.21996 c 5.67414,-0.38562 10.26552,-4.57829 10.26552,-10.26552 0,0 -4.56641,-38.87896 -4.60178,-58.408836 -0.0371,-20.471081 4.60178,-61.240706 4.60178,-61.240706 0.39953,-5.316795 -4.7482,-10.184449 -9.35343,-10.306347 z M 86.847928,40.21925 c 0,0 40.423382,5.637129 60.766832,5.663737 20.93096,0.02738 62.53727,-5.663737 62.53727,-5.663737 0,0 -1.0668,35.395947 -1.06195,53.099084 0.005,17.231246 1.06195,51.682636 1.06195,51.682636 0,0 -41.98057,4.99447 -63.06799,4.95577 -20.14648,-0.037 -60.236112,-4.95577 -60.236112,-4.95577 0,0 2.454146,-33.87238 2.477885,-50.83876 0.02518,-17.999875 -2.477885,-53.94296 -2.477885,-53.94296 z m 75.988642,25.146785 c -20.57571,-0.23867 -32.09397,4.152734 -46.25299,11.327991 -4.25868,2.158137 -10.97401,4.497414 -10.97401,9.204089 l 1.76992,21.007505 -1.76992,13.65653 c -0.60496,4.66762 3.82886,10.71976 8.49612,11.32747 0,0 13.1676,4.24537 32.62437,4.2478 20.07138,0.002 36.1642,-7.07967 36.1642,-7.07967 4.619,-0.90426 8.49612,-3.78894 8.49612,-8.4956 l -2.47788,-16.62379 2.47788,-18.040245 c 0.20464,-1.489834 2.15771,-20.175839 -28.55381,-20.53208 z m -2.20348,19.592086 a 16.912008,17.34565 0 0 1 16.91214,17.345709 16.912008,17.34565 0 0 1 -16.91214,17.34571 16.912008,17.34565 0 0 1 -16.91215,-17.34571 16.912008,17.34565 0 0 1 16.91215,-17.345709 z" />
+                        </g>
+                      </svg>
                       4 - Heparin infusions
                     </h2>
 
@@ -311,19 +316,13 @@
             <div class="flex flex-col items-center justify-center">
               <%= button_tag type: 'submit', class: "lg:mb-6 mb-4 flex justify-center items-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" do %>
                 <svg
-                  class="lg:mr-3 mr-2 w-4 h-6 fill-current lg:w-8 lg:h-8 text-beige-color lg:hover:text-active-color active:scale-95"
-                  width="98.622169mm"
-                  height="98.268173mm"
-                  viewBox="0 0 98.622169 98.268173"
+                  class="lg:mr-3 mr-2 w-6 h-6 fill-current lg:w-8 lg:h-8 text-beige-color lg:hover:text-active-color active:scale-95"
+                  width="510.07129"
+                  height="469.40924"
+                  viewBox="0 0 134.95636 124.19786"
                   version="1.1"
                   id="svg1"
-                  inkscape:export-filename="calculate_icon.svg"
-                  inkscape:export-xdpi="96"
-                  inkscape:export-ydpi="96"
-                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:svg="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg">
                   <sodipodi:namedview
                     id="namedview1"
                     pagecolor="#ffffff"
@@ -333,119 +332,62 @@
                     inkscape:pageopacity="0.0"
                     inkscape:pagecheckerboard="0"
                     inkscape:deskcolor="#d1d1d1"
-                    inkscape:document-units="mm" />
+                    inkscape:document-units="px"
+                    inkscape:zoom="0.70710678"
+                    inkscape:cx="309.71277"
+                    inkscape:cy="365.57421"
+                    inkscape:window-width="1920"
+                    inkscape:window-height="1017"
+                    inkscape:window-x="-8"
+                    inkscape:window-y="-8"
+                    inkscape:window-maximized="1"
+                    inkscape:current-layer="layer1" />
                   <defs
                     id="defs1" />
                   <g
                     inkscape:label="Layer 1"
                     inkscape:groupmode="layer"
                     id="layer1"
-                    transform="translate(-99.719907,-48.390943)">
-                    <g
-                      id="g3"
-                      transform="translate(47.789035,6.0178784)"
-                      inkscape:export-filename=".\g3.svg"
+                    transform="translate(-57.550659,-33.479142)">
+                    <path
+                      style="fill:none;stroke:currentColor;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+                      d="M 66.550656,42.479142 V 148.677 H 183.50702"
+                      id="path1"
+                      inkscape:export-filename="calculate.svg"
                       inkscape:export-xdpi="96"
-                      inkscape:export-ydpi="96">
-                      <path
-                        style="fill:none;stroke:currentColor;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
-                        d="M 55.930868,46.373063 V 136.64124 H 146.55304"
-                        id="path1" />
-                      <path
-                        style="fill:none;stroke:currentColor;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
-                        d="M 56.638856,123.5435 H 73.630511 V 50.974968 L 97.702025,80.002382 V 58.054827 L 123.18951,76.816446 V 59.824791 l 19.8236,11.327772"
-                        id="path2"
-                        sodipodi:nodetypes="cccccccc" />
-                      <path
-                        id="path3"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 94.870086,95.047081 a 4.4249105,4.4249105 0 0 1 -4.424911,4.424911 4.4249105,4.4249105 0 0 1 -4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.424911,4.424911 z" />
-                      <path
-                        id="path3-6"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 144.58644,55.329102 a 4.4249105,4.4249105 0 0 1 -4.42491,4.42491 4.4249105,4.4249105 0 0 1 -4.42491,-4.42491 4.4249105,4.4249105 0 0 1 4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,4.424911 z" />
-                      <path
-                        id="path3-6-5"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 91.396384,49.471817 a 4.4249105,4.4249105 0 0 1 -4.42491,4.424911 4.4249105,4.4249105 0 0 1 -4.424911,-4.424911 4.4249105,4.4249105 0 0 1 4.424911,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,4.424911 z" />
-                      <path
-                        id="path3-6-5-2"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 129.27361,87.485847 a 4.4249105,4.4249105 0 0 1 -4.42491,4.424911 4.4249105,4.4249105 0 0 1 -4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,-4.42491 4.4249105,4.4249105 0 0 1 4.42491,4.42491 z" />
-                    </g>
+                      inkscape:export-ydpi="96"
+                      sodipodi:nodetypes="ccc" />
+                    <path
+                      style="fill:none;stroke:currentColor;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
+                      d="m 92.903541,84.981908 11.417179,-13.738183 33.62202,23.538704 27.29391,-23.57151"
+                      id="path2"
+                      sodipodi:nodetypes="cccc" />
+                    <path
+                      d="m 174.8529,90.131611 -17.93896,13.249849 v 25.52747 h 17.93896 z"
+                      style="stroke:#808080;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                      id="path8" />
+                    <path
+                      d="m 151.29981,106.2661 -7.96023,6.22665 a 9.7942294,8.9107205 0 0 1 -9.97872,1.51482 v 14.90136 h 17.93895 z"
+                      style="stroke:#808080;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                      id="path9" />
+                    <path
+                      d="m 127.74673,111.78334 -17.93947,-11.18069 v 28.30628 h 17.93947 z"
+                      style="stroke:#808080;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                      id="path10" />
+                    <path
+                      d="m 104.19313,98.106475 c 0,0 -4.360674,5.933425 -7.843456,6.730955 -3.379966,0.77398 -7.277688,0.66973 -10.095508,-2.47742 v 26.54892 h 17.938964 z"
+                      style="stroke:#808080;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                      id="path11"
+                      sodipodi:nodetypes="cacccc" />
                   </g>
                 </svg>
                 Calculate dosing regimen
-                <svg
-                  class="lg:ml-3 ml-2 w-4 h-6 fill-current lg:w-8 lg:h-8 text-beige-color lg:hover:text-active-color active:scale-95"
-                  width="98.622169mm"
-                  height="98.268173mm"
-                  viewBox="0 0 98.622169 98.268173"
-                  version="1.1"
-                  id="svg1"
-                  inkscape:export-filename="calculate_icon.svg"
-                  inkscape:export-xdpi="96"
-                  inkscape:export-ydpi="96"
-                  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:svg="http://www.w3.org/2000/svg">
-                  <sodipodi:namedview
-                    id="namedview1"
-                    pagecolor="#ffffff"
-                    bordercolor="#000000"
-                    borderopacity="0.25"
-                    inkscape:showpageshadow="2"
-                    inkscape:pageopacity="0.0"
-                    inkscape:pagecheckerboard="0"
-                    inkscape:deskcolor="#d1d1d1"
-                    inkscape:document-units="mm" />
-                  <defs
-                    id="defs1" />
-                  <g
-                    inkscape:label="Layer 1"
-                    inkscape:groupmode="layer"
-                    id="layer1"
-                    transform="translate(-99.719907,-48.390943)">
-                    <g
-                      id="g3"
-                      transform="translate(47.789035,6.0178784)"
-                      inkscape:export-filename=".\g3.svg"
-                      inkscape:export-xdpi="96"
-                      inkscape:export-ydpi="96">
-                      <path
-                        style="fill:none;stroke:currentColor;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
-                        d="M 55.930868,46.373063 V 136.64124 H 146.55304"
-                        id="path1" />
-                      <path
-                        style="fill:none;stroke:currentColor;stroke-width:7.99999;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:stroke fill markers"
-                        d="M 56.638856,123.5435 H 73.630511 V 50.974968 L 97.702025,80.002382 V 58.054827 L 123.18951,76.816446 V 59.824791 l 19.8236,11.327772"
-                        id="path2"
-                        sodipodi:nodetypes="cccccccc" />
-                      <path
-                        id="path3"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 94.870086,95.047081 a 4.4249105,4.4249105 0 0 1 -4.424911,4.424911 4.4249105,4.4249105 0 0 1 -4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.424911,4.424911 z" />
-                      <path
-                        id="path3-6"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 144.58644,55.329102 a 4.4249105,4.4249105 0 0 1 -4.42491,4.42491 4.4249105,4.4249105 0 0 1 -4.42491,-4.42491 4.4249105,4.4249105 0 0 1 4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,4.424911 z" />
-                      <path
-                        id="path3-6-5"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 91.396384,49.471817 a 4.4249105,4.4249105 0 0 1 -4.42491,4.424911 4.4249105,4.4249105 0 0 1 -4.424911,-4.424911 4.4249105,4.4249105 0 0 1 4.424911,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,4.424911 z" />
-                      <path
-                        id="path3-6-5-2"
-                        style="stroke:currentColor;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                        d="m 129.27361,87.485847 a 4.4249105,4.4249105 0 0 1 -4.42491,4.424911 4.4249105,4.4249105 0 0 1 -4.42491,-4.424911 4.4249105,4.4249105 0 0 1 4.42491,-4.42491 4.4249105,4.4249105 0 0 1 4.42491,4.42491 z" />
-                    </g>
-                  </g>
-                </svg>
+
               <% end %>
-              <%= form.submit "Calculate dosing regimen", class:"lg:mb-6 mb-4 flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %>
+              <!-- <%= form.submit "Calculate dosing regimen", class:"lg:mb-6 mb-4 flex justify-center lg:text-lg text-base bg-icon-color-dark text-white font-bold lg:px-4 lg:py-2 px-3 py-1.5 rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline" %> -->
                 <%= image_tag 'animatedCircle.gif', id:"loading-gif", class: 'my-4 w-12 lg:w-auto', style:"display:none"%>
-              <% end %>
-            </div>
+            <% end %>
+          </div>
         </div>
         <br>
 
@@ -789,7 +731,7 @@
   <div class="mx-auto full-width bg-secondary lg:py-4">
     <div class="container max-w-6xl gap-5 py-4 mx-auto my-0 lg:flex lg:flex-row lg:p-4 lg:justify-center lg:w-4/5">
       <div class="flex flex-col justify-center w-4/5 mx-auto mb-3 justify-items-start lg:basis-2/3">
-        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4 lg:text-start">ACT Pred, who is it?</h2>
+        <h2 id="section-team" class="mb-2 text-base font-bold text-center text-icon-color-dark lg:text-2xl lg:mb-4 lg:text-start">optiACT, who is it?</h2>
         <p class="text-sm text-base text-gray-800 lg:text-lg"><strong>Scientific managers:</strong> This app has been developped and designed by Edouard Ollier, Julien Lanoiselée and Robin
           Chaux from INSERM unit U1059 (https://sainbiose-lab.fr)</p>
         <br>
