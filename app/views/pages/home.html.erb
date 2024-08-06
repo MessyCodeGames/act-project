@@ -3,7 +3,7 @@
   <!-- BANNER -->
   <div id="hero-banner" class="h-auto bg-primary lg:flex lg:flex-col lg:justify-center" style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png')">
 
-    <div class="gap-2 lg:flex lg:gap-6 lg:ml-5 ml-4 lg:pt-5 pt-4">
+    <div class="gap-2 pt-4 ml-4 lg:flex lg:gap-6 lg:ml-5 lg:pt-5">
       <a href="#section-calcul" class="hidden text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:block">Heparin prediction</a>
       <a href="#section-calcul" class="text-base font-bold text-white lg:text-xl lg:hover:text-icon-color-dark lg:hidden">Prediction</a>
       <span class="text-sm text-white lg:text-2xl lg:hidden"> | </span>
@@ -47,10 +47,13 @@
     <div class="p-2 lg:p-4">
 
       <div class="container mx-auto">  <!--max-w-2xl  text-center-->
-        <h2 id="section-calcul" class="font-bold text-center text-icon-color-dark lg:text-2xl text-base">Heparin prediction form</h2>
+        <h2 id="section-calcul" class="text-base font-bold text-center text-icon-color-dark lg:text-2xl">Heparin prediction form</h2>
       </div>
-      <a href="#section-tutorial" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">How does it work?</a>
       <div data-controller="form-handler">
+        <div class="flex gap-4">
+          <a href="#section-tutorial" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">How does it work?</a>
+          <button data-action="click->form-handler#loadSession" class="justify-items-end lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color-dark rounded lg:hover:bg-active-color active:bg-active-color active:scale-95 focus:outline-none focus:shadow-outline lg:mt-4 mt-4 mb-2 inline-block">Load last session</button>
+        </div>
         <!-- Form -->
         <div data-form-handler-target="form">
             <%= form_with model: @patient, data: { action: "form-handler#validateAndSubmitForm" } do |form| %>
@@ -98,7 +101,7 @@
                     2 - ACT&nbsp;<em class="text-xs font-normal lg:text-sm">(required)</em>
                   </h2>
 
-                  <div data-addable-target="actValues" data-controller="deletable">
+                  <div data-addable-target="actValues" data-form-handler-target="actValues" data-controller="deletable">
                     <div class="w-full act-row lg:flex lg:items-center">
                       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
                         <%= form.fields_for :acts do |acts_form| %>
@@ -140,7 +143,7 @@
 
                 <!-- HEPARIN BOLUS INJECTION PART -->
                 <div id="bolus-injection"  class="flex flex-col p-2 lg:p-4">
-                  <div data-addable-target="heparinsValues" data-controller="deletable">
+                  <div data-addable-target="heparinsValues" data-controller="deletable" data-form-handler-target="bolusValues">
                   <br>
                     <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
@@ -154,7 +157,7 @@
                         <%= form.fields_for :heparins do |heparins_form| %>
                           <div class="flex flex-row w-full">
                             <%= heparins_form.label :bolus_given, "Heparin bolus injection", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :bolus_given, placeholder: "Total UI per shot", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                            <%= heparins_form.number_field :bolus_given, data: { form_handler_target: "bolusGiven" }, placeholder: "Total UI per shot", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
                             <%= heparins_form.label :bolus_time, "Time", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
@@ -191,7 +194,7 @@
 
                 <!-- HEPARIN INFUSION PART -->
                 <div id="heparins-infusions" class="flex flex-col p-2 lg:p-4">
-                  <div data-addable-target="heparinsInfusions" data-controller="deletable">
+                  <div data-addable-target="heparinsInfusions" data-controller="deletable" data-form-handler-target="infusionValues">
                     <br>
                     <h2 class="flex items-center text-sm font-semibold text-left text-gray-800 lg:text-lg">
                       <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 mr-1 fill-current lg:w-5 lg:h-5 lg:mr-2 w:-4 text-icon-color-dark">
@@ -206,11 +209,11 @@
                         <%= form.fields_for :heparins do |heparins_form| %>
                           <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_rate_given, "Heparin infusion", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :infusion_rate_given, placeholder: "IR (UI per hour)", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                            <%= heparins_form.number_field :infusion_rate_given, data: { form_handler_target: "infusionRateGiven" }, placeholder: "IR (UI per hour)", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_duration, "Duration", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
-                            <%= heparins_form.number_field :infusion_duration, placeholder: "minutes", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
+                            <%= heparins_form.number_field :infusion_duration, data: { form_handler_target: "infusionDuration" }, placeholder: "minutes", min: "1", class: "w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs" %>
                           </div>
                           <div class="flex flex-row w-full">
                             <%= heparins_form.label :infusion_time, "Start time", class:"lg:text-base text-sm flex items-center lg:mr-2 mr-1" %>
@@ -398,7 +401,7 @@
             </div>
           </div>
 
-          <div id="image-container" class="flex flex-col items-center justify-center gap-1 plot-container lg:flex-row lg:mt-6 mt-4 mb-2 lg:gap-2"></div>
+          <div id="image-container" class="flex flex-col items-center justify-center gap-1 mt-4 mb-2 plot-container lg:flex-row lg:mt-6 lg:gap-2"></div>
 
           <div class="flex justify-center">
             <a href="#section-result-interpretation" id="interpret-link" class="lg:px-3 lg:py-1 lg:text-base px-2 py-0.5 text-sm font-bold text-white bg-icon-color rounded lg:hover:bg-gray-500 active:bg-gray-600 active:scale-95 focus:outline-none focus:shadow-outline lg:mt-8 lg:mb-4 mt-3 mb-2">How to interpret the results?</a>

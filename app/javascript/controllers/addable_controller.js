@@ -61,7 +61,7 @@ export default class extends Controller {
       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
           <label for="_heparins_bolus_given" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Heparin bolus injection</label>
-          <input placeholder="Total UI per shot" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+          <input placeholder="Total UI per shot" type="number" name="[heparins][bolus_given]" id="_heparins_bolus_given" min="1" data-form-handler-target="bolusGiven" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
           <label for="_heparins_bolus_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Time</label>
@@ -103,11 +103,11 @@ export default class extends Controller {
       <div class="flex lg:flex-row flex-col lg:items-center lg:gap-2 lg:my-2 lg:text-base text-sm gap-0.5 my-0.5 w-full">
         <div class="flex flex-row w-full">
         <label for="_heparins_infusion_rate_given" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Heparin infusion</label>
-        <input placeholder="IR (UI per hour)" type="number" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+        <input placeholder="IR (UI per hour)" type="number" data-form-handler-target="infusionRateGiven" name="[heparins][infusion_rate_given]" id="_heparins_infusion_rate_given" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
         <label for="_heparins_infusion_duration" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Duration</label>
-        <input placeholder="minutes" type="number" name="[heparins][infusion_duration]" id="_heparins_infusion_duration" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
+        <input placeholder="minutes" type="number" data-form-handler-target="infusionDuration" name="[heparins][infusion_duration]" id="_heparins_infusion_duration" min="1" class="w-full max-w-full lg:flex-1 flex-shrink-1 rounded-lg border-2 border-quaternary bg-secondary-light text-secondary-dark lg:p-2 p-1 focus:border-icon-color-dark data-hj-allow lg:text-base text-xs">
         </div>
         <div class="flex flex-row w-full">
         <label for="_heparins_infusion_time" class="lg:text-base text-sm flex items-center lg:mr-2 mr-1">Start time</label>
