@@ -161,8 +161,11 @@ export default class extends Controller {
     // Show and hide loading gif while waiting for the promise
     function showLoading() {
       const loadingGif = document.getElementById('loading-gif');
+      const computing = document.getElementById('computing');
+
       if (loadingGif) {
         loadingGif.style.display = 'block';
+        computing.style.display = 'block';
 
         const targetRect = loadingGif.getBoundingClientRect();
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -182,8 +185,11 @@ export default class extends Controller {
     // Function to hide the loading GIF
     function hideLoading() {
       const loadingGif = document.getElementById('loading-gif');
+      const computing = document.getElementById('computing');
+
       if (loadingGif) {
         loadingGif.style.display = 'none';
+        computing.style.display = 'none';
       }
     }
 
